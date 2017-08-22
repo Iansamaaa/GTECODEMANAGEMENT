@@ -1,0 +1,115 @@
+.editModal{
+top:15%;
+outline: none;
+}
+.AddMemberModal
+{
+  top:15%;
+  outline: none;
+}
+.modal-backgroundBody {
+  background-color:rgb(233, 230, 235);
+}
+.modal-backgroundHeader {
+  background-color:rgba(12, 11, 65, 0.17);
+}
+.inputModalMarginTop {
+margin-top: 0.2%;
+}
+.inputModalWidth {
+  width: 85%;
+  margin-left: 15%;margin-right: 20%;
+}
+.modal-dialog{
+width: 320px;
+}
+.modal-dialog-background{
+  background-color:rgba(25, 27, 75, 0.79);
+}
+.submitMargin{
+  margin-right: 12%;
+}
+.submitButton{
+  color: transparent;
+
+}
+.modal-header-height{
+height: 44px;
+}
+.modal-footer-height{
+  height: 20%;
+}
+.discardSubmitButton
+{
+  color: transparent;
+}
+.textMarginLeft{
+  margin-left: 14%;
+}
+.animationButton{
+  transition: all 0.3s ease 0s;
+}
+.editbuttonMargin{
+  margin-left: 170px;
+}
+.fond{position:absolute;padding-top:85px;top:0;left:0; right:0;bottom:0;
+ background-color:#00506b;}
+
+.style_prevu_kit
+{
+    display:inline-block;
+    border:0;
+    width:inherit;
+    height:inherit;
+    position: relative;
+    -webkit-transition: all 50ms ease-in;
+    -webkit-transform: scale(inherit);
+    -ms-transition: all 10ms ease-in;
+    -ms-transform: scale(0);
+    -moz-transition: all 10ms ease-in;
+    -moz-transform: scale(0);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+}
+.style_prevu_kit:hover
+{
+    box-shadow: 0px 0px 20px #2060cd;
+    z-index: 2;
+    -webkit-transition: all 50ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 100ms ease-in;
+    -ms-transform: scale(0);
+    -moz-transition: all 100ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.2);
+}
+.style_prevu_kit_input
+{
+    display:inline-block;
+    border:0;
+    width:inherit;
+    height:inherit;
+    position: relative;
+    -webkit-transition: all 50ms ease-in;
+    -webkit-transform: scale(10%);
+    -ms-transition: all 10ms ease-in;
+    -ms-transform: scale(0);
+    -moz-transition: all 10ms ease-in;
+    -moz-transform: scale(0);
+    transition: all 50ms ease-in;
+    transform: scale(1);
+}
+.style_prevu_kit_input:hover
+{
+    box-shadow: 0px 0px 20px #e79ed2;
+    z-index: 1;
+    -webkit-transition: all 50ms ease-in;
+    -webkit-transform: scale(10%);
+    -ms-transition: all 100ms ease-in;
+    -ms-transform: scale(0);
+    -moz-transition: all 100ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 50ms ease-in;
+    transform: scale(1.05);
+}
