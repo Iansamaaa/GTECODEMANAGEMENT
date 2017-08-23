@@ -1,3 +1,0 @@
-<%
-Response.Redirect("pages/Index/")
-%>
