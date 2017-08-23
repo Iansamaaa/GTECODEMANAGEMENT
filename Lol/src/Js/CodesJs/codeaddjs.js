@@ -38,7 +38,7 @@ function code_adding(){
 	alert($("#codedesc").val());
 	datastring= {ctypes: $("#ctype").val(), 
 				fnames: $("#fname").val(),
-				descs: $("#codedesc").val(),
+				descs: btoa($("#codedesc").val()),
 				versions: $('#version').val(),
 				addedby:  $('#added').val(),
 				};

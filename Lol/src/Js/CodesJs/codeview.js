@@ -32,7 +32,7 @@ function Modalview(labad){
     data: datastring,
     async: false,
     success: function(data){
-      $('#codeTA').val(data);
+      $('#codeTA').text(atob(data));
 
       }, 
     error:  function(){

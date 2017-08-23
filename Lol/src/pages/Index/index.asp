@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   
  
-
-      <link rel="stylesheet" href="css/style.css">
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="css/style.css">
 
 
 
@@ -20,8 +20,14 @@
     <!-- TOAST -->
     <script src=../../Js/plugins/toastr/build/toastr.min.js></script>
     <link rel="stylesheet" href="../../Js/plugins/toastr/build/toastr.min.css">
-     <script src=../../Js/members_func/toast_members.js></script>
- 
+    <script src=../../Js/members_func/toast_members.js></script>
+    
+    <!-- PREVENTING FOR BACK PAGES -->
+    <%  Response.Buffer = True
+        Response.ExpiresAbsolute = Now() - 1
+        Response.Expires = 0
+        Response.CacheControl = "no-cache"
+    %>
   
 </head>
 

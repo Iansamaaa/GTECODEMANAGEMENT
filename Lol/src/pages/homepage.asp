@@ -87,13 +87,21 @@
           </li>
         </ul>
         <ul class="navbar-nav ml-auto"><!--Start of UL-->
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa fa-user-o" aria-hidden="true"></i></i>
+              <% fname=Request.Cookies("USERNAME")
+                response.write(fname) %></a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
               <i class="fa fa-fw fa-sign-out"></i>
               Logout</a>
           </li>
+          </ul>
       </div>
     </nav>
+    <!-- END OF NAVIGATION -->
 
     <div class="content-wrapper py-3" id="WRAPPER"><!--Start of the Content-->
       <div class="container-fluid" id="CONTAINER">
@@ -187,7 +195,9 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="Index/index.asp">Logout</a>
+            <form action="Logout.asp">
+            <button type="submit" class="btn btn-primary">Logout</button>
+            </form>
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ function Modalview1(value){
     async: false,
     success: function(data){
 
-      $('#edit_codedesc').val(data);
+      $('#edit_codedesc').val(atob(data));
 
       }, 
     error:  function(){
@@ -58,7 +58,7 @@ function code_edit(){
   var datastring;
   datastring= { ayd: $('#viewED').val(),
     fnames: $("#edit_fname").val(),
-        descs: $("#edit_codedesc").val(),
+        descs: btoa($("#edit_codedesc").val()),
         versions: $('#edit_version').val(),
         };
     $.ajax({
@@ -67,7 +67,7 @@ function code_edit(){
     data: datastring,
     async: false,
     success: function(data){
-      toastr.success("CodeEdited Edited!", "Sucess");
+      toastr.success("Code Edited!", "Sucess");
       $('#editModal').modal('toggle');
       window.setTimeout(function(){location.reload()},2000);
 
