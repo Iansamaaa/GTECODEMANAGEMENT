@@ -89,7 +89,7 @@
         <ul class="navbar-nav ml-auto"><!--Start of UL-->
         <li class="nav-item">
             <a class="nav-link" href="#">
-              <i class="fa fa-user-o" aria-hidden="true"></i></i>
+              <i class="fa fa-user-o" aria-hidden="true"></i>
               <% fname=Request.Cookies("USERNAME")
                 response.write(fname) %></a>
           </li>
@@ -179,7 +179,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
-<!--                                                                                   MODALS                                              -->
+<!--                                                       MODALS                                              -->
     <!-- Logout Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -219,6 +219,7 @@
           <div class="container">
           
           <form class="form-inline">
+
           <div class="form-group">
           <input type="text" class="form-control smallInput" id="ctype" Placeholder="Code Type">&nbsp;
           </div>
@@ -236,8 +237,12 @@
           </div>
 
           <div class="form-group col-xs-2">
-          <input class="form-control smallInput" id="added" Placeholder="Added By"></input>
+          <input class="form-control smallInput" id="added" Placeholder="Added By" style="display:none" value="<% fname=Request.Cookies("USERNAME")
+                response.write(fname) %>">
+            
+          </input>
           </div>
+
           </form>
           
       
@@ -305,7 +310,7 @@
     </div>
     <!-- END OF View MODAL -->
 
-      <!-- Edit Modal MODAL -->
+    <!-- Edit Modal MODAL -->
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -336,6 +341,12 @@
           <div class="form-group">
           <textarea class="form-control codeTS" id="edit_codedesc" Placeholder="Code Description"></textarea>
           </div>
+          <div class="form-group col-xs-2">
+          <input class="form-control smallInput" id="edited" Placeholder="Edited By" style="display:none" value="<% fname=Request.Cookies("USERNAME")
+                response.write(fname) %>">
+            
+          </input>
+          </div>
           </form>
           
       
@@ -357,7 +368,8 @@
 
 
 
-<!--                                                                    END OF MODALS                                              -->
+<!--                                                END OF MODALS                                              -->
+
     <!-- Bootstrap core JavaScript -->
     <script src="pagedesigns/vendor/jquery/jquery.min.js"></script>
     <script src="pagedesigns/vendor/popper/popper.min.js"></script>

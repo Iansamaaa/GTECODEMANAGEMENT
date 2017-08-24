@@ -1,5 +1,4 @@
 $(function(){
-
 	$(document).ready(function(){
 		$("#modalSubmitMem").bind({
 		click:function(){
@@ -19,7 +18,6 @@ $(function(){
 		}
 		}
 	});
-
 	}); // End of document ready]
 });
 
@@ -46,6 +44,8 @@ function AddMembers(){
 		async: false,
 		success: function(data){
 			SuccessfulAdd(data)
+			$('#AddMemberModal').modal('toggle');
+			window.setTimeout(function(){location.reload()},2000);
 			},
 		error:  function(){
 			}
@@ -64,7 +64,4 @@ function SuccessfulAdd(loginstats){
 		default:  toastr.warning("Username/Password/SPIN did not match. (Please check CAPS LOCK)", "Authentication Failed");
 
 	}
-}
-function ValidationAlpha(){
-    var regx = /^[A-Za-z0-9]+$/;
 }

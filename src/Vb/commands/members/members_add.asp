@@ -1,8 +1,6 @@
 <!--#include file='..\..\..\connections\dsn.asp'-->
 
 <%
-
-
 'Initialize Variables
 	Dim cmd_add, dr_add, strSQL_add
 

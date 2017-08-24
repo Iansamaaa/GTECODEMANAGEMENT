@@ -35,7 +35,6 @@ FUNCTIONS
 function code_adding(){
 	//Set Ajax Status
 	var datastring;
-	alert($("#codedesc").val());
 	datastring= {ctypes: $("#ctype").val(), 
 				fnames: $("#fname").val(),
 				descs: btoa($("#codedesc").val()),

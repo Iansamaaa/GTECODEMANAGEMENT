@@ -16,7 +16,7 @@
 	cmd_edit.ActiveConnection =  codemngt
 	
 	'QUERY COMMAND
-	strSQL_edit = "UPDATE codes_masterlist SET FunctionName='"&Request("fnames")&"',Version='"&Request("versions")&"',ContentScript='"&Request("descs")&"' WHERE IDcode='"&Request("ayd")&"'"
+	strSQL_edit = "UPDATE codes_masterlist SET FunctionName='"&Request("fnames")&"',Version='"&Request("versions")&"',ContentScript='"&Request("descs")&"',UpdatedBy='"&Request("edit")&"',DateTimeUpdated=NOW() WHERE IDcode='"&Request("ayd")&"'"
 	
 	cmd_edit.CommandText = strSQL_edit
 	cmd_edit.Prepared = True
