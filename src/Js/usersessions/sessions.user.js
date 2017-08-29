@@ -9,9 +9,8 @@ $(function(){
   checkSessionPage();
   $(document).ready(function(){
     //Disable Back History 
-    window.history.forward(1);
-    return false;
   });
+  
 })
 
 
@@ -20,7 +19,7 @@ function checkSessionPage(){
   
   $.ajax({
     type: "POST",
-    url: "../Vb/session/checksession.asp",
+    url: "../../Vb/session/checksession.pages.asp",
     data: {e: Number(new Date())},
     success: function(data){evaluate_stat(data)}
     })
@@ -31,7 +30,7 @@ function checkSessionPage(){
 function evaluate_stat(stat){
   
   if (stat=='0'){
-    window.top.location.href="Index/index.asp";
+    window.top.location.href="../Index/index.asp";
     return false;
     }
-}
+  }

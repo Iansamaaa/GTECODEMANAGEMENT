@@ -59,6 +59,8 @@ function redirect_login(loginstat){
 				break;
 		case 'y': window.location="../homepage.asp";
 				break;
+		case 'z': window.location="../userpages/homepage.user.asp";
+				break;
 		default:  alert("HAYS");
 		
 	}	
