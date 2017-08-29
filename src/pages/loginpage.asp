@@ -50,6 +50,9 @@
 <script src="../Js/plugins/toastr/build/toastr.min.js"></script>
 <script src="../Js/members_func/toast_members.js"></script>
 
+<!-- SESSIONS -->
+<script src="../Js/sessions/sessions.pages1.js"></script>
+
 </head>
   <body class="fixed-nav" id="page-top">
     <!-- Modal Style -->

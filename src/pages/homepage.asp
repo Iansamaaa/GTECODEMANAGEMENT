@@ -30,7 +30,8 @@
     <!-- TableSizeandContentsIzes -->
     <link href="pagedesigns/css/tablesizes.css" rel="stylesheet">
 
-
+    <!-- SESSIONS -->
+    <script src="../Js/sessions/sessions.pages.js"></script>
     
 
     <!-- TOAST FILES -->
@@ -44,7 +45,6 @@
     <script type= "text/javascript" src="../Js/CodesJs/codeview.js"></script>
     <script type= "text/javascript" src="../Js/CodesJs/codeedit.js"></script>
 
-    
   </head>
 
   <body class="fixed-nav" id="page-top">
@@ -342,9 +342,8 @@
           <textarea class="form-control codeTS" id="edit_codedesc" Placeholder="Code Description"></textarea>
           </div>
           <div class="form-group col-xs-2">
-          <input class="form-control smallInput" id="edited" Placeholder="Edited By" style="display:none" value="<% fname=Request.Cookies("USERNAME")
-                response.write(fname) %>">
-            
+          <input class="form-control smallInput" id="edited" Placeholder="Edited By" style="display:none" value="<%fname=Request.Cookies("USERNAME")
+                response.write(fname)%>">
           </input>
           </div>
           </form>
@@ -383,7 +382,7 @@
     <!-- Custom scripts for this template -->
     <script src="pagedesigns/js/sb-admin.min.js"></script>
 
-    
+
   </body>
 
 </html>
