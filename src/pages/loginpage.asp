@@ -24,8 +24,8 @@
 ></script>
 <script src='..\Js\members_func\members_remove_triggers.js'
 ></script>
-<!-- FILES INCLUDED -->
-
+<!-- FILES INCLUDED FOR TABLES -->
+  
 <!-- JQUERY -->
 <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
 
@@ -123,10 +123,10 @@
               <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
                 <thead>
                   <tr>
-                   <th>Actions</th>
-                    <th>UserName</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                   <th width="20%">Actions</th>
+                    <th width="25%">UserName</th>
+                    <th width="25%">First Name</th>
+                    <th width="25%">Last Name</th>
                    
                   </tr>
                 </thead>
@@ -301,8 +301,8 @@
 
   </div>
 
-  <div class="modal-footer modal-backgroundHeader modal-footer-height ">
-    <Button id="modalClearMem" type="button" class="btn fa fa-ban animationButton style_prevu_kit"></Button>
+  <div class="modal-footer modal-backgroundHeader modal-footer-height  ">
+    <Button id="modalClearMem" type="button" class="btn fa fa-ban animationButton style_prevu_kit modalClearMem"></Button>
       <Button id="modalSubmitMem" type="submit" class="btn fa fa-check animationButton style_prevu_kit submitMargin"></Button>
   </div>
 
