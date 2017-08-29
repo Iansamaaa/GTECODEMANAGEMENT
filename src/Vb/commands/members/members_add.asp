@@ -14,7 +14,6 @@
 	cmd_add.CommandText = strSQL_add
 	cmd_add.Prepared = True
 
-
 	Set dr_add = cmd_add.Execute()
 
 	if NOT dr_add.EOF then
