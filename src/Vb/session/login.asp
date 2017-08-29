@@ -26,7 +26,6 @@
 	Set dr_login= cmd_login.Execute()
 
 	if NOT dr_login.EOF then
-
 		'set sessions
 		Response.Cookies("USERNAME") = Request("user")
 		Response.Cookies("FIRSTNAME") = dr_login("FirstName")
@@ -35,9 +34,12 @@
 		else 
 			Response.Write "z"
 		End if 
-		
 	Else
 		'Return Unidentified credentials
+		Response.Buffer = True
+        Response.ExpiresAbsolute = Now() - 1
+        Response.Expires = 0
+        Response.CacheControl = "no-cache"
 		Response.Write "x"
 	End if
 
