@@ -127,7 +127,7 @@
                     <th width="25%">UserName</th>
                     <th width="25%">First Name</th>
                     <th width="25%">Last Name</th>
-                   
+                   <th width="25%">Type</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -145,7 +145,7 @@
                 <td><%=dr("Username")%></td>
                 <td><%=dr("FirstName")%></td>
                 <td><%=dr("LastName")%></td>
-  
+                <td><%=dr("AccountType")%></td>
 
                 </tr>
                 <%
@@ -268,7 +268,7 @@
 <div class="modal-content">
 
   <div class="modal-header modal-backgroundHeader modal-header-height" >
-      <h5 class="modal-title textMarginLeft">Input Member Data</h5>
+      <h5 class="modal-title ">Input Member Data</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -278,22 +278,12 @@
   <div class="container">
 
   <form class="form-horizontal">
-
-      <div class="form-group">
       <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usn"  placeholder="UserName"></input>
-      </div>
-
-      <div class="form-group">
-      <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" align-self="middle" name="FirstName" id="frstn" placeholder="Firstname"></input>
-      </div>
-
-      <div class="form-group">
+      <input Id="atype" class="atype inputModalWidth" type="radio" name="Admin Type" >Admin</input>
+      <input Id="atype" type="radio" name="Admin Type" >User</input>
+      <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="FirstName" id="frstn" placeholder="Firstname"></input>
       <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="LastName" id="lstn"  placeholder="LastName"></input>
-      </div>
-
-      <div class="form-group">
       <input  type="password" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="Password" id="pwd"  placeholder="Password"></input>
-      </div>
 
   </form>
 
@@ -321,7 +311,7 @@
       <h5 class="modal-title">Removing Member</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
-            </button>
+              </button>
   </div>
   <div class="modal-body">
     <input type="text" class="form-control" id="usntor" style="display:none">
