@@ -10,14 +10,14 @@
 	'****************************
 
 	'Initialize Variables
-	Dim cmd_login, dr_login, strSQL_login
+	Dim cmd_login, dr_login, strSQL_login, actchecker
 
 	'Create Objects
 	Set cmd_login = Server.CreateObject("ADODB.Command")
 	cmd_login.ActiveConnection =  codemngt
 
 	'QUERY COMMAND
-	strSQL_login = "SELECT * FROM users WHERE Username='"&Request("user")&"' AND Password=SHA1('"&Request("user")&""&Request("pass")&"') OR Username='"&Request("user")&"' AND Password=SHA1('"&Request("pass")&"') "
+	strSQL_login = "SELECT * FROM users WHERE Username='"&Request("user")&"' AND Password=SHA1('"&Request("user")&""&Request("pass")&"') OR Username='"&Request("user")&"' AND Password=SHA1('"&Request("pass")&"')"
 
 	cmd_login.CommandText = strSQL_login
 	cmd_login.Prepared = True
@@ -30,8 +30,12 @@
 		'set sessions
 		Response.Cookies("USERNAME") = Request("user")
 		Response.Cookies("FIRSTNAME") = dr_login("FirstName")
-
-		Response.Write "y"
+		if dr_login("Accounttype")="ADMIN" then 
+			Response.Write "y"
+		else 
+			Response.Write "z"
+		End if 
+		
 	Else
 		'Return Unidentified credentials
 		Response.Write "x"
@@ -41,5 +45,4 @@
 	dr_login.close()
 	Set dr_login = Nothing
 	Set cmd_login = Nothing
-
 %>
