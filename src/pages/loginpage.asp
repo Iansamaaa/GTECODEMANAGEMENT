@@ -302,7 +302,7 @@
   </div>
 
   <div class="modal-footer modal-backgroundHeader modal-footer-height ">
-    <Button id="modalClearMem" type="button" class="btn fa fa-ban animationButton style_prevu_kit" aria-hidden="true" data-dismiss="modal"></Button>
+    <Button id="modalClearMem" type="button" class="btn fa fa-ban animationButton style_prevu_kit"></Button>
       <Button id="modalSubmitMem" type="submit" class="btn fa fa-check animationButton style_prevu_kit submitMargin"></Button>
   </div>
 

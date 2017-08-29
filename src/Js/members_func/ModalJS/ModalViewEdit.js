@@ -2,6 +2,18 @@
 $(function(){
 $(document).ready(function(){
 
+$("#modalClearMem").bind({
+
+  click:function(){
+   $("#frstn").val("")
+   $("#lstn").val("")
+   $("#pwd").val("")
+   $("#usn").val("")
+  }
+
+});
+
+
 $("#modalBan").bind({
 
   click:function(){
@@ -10,6 +22,8 @@ $("#modalBan").bind({
   }
 
 });
+
+
 $("#enableModalEdit").bind({
 
   click:function(){
