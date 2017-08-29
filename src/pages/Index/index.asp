@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../../Js/plugins/toastr/build/toastr.min.css">
     <script src=../../Js/members_func/toast_members.js></script>
     
+<<<<<<< HEAD
     <!-- PREVENTING FOR BACK PAGES -->
     <%  
     Response.Buffer = True
@@ -29,6 +30,11 @@
         Response.Expires = 0
         Response.CacheControl = "no-cache"
     %>
+=======
+    <!-- SESSIONS -->
+    <script src="../../Js/sessions/sessions.js"></script>
+
+>>>>>>> 5b8543dc51c08723e491e7955aeb93ba294de4f2
   
 </head>
 
