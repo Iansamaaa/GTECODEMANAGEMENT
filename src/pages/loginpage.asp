@@ -280,7 +280,7 @@
   <form class="form-horizontal">
       <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usn"  placeholder="UserName"></input>
       <input Id="atype" class="atype inputModalWidth" type="radio" name="Admin Type" >Admin</input>
-      <input Id="atype" type="radio" name="Admin Type" >User</input>
+      <input Id="atype"  class="atype inputModalWidth" type="radio" name="Admin Type" >User</input>
       <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="FirstName" id="frstn" placeholder="Firstname"></input>
       <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="LastName" id="lstn"  placeholder="LastName"></input>
       <input  type="password" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="Password" id="pwd"  placeholder="Password"></input>
