@@ -123,7 +123,7 @@
               <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
                 <thead>
                   <tr>
-                   <th width="20%">Actions</th>
+                   <th width="16%">Actions</th>
                     <th width="25%">UserName</th>
                     <th width="25%">First Name</th>
                     <th width="25%">Last Name</th>
