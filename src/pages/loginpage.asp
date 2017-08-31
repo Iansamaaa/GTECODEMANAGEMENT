@@ -279,8 +279,12 @@
 
   <form class="form-horizontal">
       <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usn"  placeholder="UserName"></input>
-      <input Id="atype" class="atype inputModalWidth" type="radio" name="Admin Type" >Admin</input>
-      <input Id="atype"  class="atype inputModalWidth" type="radio" name="Admin Type" >User</input>
+      <div   class="input-group">
+      <span  class="input-group-addon spanAdjustLeft spanAdjustRight style_prevu_kit_input style_prevu_kit_input:hover">
+      <label><input id="atype" type="radio" name="optradio" value="ADMIN">Admin</label>
+        <label class="radioPaddingLeft"><input  id="stype" type="radio" name="optradio" value="USER" >User</label>
+        </span>
+        </div>
       <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="FirstName" id="frstn" placeholder="Firstname"></input>
       <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="LastName" id="lstn"  placeholder="LastName"></input>
       <input  type="password" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="Password" id="pwd"  placeholder="Password"></input>
@@ -318,7 +322,7 @@
     <h3> Do you wish to remove this member? </h3>
   </div>
   <div class="modal-footer modal-backgroundHeader modal-footer-height ">
-      <Button id="modalYESremove" type="submit" class="btn fa fa-check animationButton style_prevu_kit submitMargin" aria-hidden="true"></Button>
+      <Button id="modalYESremove" type="submit" class="btn fa fa-check animationButton modalYESremove style_prevu_kit submitMargin" aria-hidden="true"></Button>
   </div>
 </div>
 

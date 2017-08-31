@@ -10160,7 +10160,7 @@
 		 *      } );
 		 *    } );
 		 */
-		"aLengthMenu": [ 10, 25, 50, 100 ],
+		"aLengthMenu": [ 10,20,50,70,100,],
 	
 	
 		/**
@@ -11185,7 +11185,6 @@
 		 *    } )
 		 */
 		"iDisplayLength": 10,
-	
 	
 		/**
 		 * Define the starting point for data display when using DataTables with

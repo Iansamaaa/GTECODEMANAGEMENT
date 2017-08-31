@@ -9,7 +9,7 @@ $(function(){
 	}
 	});
 
-	$("#modalYESremove").bind({
+	$(".modalYESremove").bind({
 	 click:function(){
 		 var Remm = $("#usntor").val();
 		 memREM(Remm);
