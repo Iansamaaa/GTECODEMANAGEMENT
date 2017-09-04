@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <!--#include file='..\Vb\commands\members\members.view.asp'
+
+<!--#include file='..\Vb\commands\members\members.view.asp'
+
 -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,8 +26,11 @@
 ></script>
 <script src='..\Js\members_func\members_remove_triggers.js'
 ></script>
+
 <!-- FILES INCLUDED FOR TABLES -->
-  
+<script src='..\Js\members_func\membersDataovveride.js'
+></script>
+
 <!-- JQUERY -->
 <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
 
@@ -98,9 +103,9 @@
         </ul>
         <ul class="navbar-nav ml-auto"><!--Start of UL-->
         <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fa fa-user-o" aria-hidden="true"></i></i>
-              <% fname=Request.Cookies("USERNAME")
+            <a class="nav-link" href="#" id="cookieValue">
+              <i  class="fa fa-user-o" aria-hidden="true"></i></i>
+              <%  fname=Request.Cookies("USERNAME")
                 response.write(fname) %></a>
           </li>
           <li class="nav-item">
@@ -139,7 +144,7 @@
 
         <button type="submit" class="btn btn-default ViewModalButton fa fa-eye" data-toggle="modal" data-target="#ViewModal"></button>
         <button type="submit" class="btn btn-default editModalButton fa fa-pencil-square-o" data-toggle="modal" data-target="#editModal"></button>
-   
+
         <button type="submit" class="btn btn-default RemoveMemberButton fa fa-times" data-toggle="modal" data-target="#RemoveMemberModal"></button>
                 </td>
                 <td><%=dr("Username")%></td>
@@ -261,7 +266,7 @@
 <!-- END OF LOGOUT MODAL -->
 
 <!--"ADD MODAL"-->
-<div id="AddMemberModal" class="modal fade AddMemberModal" role="dialog" > 
+<div id="AddMemberModal" class="modal fade AddMemberModal" role="dialog" >
 <div class="modal-dialog modalSIZE">
 
 <!-- Modal content-->
@@ -297,7 +302,7 @@
 
   <div class="modal-footer modal-backgroundHeader modal-footer-height  ">
     <Button id="modalClearMem" type="button" class="btn fa fa-ban animationButton style_prevu_kit modalClearMem"></Button>
-      <Button id="modalSubmitMem" type="submit" class="btn fa fa-check animationButton style_prevu_kit submitMargin"></Button>
+      <Button id="modalSubmitMem" type="submit" class="modalSubmitMem btn fa fa-check animationButton style_prevu_kit submitMargin"></Button>
   </div>
 
 </div>

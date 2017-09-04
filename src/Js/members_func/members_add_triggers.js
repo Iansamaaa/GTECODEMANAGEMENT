@@ -1,9 +1,9 @@
-var radio="ADMIN";
-var i=0;
 $(function(){
 	$(document).ready(function(){
-		$("#modalSubmitMem").bind({
+		$(".modalSubmitMem").bind({
 		click:function(){
+			AddMembersLOGS();
+
 			RadioUserType();
     	var regx = /^[0-9 ]/;
 		if($('#usn').val()==''  || $('#pwd').val()=='' || $('#frstn').val()=='' || $('#lstn').val()=='')
@@ -22,9 +22,7 @@ $(function(){
 		}
 		else
 		{
-			
 				AddMembers();
-			
 
 		}
 		}
@@ -42,10 +40,10 @@ FUNCTIONS
 //validate to server
 function AddMembers(){
 	//Set Ajax Status
-	
+
 
 	var datastring;
-	for (i=0;i<1;i++){
+
 	datastring= {firstn: $("#frstn").val(),
 				lastn: $("#lstn").val(),
 				usn: $("#usn").val(),
@@ -66,10 +64,29 @@ function AddMembers(){
 		error:  function(){
 			}
 		})
-}
+
 }
 
 
+
+
+var aidentifier = "null";
+var actionM;
+function AddMembersLOGS(){
+	//Set Ajax Status
+	aidentifier = "ADDED MEMBER";
+	var datastring;
+	 datastring= {actionM: aidentifier,
+
+				};
+
+        $.ajax({
+          type: "POST",
+          url: "../../Vb/commands/members/logs.asp",
+          data: datastring,
+          async: false,
+          })
+}
 
 
 
