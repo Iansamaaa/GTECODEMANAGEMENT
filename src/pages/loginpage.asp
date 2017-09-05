@@ -26,9 +26,13 @@
 ></script>
 <script src='..\Js\members_func\members_remove_triggers.js'
 ></script>
+<script src='..\Js\members_func\alogs.js'
+
+></script>
 
 <!-- FILES INCLUDED FOR TABLES -->
-<script src='..\Js\members_func\membersDataovveride.js'
+<script src='..\Js\members_func\tableData.js'
+
 ></script>
 
 <!-- JQUERY -->
@@ -196,11 +200,11 @@
             </button>
       </div>
       <div class="modal-body modal-dialog-background">
-          <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usern"   value="<%=Request("Username")%>" placeholder="UserName"></input>
+          <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usern"    placeholder="UserName"></input>
 
-          <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" align-self="middle" name="FirstName" id="firstn"  value="<%=Request("FirstName")%>" placeholder="Firstname"></input>
+          <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" align-self="middle" name="FirstName" id="firstn"   placeholder="Firstname"></input>
 
-          <input   type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="LastName" id="lastn"  value="<%=Request("LastName")%>" placeholder="LastName"></input>
+          <input   type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="LastName" id="lastn"   placeholder="LastName"></input>
 
       </div>
       <div class="modal-footer modal-backgroundHeader modal-footer-height ">
