@@ -2,12 +2,6 @@ $(function(){
 
   $(document).ready(function(){
   
-  $(".btnRECORD").bind({
-    click:function(){
-      var KAFOY = $(this).closest('tr').find('td:eq(1)').text();
-      $('#IDrecord').val(KAFOY);
-    }
-  });
   
    $("#btnREMOVE").bind({
     click:function(){
@@ -41,7 +35,7 @@ function RemoveMember(labad){
 
       toastr.success("Code Deleted", "Sucess");
       $('#removeModal').modal('toggle');
-      window.setTimeout(function(){location.reload()},2000);
+   
 
       }, 
     error:  function(){

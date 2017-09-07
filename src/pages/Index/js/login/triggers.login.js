@@ -1,6 +1,9 @@
 $(function(){
-
+	NProgress.start();
 	$(document).ready(function(){
+	
+   	setTimeout(function() { NProgress.done(); }, 1000);
+  
 	
 		$("#subINDEX").bind({
 		
@@ -55,9 +58,11 @@ function redirect_login(loginstat){
 	
 	switch (loginstat){
 		
-		case 'x': toastr.warning("Username or Password is Incorrect", "Check Fields").css("height","100px").css("font-size","12pt").css("padding-top","30px");
+		case 'x':NProgress.start();
+   				 setTimeout(function() { NProgress.done(); toastr.warning("Username or Password is Incorrect", "Check Fields").css("height","100px").css("font-size","12pt").css("padding-top","30px"); }, 500);
 				break;
-		case 'y': window.location="../homepage.asp";
+		case 'y':NProgress.start();
+   				 setTimeout(function() { NProgress.done(); window.location="../homepage.asp"; }, 4000);
 				break;
 		case 'z': window.location="../userpages/homepage.user.asp";
 				break;

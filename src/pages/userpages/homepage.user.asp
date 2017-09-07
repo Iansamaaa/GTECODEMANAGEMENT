@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-  <!--#include file="../../Vb/commands/codes/codes.view.asp"-->
+ 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,7 +14,7 @@
     
     <!-- JQUERY -->
     <script src="../../Js/plugins/jquery-3.2.1.min.js"></script>
-
+    <script src="../../Js/ssp/datatables.code.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="../pagedesigns/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -23,6 +23,7 @@
 
     <!-- Plugin CSS -->
     <link href="../pagedesigns/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="../pagedesigns/css/buttons.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../pagedesigns/css/sb-admin.css" rel="stylesheet">
@@ -31,7 +32,7 @@
     <link href="../pagedesigns/css/tablesizes.css" rel="stylesheet">
 
     <!-- SESSIONS -->
-    <script src="../../Js/usersessions/sessions.user.js"></script>
+    <script src="../../Js/sessions/sessions.pages.js"></script>
     
 
     <!-- TOAST FILES -->
@@ -40,11 +41,17 @@
     <script src="../../Js/members_func/toast_members.js"></script>
 
     <!-- TRIGGERS -->
-    <script type= "text/javascript" src="../../Js/UserCodesJs/codeaddjs.user.js"></script>
-    <script type= "text/javascript" src="../../Js/UserCodesJs/coderemove.user.js"></script>
-    <script type= "text/javascript" src="../../Js/UserCodesJs/codeview.user.js"></script>
-    <script type= "text/javascript" src="../../Js/UserCodesJs/codeedit.user.js"></script>
+    <script type= "text/javascript" src="../../Js/CodesJs/codeaddjs.js"></script>
+    <script type= "text/javascript" src="../../Js/CodesJs/coderemove.js"></script>
+    <script type= "text/javascript" src="../../Js/CodesJs/codeview.js"></script>
+    <script type= "text/javascript" src="../../Js/CodesJs/codeedit.js"></script>
 
+    <!-- PLUGINS -->
+    <script src="../../Js/plugins/nprogress-master/nprogress.js"></script>
+    <link rel="stylesheet" href="../../Js/plugins/nprogress-master/nprogress.css">
+
+    <!-- JS -->
+    <script src="../../Js/CodesJs/codesview.js"></script>
   </head>
 
   <body class="fixed-nav" id="page-top">
@@ -99,15 +106,17 @@
     <div class="content-wrapper py-3" id="WRAPPER"><!--Start of the Content-->
       <div class="container-fluid" id="CONTAINER">
         <!-- Example Tables Card -->
-        <div class="card mb-4">
-          <div class="card-header blue"><button type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Codes</button>
+        <div class="card mb-4" style="display:none" id="tablecard">
+          <div class="card-header blue" ><button type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Codes</button>
           </div>
-          <div class="card-body" id="TableBODY">
+          <div class="card-body" id="TableBODY" >
             <div class="table-responsive">
               <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
                 <thead>
                   <tr>
-                  <th>Actions</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                     <th>Code # </th>
                     <th>Code Type</th>
                     <th>Function Name</th>
@@ -116,43 +125,9 @@
                     <th>Added By</th>
                     <th>Date Updated</th>
                     <th>Update By</th>
-                    
+
                   </tr>
                 </thead>
-                <tbody>
-                 <%
-                  While not dr.EOF 
-                 %>
-                <tr>
-                <td>
-
-                <button type="submit" class="btn btn-default btn-xs btnED" data-toggle="modal" data-target="#editModal" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true" title="Edit"></i></button> 
-
-
-                <button type="submit" class="btn btn-default btn-xs btnEN" data-toggle="modal" data-target="#viewModal" title="View"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                </td>
-                <td><%=dr("IDcode")%></td>
-                <td><%=dr("Language")%></td>
-                <td><%=dr("FunctionName")%></td>
-                <td><%=dr("Version")%></td>
-                <td><%=dr("DateTimeAdded")%></td>
-                <td><%=dr("AddedBy")%></td>
-                <td><%=dr("DateTimeUpdated")%></td>
-                <td><%=dr("UpdatedBy")%></td>
-
-                
-                </tr>
-                <%
-                dr.Movenext()
-                Wend
-                %>
-
-                <% 
-                dr.Close()
-                Set dr = nothing
-                Set cmd = nothing
-                %>
-                </tbody>
               </table>
             </div>
           </div>
@@ -187,7 +162,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <form action="../Logout.asp">
+            <form action="Logout.asp">
             <button type="submit" class="btn btn-primary">Logout</button>
             </form>
           </div>
@@ -250,6 +225,32 @@
       </div>
     </div>
     <!-- END OF ADD MODAL -->
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="removeModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Code?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete Record?
+              
+          <form class="form-inline">
+          <input type="text" class="form-control" id="IDrecord" style="display:none">
+          </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="btnREMOVE">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF Delete MODAL -->
 
       <!-- View Modal -->
     <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">

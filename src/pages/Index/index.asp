@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <title>Code Management System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-  
+    
  
     <!-- STYLE CSS -->
     <link rel="stylesheet" href="css/style.css">
+
 
 
 
@@ -24,6 +25,10 @@
 
     <!-- SESSIONS -->
     <script src="../../Js/sessions/sessions.js"></script>
+
+    <!-- Plugins -->
+    <script src="../../Js/plugins/nprogress-master/nprogress.js"></script>
+    <link rel="stylesheet" href="../../Js/plugins/nprogress-master/nprogress.css">
   
 </head>
 
@@ -49,6 +54,7 @@
           <input type="password" class="login__input pass" placeholder="Password" id="password"/>
         </div>
         <button type="button" class="login__submit" id="subINDEX">Sign in</button>
+
       </div>
     </div>
     <div class="app">
