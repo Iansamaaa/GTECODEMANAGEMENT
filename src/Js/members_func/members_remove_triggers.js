@@ -39,7 +39,8 @@ function memREM(yow){
 		success: function(data){;
 			toastr.success("Member Removed!", "Success");
 			$('#RemoveMemberModal').modal('toggle');
-			 window.setTimeout(function(){location.reload()},2000);
+			 window.setTimeout(function(){window.location="../../pages/loginpage.asp"
+},2000);
 			},
 		error:  function(){
 			toastr.warning("Member not removed!", "Failed");}
