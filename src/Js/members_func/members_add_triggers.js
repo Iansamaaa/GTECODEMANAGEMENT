@@ -3,7 +3,6 @@ $(function(){
 		$(".modalSubmitMem").bind({
 		click:function(){
 			AddMembersLOGS();
-
 			RadioUserType();
     	var regx = /^[0-9 ]/;
 		if($('#usn').val()==''  || $('#pwd').val()=='' || $('#frstn').val()=='' || $('#lstn').val()=='')
