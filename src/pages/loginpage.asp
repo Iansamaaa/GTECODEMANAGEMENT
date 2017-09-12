@@ -46,7 +46,7 @@
 
 <!-- Plugin CSS -->
 <link href="pagedesigns/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-
+ <script src="../Js/sessions/antiuser.js"></script>
 <!-- Custom styles for this template -->
 <link href="pagedesigns/css/sb-admin.css" rel="stylesheet">
 

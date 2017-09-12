@@ -18,7 +18,26 @@ $(function(){
 
    $("#btnEDIT").bind({
     click:function(){
-      code_edit();
+      if($('#ctype').val()=='' || $('#fname').val()=='' || $('#codedesc').val()=='' || $('#version').val()==''|| $('#added').val()=='')
+      {
+        toastr.warning("Fill out Required Fields", "Check Fields"); 
+        return false;
+      }
+      else if(!($('#version').val()).match(/^[0-9.]{3,6}$/))
+      {
+      toastr.warning("Type in version Number", "Check Fields"); 
+      return false;
+      }
+      else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{3,20}$/))
+      {
+      toastr.warning("Type valid Function Name", "Check Fields"); 
+      return false;
+      }
+      else
+      {
+         code_edit();
+      }
+     
     }
   });
 

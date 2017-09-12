@@ -29,6 +29,7 @@
 		'set sessions
 		Response.Cookies("USERNAME") = Request("user")
 		Response.Cookies("FIRSTNAME") = dr_login("FirstName")
+		Response.Cookies("USERTYPE") = dr_login("Accounttype")
 		if dr_login("Accounttype")="ADMIN" then
 			Response.Write "y"
 		else

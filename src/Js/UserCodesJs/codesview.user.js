@@ -33,16 +33,6 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
                  width:"15px"
             },
             {
-                "className":      'details-control2',
-                "orderable":      false,
-                "data":           null,
-                "defaultContent": '',
-                 "render": function () {
-                         return '<i class="fa fa-times" aria-hidden="true"></i>';
-                     },
-                 width:"15px"
-            },
-            {
                 "className":      'details-control',
                 "orderable":      false,
                 "data":           null,
@@ -75,23 +65,17 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
      });
 
     $('#dataTable tbody').on('click', 'td.details-control', function () {
-      var HAHA = $(this).closest('tr').find('td:eq(3)').text();
+      var HAHA = $(this).closest('tr').find('td:eq(2)').text();
       $('#viewC').text(HAHA);
       Modalview(HAHA);
       $('#viewModal').modal('toggle');
   });
 
-      $('#dataTable tbody').on('click', 'td.details-control2', function () {
-      var KAFOY = $(this).closest('tr').find('td:eq(3)').text();
-      $('#IDrecord').val(KAFOY);
-      $('#removeModal').modal('toggle');
-  });
-
      $('#dataTable tbody').on('click', 'td.details-control3', function () {
-      var KAFOY = $(this).closest('tr').find('td:eq(3)').text();
-      var A = $(this).closest('tr').find('td:eq(4)').text();
-      var B = $(this).closest('tr').find('td:eq(5)').text();
-      var C = $(this).closest('tr').find('td:eq(6)').text();
+      var KAFOY = $(this).closest('tr').find('td:eq(2)').text();
+      var A = $(this).closest('tr').find('td:eq(3)').text();
+      var B = $(this).closest('tr').find('td:eq(4)').text();
+      var C = $(this).closest('tr').find('td:eq(5)').text();
       $('#viewED').val(KAFOY);
       $('#edit_ctype').val(A);
       $('#edit_fname').val(B);
@@ -103,7 +87,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
   });
 
 
-
+// VIEW OF CODES FUNCTION
 function Modalview(labad){
   //Set Ajax Status
   var datastring;
@@ -125,6 +109,7 @@ function Modalview(labad){
 
 }
 
+// EDIT FUNCTION
 function Modalview1(value){
   //Set Ajax Status
   var datastring;

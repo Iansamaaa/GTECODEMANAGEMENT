@@ -14,7 +14,7 @@
     
     <!-- JQUERY -->
     <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
-    <script src="../Js/ssp/datatables.code.js"></script>
+
     <!-- Bootstrap core CSS -->
     <link href="pagedesigns/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -23,17 +23,18 @@
 
     <!-- Plugin CSS -->
     <link href="pagedesigns/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-    <link href="pagedesigns/css/buttons.css" rel="stylesheet">
+   
 
     <!-- Custom styles for this template -->
     <link href="pagedesigns/css/sb-admin.css" rel="stylesheet">
+    <link href="pagedesigns/css/buttons.css" rel="stylesheet">
 
     <!-- TableSizeandContentsIzes -->
     <link href="pagedesigns/css/tablesizes.css" rel="stylesheet">
 
     <!-- SESSIONS -->
     <script src="../Js/sessions/sessions.pages.js"></script>
-    
+    <script src="../Js/sessions/antiuser.js"></script>
 
     <!-- TOAST FILES -->
     <link href="../Js/plugins/toastr/build/toastr.min.css" rel="stylesheet"/>
@@ -49,6 +50,7 @@
     <!-- PLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
     <link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
+    <script src="../Js/plugins/cookies.js"></script>
 
     <!-- JS -->
     <script src="../Js/CodesJs/codesview.js"></script>

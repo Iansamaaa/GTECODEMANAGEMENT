@@ -1,5 +1,5 @@
 <%
-if Request.Cookies("USERNAME")="" then
+if Request.Cookies("USERNAME")="" AND Request.Cookies("USERTYPE")="USER" then
 	Response.Write "0"
 	Response.End()
 Else

@@ -35,6 +35,7 @@ function RemoveMember(labad){
 
       toastr.success("Code Deleted", "Sucess");
       $('#removeModal').modal('toggle');
+      window.setTimeout(function(){location.reload()},2000);
    
 
       }, 

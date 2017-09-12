@@ -9,9 +9,19 @@ $(function(){
 				toastr.warning("Fill out Required Fields", "Check Fields"); 
 				return false;
 			}
-			else if(!($('#version').val()).match(/^[0-9.]+$/))
+			else if(!($('#version').val()).match(/^[0-9.]{3,6}$/))
 			{
 			toastr.warning("Type in version Number", "Check Fields"); 
+			return false;
+			}
+			else if(!($('#ctype').val()).match(/^[a-zA-Z. ]{5,15}$/))
+			{
+			toastr.warning("Type valid Code type", "Check Fields"); 
+			return false;
+			}
+			else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{3,20}$/))
+			{
+			toastr.warning("Type valid Function Name", "Check Fields"); 
 			return false;
 			}
 			else

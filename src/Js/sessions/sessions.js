@@ -20,7 +20,7 @@ function checkSessionPage(){
   
   $.ajax({
     type: "POST",
-    url: "../Vb/session/checksession.asp",
+    url: "../../Vb/session/checksession.asp",
     data: {e: Number(new Date())},
     success: function(data){evaluate_stat(data)}
     })
@@ -30,8 +30,12 @@ function checkSessionPage(){
 //Evaluate Status
 function evaluate_stat(stat){
   
-  if (stat=='0'){
-    window.top.location.href="Index/index.asp";
+  if (stat=='1'){
+    window.top.location.href="../homepage.asp";
+    return false;
+    }
+  else if (stat=='2'){
+    window.top.location.href="../homepage.user.asp";
     return false;
     }
 }

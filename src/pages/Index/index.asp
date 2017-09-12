@@ -18,13 +18,13 @@
     <!-- TRIGGERS -->
     <script src="js/login/triggers.login.js"></script>
 
+    <!-- SESSIONS -->
+    <script src="../../Js/sessions/sessions.js"></script>
+
     <!-- TOAST -->
     <script src=../../Js/plugins/toastr/build/toastr.min.js></script>
     <link rel="stylesheet" href="../../Js/plugins/toastr/build/toastr.min.css">
     <script src=../../Js/members_func/toast_members.js></script>
-
-    <!-- SESSIONS -->
-    <script src="../../Js/sessions/sessions.js"></script>
 
     <!-- Plugins -->
     <script src="../../Js/plugins/nprogress-master/nprogress.js"></script>
