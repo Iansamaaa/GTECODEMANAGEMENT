@@ -1,15 +1,7 @@
-var MemRem = $("#usntor").val();
 $(function(){
 
 	$(document).ready(function(){
-		$(".RemoveMemberButton").bind({
-		click:function(){
-			var toRemovemem = $(this).closest('tr').find('td:eq(0)').text();
-			$('#usntor').val(toRemovemem);
-	}
-	});
-
-	$("#modalYESremove").bind({
+	$(".modalYESremove").bind({
 	 click:function(){
 		 var Remm = $("#usntor").val();
 		 memREM(Remm);
@@ -39,7 +31,8 @@ function memREM(yow){
 		success: function(data){;
 			toastr.success("Member Removed!", "Success");
 			$('#RemoveMemberModal').modal('toggle');
-			 window.setTimeout(function(){location.reload()},2000);
+			 window.setTimeout(function(){window.location="../../pages/loginpage.asp"
+},2000);
 			},
 		error:  function(){
 			toastr.warning("Member not removed!", "Failed");}

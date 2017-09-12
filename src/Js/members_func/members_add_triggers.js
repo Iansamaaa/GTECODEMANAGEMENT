@@ -1,9 +1,11 @@
 $(function(){
 	$(document).ready(function(){
-		$("#modalSubmitMem").bind({
+		$(".modalSubmitMem").bind({
 		click:function(){
+			AddMembersLOGS();
+			RadioUserType();
     	var regx = /^[0-9 ]/;
-		if($('#usn').val()=='' || $('#pwd').val()=='' || $('#frstn').val()=='' || $('#lstn').val()=='')
+		if($('#usn').val()==''  || $('#pwd').val()=='' || $('#frstn').val()=='' || $('#lstn').val()=='')
 		{
 			toastr.warning("Fill out Required Fields", "Check Fields");
 		}
@@ -12,9 +14,15 @@ $(function(){
 			toastr.warning("No alphanumeric in Firstname or Lastname", "Check Fields");
 
 		}
+		else if($('#usn').val().indexOf(' ')>=0)
+		{
+				toastr.warning("Invalid: Username has space")
+
+		}
 		else
 		{
-			AddMembers();
+				AddMembers();
+
 		}
 		}
 	});
@@ -26,15 +34,20 @@ $(function(){
 FUNCTIONS
 **********/
 
+
 //check_fields
 //validate to server
 function AddMembers(){
 	//Set Ajax Status
+
+
 	var datastring;
+
 	datastring= {firstn: $("#frstn").val(),
 				lastn: $("#lstn").val(),
 				usn: $("#usn").val(),
 				pwds: $("#pwd").val(),
+				atype: radio,
 				};
 
 	$.ajax({
@@ -50,7 +63,50 @@ function AddMembers(){
 		error:  function(){
 			}
 		})
+
 }
+
+
+
+
+var aidentifier = "null";
+var actionM;
+function AddMembersLOGS(){
+	//Set Ajax Status
+	aidentifier = "ADDED MEMBER";
+	var datastring;
+	 datastring= {actionM: aidentifier,
+
+				};
+
+        $.ajax({
+          type: "POST",
+          url: "../../Vb/commands/members/logs.asp",
+          data: datastring,
+          async: false,
+          })
+}
+
+
+
+
+
+function RadioUserType(){
+
+	if($('#atype').is(':checked'))
+	{
+		radio="ADMIN"
+	}
+	else
+	{
+		radio="USER"
+	}
+}
+
+
+
+
+
 
 //redirect login
 function SuccessfulAdd(loginstats){

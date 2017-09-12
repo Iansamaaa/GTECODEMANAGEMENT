@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <title>Code Management System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-  
+    
  
     <!-- STYLE CSS -->
     <link rel="stylesheet" href="css/style.css">
+
 
 
 
@@ -17,14 +18,17 @@
     <!-- TRIGGERS -->
     <script src="js/login/triggers.login.js"></script>
 
+    <!-- SESSIONS -->
+    <script src="../../Js/sessions/sessions.js"></script>
+
     <!-- TOAST -->
     <script src=../../Js/plugins/toastr/build/toastr.min.js></script>
     <link rel="stylesheet" href="../../Js/plugins/toastr/build/toastr.min.css">
     <script src=../../Js/members_func/toast_members.js></script>
-    
-    <!-- SESSIONS -->
-    <script src="../../Js/sessions/sessions.js"></script>
 
+    <!-- Plugins -->
+    <script src="../../Js/plugins/nprogress-master/nprogress.js"></script>
+    <link rel="stylesheet" href="../../Js/plugins/nprogress-master/nprogress.css">
   
 </head>
 
@@ -50,6 +54,7 @@
           <input type="password" class="login__input pass" placeholder="Password" id="password"/>
         </div>
         <button type="button" class="login__submit" id="subINDEX">Sign in</button>
+
       </div>
     </div>
     <div class="app">

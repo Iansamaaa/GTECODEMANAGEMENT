@@ -1,0 +1,15 @@
+td.details-control {
+    text-align:center;
+    color:forestgreen;
+    cursor: pointer;
+}
+td.details-control2{
+	text-align:center;
+    color:red;
+    cursor: pointer;
+}
+td.details-control3{
+	text-align:center;
+    color:blue;
+    cursor: pointer;
+}

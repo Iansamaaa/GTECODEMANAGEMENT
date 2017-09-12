@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <!--#include file='..\Vb\commands\members\members.view.asp'
--->
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,24 +10,22 @@
     <meta name="author" content="">
     <title>Code Management System</title>
 
-    <!-- JQUERY -->
-    <script src='..\Js\plugins\jquery-3.2.1.min.js'
+    <!--DataTables JS JSON-->
 
-></script>
+    <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
+    <script src='..\Js\members_func\membersDataovveride.js'>
+    </script>
+    <script src='..\Js\members_func\members_edit_triggers.js'>
+    </script>
+    <script src='..\Js\members_func\members_remove_triggers.js'>
+    </script>
+    <script src='..\Js\members_func\members_add_triggers.js'>
+    </script>
+
    <!-- FILES INCLUDED FOR BUTTONS -->
-<script src='..\Js\members_func\ModalJS\ModalViewEdit.js'
-></script>
-<script src='..\Js\members_func\members_edit_triggers.js'
-></script>
-<script src='..\Js\members_func\members_add_triggers.js'
-></script>
-<script src='..\Js\members_func\members_remove_triggers.js'
-></script>
-<!-- FILES INCLUDED -->
+<!-- FILES INCLUDED FOR TABLES -->
 
 <!-- JQUERY -->
-<script src="../Js/plugins/jquery-3.2.1.min.js"></script>
-
 <!-- Bootstrap core CSS -->
 <link href="pagedesigns/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -37,9 +34,10 @@
 
 <!-- Plugin CSS -->
 <link href="pagedesigns/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-
+ <script src="../Js/sessions/antiuser.js"></script>
 <!-- Custom styles for this template -->
 <link href="pagedesigns/css/sb-admin.css" rel="stylesheet">
+  <link href="pagedesigns/css/buttons.css" rel="stylesheet">
 
 <!-- TableSizeandContentsIzes -->
 <link href="pagedesigns/css/tablesizes.css" rel="stylesheet">
@@ -52,6 +50,7 @@
 
 <!-- SESSIONS -->
 <script src="../Js/sessions/sessions.pages1.js"></script>
+<script src="../Js/sessions/antiuser.js"></script>
 
 </head>
   <body class="fixed-nav" id="page-top">
@@ -98,9 +97,9 @@
         </ul>
         <ul class="navbar-nav ml-auto"><!--Start of UL-->
         <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fa fa-user-o" aria-hidden="true"></i></i>
-              <% fname=Request.Cookies("USERNAME")
+            <a class="nav-link" href="#" id="cookieValue">
+              <i  class="fa fa-user-o" aria-hidden="true"></i></i>
+              <%  fname=Request.Cookies("USERNAME")
                 response.write(fname) %></a>
           </li>
           <li class="nav-item">
@@ -111,49 +110,26 @@
         </ul> <!--End of UL-->
       </div>
     </nav>
-
     <div class="content-wrapper py-3"><!--Start of the Content-->
       <div class="container-fluid">
         <!-- Example Tables Card -->
-        <div class="card mb-3">
+        <div class="card mb-3" id="tablecards">
         <div class="card-header blue"><button id="AddMemberFunc" type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#AddMemberModal" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Members</button>
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
+              <table class="table table-bordered" width="100%" id="memberTable" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>UserName</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Actions</th>
+                    <th></th>
+                    <th></th>
+                    <th >UserName</th>
+                    <th >First Name</th>
+                    <th >Last Name</th>
+                   <th >Type</th>
                   </tr>
                 </thead>
-                <tbody>
-                 <%
-                  While not dr.EOF
-                 %>
-                <tr>
-                <td><%=dr("Username")%></td>
-                <td><%=dr("FirstName")%></td>
-                <td><%=dr("LastName")%></td>
-                <td>
-        <button type="submit" class="btn btn-default editModalButton fa fa-eye" data-toggle="modal" data-target="#editModal"></button>
-        <button type="submit" class="btn btn-default RemoveMemberButton fa fa-times" data-toggle="modal" data-target="#RemoveMemberModal"></button>
-                </td>
 
-                </tr>
-                <%
-                dr.Movenext()
-                Wend
-                %>
-
-                <%
-                dr.Close()
-                Set dr = nothing
-                Set cmd = nothing
-                %>
-                </tbody>
               </table>
             </div>
           </div>
@@ -173,20 +149,24 @@
     </a>
 
     <!--Edit Modal-->
-<div id="editModal" class="modal fade editModal " role="dialog" >
+<div id="editModal" class="modal fade editsModal editModal " role="dialog" >
 
   <div class="modal-dialog modalSIZE">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header modal-backgroundHeader modal-header-height" >
-          <h5 class="modal-title textMarginLeft"><Button id="enableModalEdit" type="submit" class=" btn btn-default editbuttonMargin fa fa-pencil-square-o" aria-hidden="true"></Button></h5>
+          <h5 class="modal-title ">Edit Member</h5>
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
       </div>
       <div class="modal-body modal-dialog-background">
-          <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usern"   value="<%=Request("Username")%>" placeholder="UserName"></input>
+          <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usern"    placeholder="UserName"></input>
 
-          <input disabled type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" align-self="middle" name="FirstName" id="firstn"  value="<%=Request("FirstName")%>" placeholder="Firstname"></input>
+          <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" align-self="middle" name="FirstName" id="firstn"   placeholder="Firstname"></input>
 
-          <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="LastName" id="lastn"  value="<%=Request("LastName")%>" placeholder="LastName"></input>
+          <input   type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="LastName" id="lastn"   placeholder="LastName"></input>
 
       </div>
       <div class="modal-footer modal-backgroundHeader modal-footer-height ">
@@ -197,6 +177,35 @@
 
   </div>
 </div>
+
+
+<!-- View Modal-->
+<div id="ViewModal" class="modal fade editsModal ViewModal " role="dialog" >
+
+  <div class="modal-dialog modalSIZE">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header modal-backgroundHeader modal-header-height" >
+        <button type="button" class="btn btn-default close" data-dismiss="modal"></button>
+        <h5 class="modal-title">View</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+      </div>
+      <div class="modal-body modal-dialog-background">
+          <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usernview"    placeholder="UserName"></input>
+
+          <input disabled type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" align-self="middle" name="FirstName" id="firstnview"  placeholder="Firstname"></input>
+
+          <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="LastName" id="lastnview"  placeholder="LastName"></input>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 <!-- Logout Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -223,36 +232,33 @@
 <!-- END OF LOGOUT MODAL -->
 
 <!--"ADD MODAL"-->
-<div id="AddMemberModal" class="modal fade AddMemberModal" role="dialog" > 
+<div id="AddMemberModal" class="modal fade AddMemberModal" role="dialog" >
 <div class="modal-dialog modalSIZE">
 
 <!-- Modal content-->
 <div class="modal-content">
 
   <div class="modal-header modal-backgroundHeader modal-header-height" >
-      <h5 class="modal-title textMarginLeft">Input Member Data</h5>
+      <h5 class="modal-title ">Input Member Data</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
   </div>
   <div class="modal-body modal-dialog-background">
 
   <div class="container">
 
   <form class="form-horizontal">
-
-      <div class="form-group">
       <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usn"  placeholder="UserName"></input>
-      </div>
-
-      <div class="form-group">
-      <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" align-self="middle" name="FirstName" id="frstn" placeholder="Firstname"></input>
-      </div>
-
-      <div class="form-group">
+      <div   class="input-group">
+      <span  class="input-group-addon spanAdjustLeft spanAdjustRight style_prevu_kit_input style_prevu_kit_input:hover">
+      <label><input id="atype" type="radio" name="optradio" value="ADMIN">Admin</label>
+        <label class="radioPaddingLeft"><input  id="stype" type="radio" name="optradio" value="USER" >User</label>
+        </span>
+        </div>
+      <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="FirstName" id="frstn" placeholder="Firstname"></input>
       <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="LastName" id="lstn"  placeholder="LastName"></input>
-      </div>
-
-      <div class="form-group">
       <input  type="password" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="Password" id="pwd"  placeholder="Password"></input>
-      </div>
 
   </form>
 
@@ -260,9 +266,9 @@
 
   </div>
 
-  <div class="modal-footer modal-backgroundHeader modal-footer-height ">
-    <Button id="modalClearMem" type="button" class="btn fa fa-ban animationButton style_prevu_kit" aria-hidden="true" data-dismiss="modal"></Button>
-      <Button id="modalSubmitMem" type="submit" class="btn fa fa-check animationButton style_prevu_kit submitMargin"></Button>
+  <div class="modal-footer modal-backgroundHeader modal-footer-height  ">
+    <Button id="modalClearMem" type="button" class="btn fa fa-ban animationButton style_prevu_kit modalClearMem"></Button>
+      <Button id="modalSubmitMem" type="submit" class="modalSubmitMem btn fa fa-check animationButton style_prevu_kit submitMargin"></Button>
   </div>
 
 </div>
@@ -272,19 +278,22 @@
 <!-- END OF ADD MODAL -->
 
 <!--"REMOVEMODAL"-->
-<div id="RemoveMemberModal" class="modal fade RemoveMemberModal " role="dialog" >
+<div id="RemoveMemberModal" class="modal fade RemoveMemberModal editsModal " role="dialog" >
 <div class="modal-dialog modalSIZE">
 <!-- Modal content-->
 <div class="modal-content">
   <div class="modal-header modal-backgroundHeader modal-header-height" >
-      <h5 class="modal-title textMarginLeft">Removing Member</h5>
+      <h5 class="modal-title">Removing Member</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
   </div>
   <div class="modal-body">
     <input type="text" class="form-control" id="usntor" style="display:none">
     <h3> Do you wish to remove this member? </h3>
   </div>
   <div class="modal-footer modal-backgroundHeader modal-footer-height ">
-      <Button id="modalYESremove" type="submit" class="btn fa fa-check animationButton style_prevu_kit submitMargin" aria-hidden="true"></Button>
+      <Button id="modalYESremove" type="submit" class="btn fa fa-check animationButton modalYESremove style_prevu_kit submitMargin" aria-hidden="true"></Button>
   </div>
 </div>
 
@@ -312,8 +321,6 @@
 
     <!-- Custom scripts for this template -->
     <script src='pagedesigns\js\sb-admin.min.js'
-></script>
-    <script src='..\Js\members_func\modalmembersEdit.js'
 ></script>
 
 

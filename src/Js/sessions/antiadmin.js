@@ -8,18 +8,18 @@
 $(function(){
   $(document).ready(function(){
     //Disable Back History 
-    checkSessionPage();
+    checkuserSession();
   });
   
 })
 
 
 //Check Session
-function checkSessionPage(){
+function checkuserSession(){
   
   $.ajax({
     type: "POST",
-    url: "../Vb/session/checksession.pages.asp",
+    url: "../Vb/session/adminchecker.asp",
     data: {e: Number(new Date())},
     success: function(data){evaluate_stat(data)}
     })
@@ -32,7 +32,7 @@ function evaluate_stat(stat){
 
 
   switch (stat){
-    case 'x': window.location="Index/index.asp";
+    case 'x': window.location="homepage.asp";
         break;
   } 
   

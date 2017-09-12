@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-
+ 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,13 +11,12 @@
     <meta name="author" content="">
     <title>Code Management System</title>
     <!-- FILES INCLUDED -->
-
+    
     <!-- JQUERY -->
     <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="pagedesigns/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
 
     <!-- Custom fonts for this template -->
     <link href="pagedesigns/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -35,9 +34,8 @@
 
     <!-- SESSIONS -->
     <script src="../Js/sessions/sessions.pages.js"></script>
-    <script src="../Js/sessions/antiuser.js"></script>
-
-
+    <script src="../Js/sessions/antiadmin.js"></script>
+    
 
     <!-- TOAST FILES -->
     <link href="../Js/plugins/toastr/build/toastr.min.css" rel="stylesheet"/>
@@ -45,10 +43,9 @@
     <script src="../Js/members_func/toast_members.js"></script>
 
     <!-- TRIGGERS -->
-    <script type= "text/javascript" src="../Js/CodesJs/codeaddjs.js"></script>
-    <script type= "text/javascript" src="../Js/CodesJs/coderemove.js"></script>
-    <script type= "text/javascript" src="../Js/CodesJs/codeview.js"></script>
-    <script type= "text/javascript" src="../Js/CodesJs/codeedit.js"></script>
+    <script type= "text/javascript" src="../Js/UserCodesJs/codeaddjs.user.js"></script>
+    <script type= "text/javascript" src="../Js/UserCodesJs/codeview.user.js"></script>
+    <script type= "text/javascript" src="../Js/UserCodesJs/codeedit.user.js"></script>
 
     <!-- PLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
@@ -56,7 +53,7 @@
     <script src="../Js/plugins/cookies.js"></script>
 
     <!-- JS -->
-    <script src="../Js/CodesJs/codesview.js"></script>
+    <script src="../Js/UserCodesJs/codesview.user.js"></script>
   </head>
 
   <body class="fixed-nav" id="page-top">
@@ -74,13 +71,6 @@
               <i class="fa fa-code" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Codes</span>
-            </a>
-          </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Members">
-            <a class="nav-link" href="loginpage.asp">
-              <i class="fa fa-users" aria-hidden="true"></i>
-              <span class="nav-link-text">
-                Members</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
@@ -128,7 +118,6 @@
                   <tr>
                     <th></th>
                     <th></th>
-                    <th></th>
                     <th>Code # </th>
                     <th>Code Type</th>
                     <th>Function Name</th>
@@ -144,7 +133,7 @@
             </div>
           </div>
           <div class="card-footer small text-muted">
-            Made by #GTE OJT
+            Made by #GTE OJT 
           </div>
         </div>
 
@@ -196,7 +185,7 @@
           <div class="modal-body">
 
           <div class="container">
-
+          
           <form class="form-inline">
 
           <div class="form-group">
@@ -218,16 +207,16 @@
           <div class="form-group col-xs-2">
           <input class="form-control smallInput" id="added" Placeholder="Added By" style="display:none" value="<% fname=Request.Cookies("USERNAME")
                 response.write(fname) %>">
-
+            
           </input>
           </div>
 
           </form>
-
-
+          
+      
 
           </div>
-          </div>
+          </div> 
           <!-- HAYS -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -237,32 +226,6 @@
       </div>
     </div>
     <!-- END OF ADD MODAL -->
-
-    <!-- Delete Modal -->
-    <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="removeModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Delete Code?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Are you sure you want to delete Record?
-
-          <form class="form-inline">
-          <input type="text" class="form-control" id="IDrecord" style="display:none">
-          </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary" id="btnREMOVE">Remove</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- END OF Delete MODAL -->
 
       <!-- View Modal -->
     <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
@@ -276,7 +239,7 @@
           </div>
           <div class="modal-body">
           <textarea class="form-control" id="codeTA" Placeholder="Code Description" disabled></textarea>
-
+              
           <form class="form-inline">
           <input type="text" class="form-control" id="viewC" style="display:none">
           </form>
@@ -302,7 +265,7 @@
           <div class="modal-body">
 
           <div class="container">
-
+          
           <form class="form-inline">
           <input type="text" class="form-control" id="viewED" style="display:none">
           <div class="form-group">
@@ -326,11 +289,11 @@
           </input>
           </div>
           </form>
-
-
+          
+      
 
           </div>
-          </div>
+          </div> 
           <!-- HAYS -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

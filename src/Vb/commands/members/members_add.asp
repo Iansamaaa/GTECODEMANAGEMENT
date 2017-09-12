@@ -14,7 +14,6 @@
 	cmd_add.CommandText = strSQL_add
 	cmd_add.Prepared = True
 
-
 	Set dr_add = cmd_add.Execute()
 
 	if NOT dr_add.EOF then
@@ -38,12 +37,16 @@ function add()
 	cmd.ActiveConnection =  codemngt
 
 	'QUERY COMMAND
-	strSQL_add = "INSERT INTO users (FirstName,LastName,Username,`Password`)values('"&Request("firstn")&"','"&Request("lastn")&"','"&Request("usn")&"',SHA1('"&Request("user")&""&Request("pwds")&"'))"
+	strSQL_add = "INSERT INTO users(FirstName,AccountType,LastName,Username,`Password`)values('"&Request("firstn")&"','"&Request("atype")&"','"&Request("lastn")&"','"&Request("usn")&"',SHA1('"&Request("user")&""&Request("pwds")&"'))"
 	cmd.CommandText = strSQL_add
 	cmd.Prepared = True
-
-
 	Set dr_add = cmd.Execute()
+
+
+	
+
+
+
 
 end function
 

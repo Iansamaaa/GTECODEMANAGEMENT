@@ -9,12 +9,12 @@ $(function(){
 				toastr.warning("Fill out Required Fields", "Check Fields"); 
 				return false;
 			}
-			else if(!($('#version').val()).match(/^[0-9.]{1,6}$/))
+			else if(!($('#version').val()).match(/^[0-9.]{3,6}$/))
 			{
 			toastr.warning("Type in version Number", "Check Fields"); 
 			return false;
 			}
-			else if(!($('#ctype').val()).match(/^[a-zA-Z. ]{1,10}$/))
+			else if(!($('#ctype').val()).match(/^[a-zA-Z. ]{5,15}$/))
 			{
 			toastr.warning("Type valid Code type", "Check Fields"); 
 			return false;
