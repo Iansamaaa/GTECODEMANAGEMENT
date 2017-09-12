@@ -10,7 +10,7 @@
 	'****************************
 
 	'Initialize Variables
-	Dim cmd_login, dr_login, strSQL_login
+	Dim cmd_login, dr_login, strSQL_login, actchecker
 
 	'Create Objects
 	Set cmd_login = Server.CreateObject("ADODB.Command")
@@ -32,6 +32,12 @@
 		Response.Cookies("FIRSTNAME") = dr_login("FirstName")
 
 		Response.Write "y"
+	Else if dr_login("Accounttype") = "ADMIN"
+	
+		Response.Cookies("USERNAME") = Request("user")
+		Response.Cookies("FIRSTNAME") = dr_login("FirstName")
+
+		Response.Write "z"
 	Else
 		'Return Unidentified credentials
 		Response.Write "x"
@@ -41,5 +47,4 @@
 	dr_login.close()
 	Set dr_login = Nothing
 	Set cmd_login = Nothing
-
 %>
