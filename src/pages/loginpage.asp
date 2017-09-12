@@ -2,9 +2,6 @@
 <html lang="en">
   <head>
 
-<!--#include file='..\Vb\commands\members\members.view.asp'
-
--->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,31 +10,22 @@
     <meta name="author" content="">
     <title>Code Management System</title>
 
-    <!-- JQUERY -->
-    <script src='..\Js\plugins\jquery-3.2.1.min.js'
+    <!--DataTables JS JSON-->
 
-></script>
+    <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
+    <script src='..\Js\members_func\membersDataovveride.js'>
+    </script>
+    <script src='..\Js\members_func\members_edit_triggers.js'>
+    </script>
+    <script src='..\Js\members_func\members_remove_triggers.js'>
+    </script>
+    <script src='..\Js\members_func\members_add_triggers.js'>
+    </script>
+
    <!-- FILES INCLUDED FOR BUTTONS -->
-<script src='..\Js\members_func\ModalJS\ModalViewEdit.js'
-></script>
-<script src='..\Js\members_func\members_edit_triggers.js'
-></script>
-<script src='..\Js\members_func\members_add_triggers.js'
-></script>
-<script src='..\Js\members_func\members_remove_triggers.js'
-></script>
-<script src='..\Js\members_func\alogs.js'
-
-></script>
-
 <!-- FILES INCLUDED FOR TABLES -->
-<script src='..\Js\members_func\tableData.js'
-
-></script>
 
 <!-- JQUERY -->
-<script src="../Js/plugins/jquery-3.2.1.min.js"></script>
-
 <!-- Bootstrap core CSS -->
 <link href="pagedesigns/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -49,6 +37,7 @@
  <script src="../Js/sessions/antiuser.js"></script>
 <!-- Custom styles for this template -->
 <link href="pagedesigns/css/sb-admin.css" rel="stylesheet">
+  <link href="pagedesigns/css/buttons.css" rel="stylesheet">
 
 <!-- TableSizeandContentsIzes -->
 <link href="pagedesigns/css/tablesizes.css" rel="stylesheet">
@@ -120,54 +109,26 @@
         </ul> <!--End of UL-->
       </div>
     </nav>
-
     <div class="content-wrapper py-3"><!--Start of the Content-->
       <div class="container-fluid">
         <!-- Example Tables Card -->
-        <div class="card mb-3">
+        <div class="card mb-3" id="tablecards">
         <div class="card-header blue"><button id="AddMemberFunc" type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#AddMemberModal" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Members</button>
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
+              <table class="table table-bordered" width="100%" id="memberTable" cellspacing="0">
                 <thead>
                   <tr>
-                   <th width="16%">Actions</th>
-                    <th width="25%">UserName</th>
-                    <th width="25%">First Name</th>
-                    <th width="25%">Last Name</th>
-                   <th width="25%">Type</th>
+                    <th></th>
+                    <th></th>
+                    <th >UserName</th>
+                    <th >First Name</th>
+                    <th >Last Name</th>
+                   <th >Type</th>
                   </tr>
                 </thead>
-                <tbody>
-                 <%
-                  While not dr.EOF
-                 %>
-                <tr>
-                              <td>
 
-        <button type="submit" class="btn btn-default ViewModalButton fa fa-eye" data-toggle="modal" data-target="#ViewModal"></button>
-        <button type="submit" class="btn btn-default editModalButton fa fa-pencil-square-o" data-toggle="modal" data-target="#editModal"></button>
-
-        <button type="submit" class="btn btn-default RemoveMemberButton fa fa-times" data-toggle="modal" data-target="#RemoveMemberModal"></button>
-                </td>
-                <td><%=dr("Username")%></td>
-                <td><%=dr("FirstName")%></td>
-                <td><%=dr("LastName")%></td>
-                <td><%=dr("AccountType")%></td>
-
-                </tr>
-                <%
-                dr.Movenext()
-                Wend
-                %>
-
-                <%
-                dr.Close()
-                Set dr = nothing
-                Set cmd = nothing
-                %>
-                </tbody>
               </table>
             </div>
           </div>
@@ -231,11 +192,11 @@
             </button>
       </div>
       <div class="modal-body modal-dialog-background">
-          <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usernview"   value="<%=Request("Username")%>" placeholder="UserName"></input>
+          <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usernview"    placeholder="UserName"></input>
 
-          <input disabled type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" align-self="middle" name="FirstName" id="firstnview"  value="<%=Request("FirstName")%>" placeholder="Firstname"></input>
+          <input disabled type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" align-self="middle" name="FirstName" id="firstnview"  placeholder="Firstname"></input>
 
-          <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="LastName" id="lastnview"  value="<%=Request("LastName")%>" placeholder="LastName"></input>
+          <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="LastName" id="lastnview"  placeholder="LastName"></input>
 
 
       </div>
@@ -359,8 +320,6 @@
 
     <!-- Custom scripts for this template -->
     <script src='pagedesigns\js\sb-admin.min.js'
-></script>
-    <script src='..\Js\members_func\modalmembersEdit.js'
 ></script>
 
 

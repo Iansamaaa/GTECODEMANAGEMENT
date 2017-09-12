@@ -1,16 +1,16 @@
 var editor;
-var tblcodes,tblgg; 
+var tblcodes,tblgg;
 var modal;
-  
-$(document).ready(function(){ 
+
+$(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
- 
-  
+
+
   tblpending = $("#dataTable").DataTable( {
       dom: "Bfrtip",
         //"processing": true,
-        //"serverSide": true, 
+        //"serverSide": true,
        ajax: {
       url: '../Vb/commands/codes/codes.view.asp',
       dataSrc: ""
@@ -52,16 +52,16 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
                      },
                  width:"15px"
             },
-
             { data: "IDCode", "orderable": false},
-            { data: "Language","orderable": false},
-            { data: "FunctionName","orderable": false},
+            { data: "Language"},
+            { data: "FunctionName"},
             { data: "Version", "orderable": false},
             { data: "DateTimeAdded", "orderable": false},
             { data: "AddedBy", "orderable": false},
             { data: "DateTimeUpdated", "orderable": false},
             { data: "UpdatedBy","orderable": false},
         ], 
+
     "columnDefs": [ {
       width: "10%",
       targets: 3,
@@ -71,7 +71,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
           data;
       }
        } ],
-    select: 'single', 
+    select: 'single',
      });
 
     $('#dataTable tbody').on('click', 'td.details-control', function () {
@@ -107,9 +107,9 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
 function Modalview(labad){
   //Set Ajax Status
   var datastring;
-  datastring= {VIEWM: labad, 
+  datastring= {VIEWM: labad,
         };
-  
+
   $.ajax({
     type: "POST",
     url: "../Vb/commands/codes/command_codes_viewm.asp",
@@ -118,17 +118,17 @@ function Modalview(labad){
     success: function(data){
       $('#codeTA').text(atob(data));
 
-      }, 
+      },
     error:  function(){
       toastr.success("Delete Failed", "Failed");}
-    })        
+    })
 
 }
 
 function Modalview1(value){
   //Set Ajax Status
   var datastring;
-  datastring= {VIEWN: $('#viewED').val(), 
+  datastring= {VIEWN: $('#viewED').val(),
         };
   $.ajax({
     type: "POST",
@@ -139,10 +139,10 @@ function Modalview1(value){
 
       $('#edit_codedesc').val(atob(data));
 
-      }, 
+      },
     error:  function(){
       toastr.success("Delete Failed", "Failed");}
-    })        
+    })
 
 }
  

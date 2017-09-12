@@ -1,14 +1,6 @@
-var MemRem = $("#usntor").val();
 $(function(){
 
 	$(document).ready(function(){
-		$(".RemoveMemberButton").bind({
-		click:function(){
-			var toRemovemem = $(this).closest('tr').find('td:eq(1)').text();
-			$('#usntor').val(toRemovemem);
-	}
-	});
-
 	$(".modalYESremove").bind({
 	 click:function(){
 		 var Remm = $("#usntor").val();

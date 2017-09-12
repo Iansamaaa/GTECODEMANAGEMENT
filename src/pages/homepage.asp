@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
- 
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,12 +11,13 @@
     <meta name="author" content="">
     <title>Code Management System</title>
     <!-- FILES INCLUDED -->
-    
+
     <!-- JQUERY -->
     <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="pagedesigns/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 
     <!-- Custom fonts for this template -->
     <link href="pagedesigns/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -35,6 +36,8 @@
     <!-- SESSIONS -->
     <script src="../Js/sessions/sessions.pages.js"></script>
     <script src="../Js/sessions/antiuser.js"></script>
+
+
 
     <!-- TOAST FILES -->
     <link href="../Js/plugins/toastr/build/toastr.min.css" rel="stylesheet"/>
@@ -141,7 +144,7 @@
             </div>
           </div>
           <div class="card-footer small text-muted">
-            Made by #GTE OJT 
+            Made by #GTE OJT
           </div>
         </div>
 
@@ -193,7 +196,7 @@
           <div class="modal-body">
 
           <div class="container">
-          
+
           <form class="form-inline">
 
           <div class="form-group">
@@ -215,16 +218,16 @@
           <div class="form-group col-xs-2">
           <input class="form-control smallInput" id="added" Placeholder="Added By" style="display:none" value="<% fname=Request.Cookies("USERNAME")
                 response.write(fname) %>">
-            
+
           </input>
           </div>
 
           </form>
-          
-      
+
+
 
           </div>
-          </div> 
+          </div>
           <!-- HAYS -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -247,7 +250,7 @@
           </div>
           <div class="modal-body">
             Are you sure you want to delete Record?
-              
+
           <form class="form-inline">
           <input type="text" class="form-control" id="IDrecord" style="display:none">
           </form>
@@ -273,7 +276,7 @@
           </div>
           <div class="modal-body">
           <textarea class="form-control" id="codeTA" Placeholder="Code Description" disabled></textarea>
-              
+
           <form class="form-inline">
           <input type="text" class="form-control" id="viewC" style="display:none">
           </form>
@@ -299,7 +302,7 @@
           <div class="modal-body">
 
           <div class="container">
-          
+
           <form class="form-inline">
           <input type="text" class="form-control" id="viewED" style="display:none">
           <div class="form-group">
@@ -323,11 +326,11 @@
           </input>
           </div>
           </form>
-          
-      
+
+
 
           </div>
-          </div> 
+          </div>
           <!-- HAYS -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
