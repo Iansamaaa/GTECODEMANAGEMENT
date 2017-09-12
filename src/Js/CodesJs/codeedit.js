@@ -12,33 +12,38 @@ $(function(){
       $('#edit_ctype').val(A);
       $('#edit_fname').val(B);
       $('#edit_version').val(C);
+
       Modalview1();
     }
   });
 
    $("#btnEDIT").bind({
     click:function(){
-      if($('#ctype').val()=='' || $('#fname').val()=='' || $('#codedesc').val()=='' || $('#version').val()==''|| $('#added').val()=='')
+       if($('#edit_ctype').val()=='' || $('#edit_fname').val()=='' || $('#edit_codedesc').val()=='' || $('#edit_version').val()==''|| $('#edited').val()=='')
       {
         toastr.warning("Fill out Required Fields", "Check Fields"); 
         return false;
       }
-      else if(!($('#version').val()).match(/^[0-9.]{3,6}$/))
+      else if(!($('#edit_version').val()).match(/^[0-9.]{1,6}$/))
       {
       toastr.warning("Type in version Number", "Check Fields"); 
       return false;
       }
-      else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{3,20}$/))
+      else if(!($('#edit_ctype').val()).match(/^[a-zA-Z. ]{1,10}$/))
+      {
+      toastr.warning("Type valid Code type", "Check Fields"); 
+      return false;
+      }
+      else if(!($('#edit_fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{3,20}$/))
       {
       toastr.warning("Type valid Function Name", "Check Fields"); 
       return false;
       }
       else
       {
-         code_edit();
+        code_edit();
       }
-     
-    }
+      }
   });
 
   }); // End of document ready]

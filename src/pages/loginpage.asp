@@ -50,6 +50,7 @@
 
 <!-- SESSIONS -->
 <script src="../Js/sessions/sessions.pages1.js"></script>
+<script src="../Js/sessions/antiuser.js"></script>
 
 </head>
   <body class="fixed-nav" id="page-top">
