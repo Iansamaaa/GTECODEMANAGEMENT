@@ -58,7 +58,6 @@ function redirect_login(loginstat){
 	
 	switch (loginstat){
 		
-<<<<<<< HEAD
 		case 'x': toastr.warning("Username or Password is Incorrect", "Check Fields").css("height","100px").css("font-size","12pt").css("padding-top","30px");
 				break;
 		case 'y': window.location="../homepage.asp";
@@ -67,7 +66,6 @@ function redirect_login(loginstat){
 				break;
 		default:  alert("HAYS");
 		
-=======
 		case 'x':NProgress.start();
    				 setTimeout(function() { NProgress.done(); toastr.warning("Username or Password is Incorrect", "Check Fields").css("height","100px").css("font-size","12pt").css("padding-top","30px"); }, 500);
 				 break;
@@ -77,6 +75,5 @@ function redirect_login(loginstat){
 		case 'z':NProgress.start();
    				 setTimeout(function() { NProgress.done(); window.location="../homepage.user.asp"; }, 4000);
 				 break;
->>>>>>> b3c73e478dd9de912e4ec695d04cec0317952df4
 	}	
 }
