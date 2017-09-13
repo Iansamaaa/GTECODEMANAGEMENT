@@ -57,7 +57,6 @@
 <link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
 <script src="../Js/plugins/cookies.js"></script>
 
-
 </head>
   <body class="fixed-nav" id="page-top">
     <!-- Modal Style -->
@@ -125,14 +124,16 @@
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" width="100%" id="memberTable" cellspacing="0" >
+              <table class="table table-bordered" id="memberTable" cellspacing="0">
+
                 <thead>
                   <tr>
                     <th></th>
                     <th></th>
-                    <th >UserName</th>
-                    <th >First Name</th>
-                    <th >Last Name</th>
-                   <th >Type</th>
+                    <th width="20%">UserName</th>
+                    <th width="20%">First Name</th>
+                    <th width="25%">Last Name</th>
+                   <th width="20%">Type</th>
                   </tr>
                 </thead>
 

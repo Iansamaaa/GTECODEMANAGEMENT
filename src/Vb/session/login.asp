@@ -1,12 +1,10 @@
 <!--#include file="../../connections/dsn.asp"-->
 
 <%
-	'****************************
-
+	'**************************
 	'This code will be used
 	'for login validation
-
-	'****************************
+	'**************************
 
 	'Initialize Variables
 	Dim cmd_login, dr_login, strSQL_login, actchecker,cget
@@ -42,10 +40,4 @@
         Response.CacheControl = "no-cache"
 		Response.Write "x"
 	End if
-
-	'Destroy Objects
-	dr_login.close()
-	Set dr_login = Nothing
-	Set cmd_login = Nothing
-
-%>
+	%>
