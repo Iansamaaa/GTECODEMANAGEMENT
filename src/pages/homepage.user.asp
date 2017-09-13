@@ -10,6 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Code Management System</title>
+    <link rel="SHORTCUT ICON" href="Index/css/img03.ico" type="image/x-icon">
     <!-- FILES INCLUDED -->
     
     <!-- JQUERY -->
@@ -33,9 +34,7 @@
     <link href="pagedesigns/css/tablesizes.css" rel="stylesheet">
 
     <!-- SESSIONS -->
-    <script src="../Js/sessions/sessions.pages.js"></script>
-    <script src="../Js/sessions/antiadmin.js"></script>
-    
+    <script src="../Js/sessions/usersession.js"></script>
 
     <!-- TOAST FILES -->
     <link href="../Js/plugins/toastr/build/toastr.min.css" rel="stylesheet"/>

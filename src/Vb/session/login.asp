@@ -1,4 +1,3 @@
-
 <!--#include file="../../connections/dsn.asp"-->
 
 <%
@@ -27,7 +26,7 @@
 
 	if NOT dr_login.EOF then
 		'set sessions
-		Response.Cookies("USERNAME") = Request("user")
+		Response.Cookies("USERNAME") = dr_login("Username")
 		Response.Cookies("FIRSTNAME") = dr_login("FirstName")
 		Response.Cookies("USERTYPE") = dr_login("Accounttype")
 		if dr_login("Accounttype")="ADMIN" then

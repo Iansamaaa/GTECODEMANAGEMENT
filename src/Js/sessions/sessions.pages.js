@@ -9,6 +9,7 @@ $(function(){
   $(document).ready(function(){
     //Disable Back History 
     checkSessionPage();
+
   });
   
 })
@@ -32,7 +33,9 @@ function evaluate_stat(stat){
 
 
   switch (stat){
-    case 'x': window.location="Index/index.asp";
+    case '0': window.location="Index/index.asp";
+        break;
+    case '2': window.setTimeout(function(){location.reload()},500);
         break;
   } 
   

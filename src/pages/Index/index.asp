@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Code Management System</title>
+  <link rel="SHORTCUT ICON" href="css/img03.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     
  

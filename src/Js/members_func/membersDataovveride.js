@@ -1,5 +1,8 @@
 
 $(document).ready(function(){
+NProgress.start();
+setTimeout(function() { NProgress.done(); $('#tablecards').show();}, 1000);
+
 
   tblpending = $("#memberTable").DataTable( {
       dom: "Bfrtip",
@@ -44,16 +47,6 @@ $(document).ready(function(){
             { data: "Accounttype"},
 
         ],
-    "columnDefs": [ {
-      width: "10%",
-      targets: 3,
-      render: function ( data, type, row ) {
-        return type === 'display' && data.length > 35 ?
-          data.substr( 0, 35 ) +'…' :
-          data;
-
-      }
-       } ],
     select: 'single',
      });
 

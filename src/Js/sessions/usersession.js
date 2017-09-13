@@ -6,12 +6,12 @@
 //This also holds the no back history code.
 
 $(function(){
-  checkSessionPage();
   $(document).ready(function(){
     //Disable Back History 
-    window.history.forward(1);
-    return false;
+    checkSessionPage();
+
   });
+  
 })
 
 
@@ -20,7 +20,7 @@ function checkSessionPage(){
   
   $.ajax({
     type: "POST",
-    url: "../Vb/session/checksession.asp",
+    url: "../Vb/session/checkusersession.asp",
     data: {e: Number(new Date())},
     success: function(data){evaluate_stat(data)}
     })
@@ -30,8 +30,15 @@ function checkSessionPage(){
 //Evaluate Status
 function evaluate_stat(stat){
   
-  if (stat=='0'){
-    window.top.location.href="Index/index.asp";
-    return false;
-    }
-}
+
+
+  switch (stat){
+    case '0': window.location="Index/index.asp";
+        break;
+    case '2': window.setTimeout(function(){location.reload()},500);
+        break;
+  } 
+  
+
+
+  }

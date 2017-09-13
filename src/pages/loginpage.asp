@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Code Management System</title>
+     <link rel="SHORTCUT ICON" href="Index/css/img03.ico" type="image/x-icon">
+
 
     <!--DataTables JS JSON-->
 
@@ -34,7 +36,6 @@
 
 <!-- Plugin CSS -->
 <link href="pagedesigns/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
- <script src="../Js/sessions/antiuser.js"></script>
 <!-- Custom styles for this template -->
 <link href="pagedesigns/css/sb-admin.css" rel="stylesheet">
   <link href="pagedesigns/css/buttons.css" rel="stylesheet">
@@ -50,7 +51,12 @@
 
 <!-- SESSIONS -->
 <script src="../Js/sessions/sessions.pages1.js"></script>
-<script src="../Js/sessions/antiuser.js"></script>
+
+<!-- Plugins -->
+<script src="../Js/plugins/nprogress-master/nprogress.js"></script>
+<link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
+<script src="../Js/plugins/cookies.js"></script>
+
 
 </head>
   <body class="fixed-nav" id="page-top">
@@ -113,12 +119,12 @@
     <div class="content-wrapper py-3"><!--Start of the Content-->
       <div class="container-fluid">
         <!-- Example Tables Card -->
-        <div class="card mb-3" id="tablecards">
+        <div class="card mb-3" id="tablecards" style="display:none">
         <div class="card-header blue"><button id="AddMemberFunc" type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#AddMemberModal" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Members</button>
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" width="100%" id="memberTable" cellspacing="0">
+              <table class="table table-bordered" width="100%" id="memberTable" cellspacing="0" >
                 <thead>
                   <tr>
                     <th></th>

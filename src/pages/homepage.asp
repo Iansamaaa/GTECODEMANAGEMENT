@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
 
     <meta charset="utf-8">
@@ -10,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Code Management System</title>
+    <link rel="SHORTCUT ICON" href="Index/css/img03.ico" type="image/x-icon">
     <!-- FILES INCLUDED -->
-
     <!-- JQUERY -->
     <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
 
@@ -35,7 +34,7 @@
 
     <!-- SESSIONS -->
     <script src="../Js/sessions/sessions.pages.js"></script>
-    <script src="../Js/sessions/antiuser.js"></script>
+  
 
 
 
@@ -113,6 +112,8 @@
           </ul>
       </div>
     </nav>
+
+
     <!-- END OF NAVIGATION -->
 
     <div class="content-wrapper py-3" id="WRAPPER"><!--Start of the Content-->
@@ -158,6 +159,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
+
 <!--                                                       MODALS                                              -->
     <!-- Logout Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

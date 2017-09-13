@@ -6,9 +6,8 @@
 //This also holds the no back history code.
 
 $(function(){
-  checkSessionPage();
   $(document).ready(function(){
-    //Disable Back History 
+     checkSessionPage();
   });
   
 })
@@ -29,8 +28,11 @@ function checkSessionPage(){
 //Evaluate Status
 function evaluate_stat(stat){
   
-  if (stat=='0'){
-    window.top.location.href="Index/index.asp";
-    return false;
-    }
+  switch (stat){
+    case '0': window.location="Index/index.asp";
+        break;
+    case '2': window.setTimeout(function(){location.reload()},500);
+        break;
+  } 
+  
   }
