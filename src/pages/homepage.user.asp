@@ -2,7 +2,6 @@
 <html lang="en">
 
   <head>
- 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -66,10 +65,17 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
           <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Codes">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="homepage.user.asp">
               <i class="fa fa-code" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Codes</span>
+            </a>
+          </li>
+             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Activity Logs">
+            <a class="nav-link" href="activitylogs.user.asp">
+              <i class="fa fa-file-text-o" aria-hidden="true"></i>
+              <span class="nav-link-text">
+                Activity Logs</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">

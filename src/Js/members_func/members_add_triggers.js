@@ -2,22 +2,24 @@ $(function(){
 	$(document).ready(function(){
 		$(".modalSubmitMem").bind({
 		click:function(){
-			AddMembersLOGS();
 			RadioUserType();
     	var regx = /^[0-9 ]/;
-		if($('#usn').val()==''  || $('#pwd').val()=='' || $('#frstn').val()=='' || $('#lstn').val()=='')
+		if($('#usn').val()==''  || $('#pwd').val()=='' || $('#frstn').val()=='' || $('#lstn').val()=='' || !($('#usn').val()).match(/^[A-Za-z ]{3,25}$/))
 		{
 			toastr.warning("Fill out Required Fields", "Check Fields");
 		}
-		else if((!($('#frstn').val()).match(/^[A-Za-z ]+$/)) || (!($('#lstn').val()).match(/^[A-Za-z ]+$/)))
+		else if(!($('#frstn').val()).match(/^[A-Za-z ]{3,13}$/) || !($('#lstn').val()).match(/^[A-Za-z ]{3,13}$/))
 		{
 			toastr.warning("No alphanumeric in Firstname or Lastname", "Check Fields");
-
 		}
 		else if($('#usn').val().indexOf(' ')>=0)
 		{
-				toastr.warning("Invalid: Username has space")
+				toastr.warning("Invalid: Username has space");
 
+		}
+		else if(!($('#usn').val()).match(/^[a-zA-Z0-9]{1,10}$/))
+		{
+				toastr.warning("Username format invalid");
 		}
 		else
 		{
@@ -65,28 +67,6 @@ function AddMembers(){
 		})
 
 }
-
-
-
-
-var aidentifier = "null";
-var actionM;
-function AddMembersLOGS(){
-	//Set Ajax Status
-	aidentifier = "ADDED MEMBER";
-	var datastring;
-	 datastring= {actionM: aidentifier,
-
-				};
-
-        $.ajax({
-          type: "POST",
-          url: "../../Vb/commands/members/logs.asp",
-          data: datastring,
-          async: false,
-          })
-}
-
 
 
 

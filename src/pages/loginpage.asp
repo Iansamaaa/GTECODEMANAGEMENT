@@ -9,8 +9,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Code Management System</title>
-     <link rel="SHORTCUT ICON" href="Index/css/img03.ico" type="image/x-icon">
-
 
     <!--DataTables JS JSON-->
 
@@ -23,6 +21,7 @@
     </script>
     <script src='..\Js\members_func\members_add_triggers.js'>
     </script>
+    <script src='..\Js\members_func\alogs.js'></script>
 
    <!-- FILES INCLUDED FOR BUTTONS -->
 <!-- FILES INCLUDED FOR TABLES -->
@@ -52,11 +51,9 @@
 <!-- SESSIONS -->
 <script src="../Js/sessions/sessions.pages1.js"></script>
 
-<!-- Plugins -->
-<script src="../Js/plugins/nprogress-master/nprogress.js"></script>
-<link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
-<script src="../Js/plugins/cookies.js"></script>
-
+<!-- LOADINGPLUGINS -->
+    <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
+    <link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
 </head>
   <body class="fixed-nav" id="page-top">
     <!-- Modal Style -->
@@ -83,6 +80,13 @@
               <i class="fa fa-users" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Members</span>
+            </a>
+          </li>
+             <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Activity Logs">
+            <a class="nav-link" href="activitylogs.asp">
+              <i class="fa fa-file-text-o" aria-hidden="true"></i>
+              <span class="nav-link-text">
+                Activity Logs</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
@@ -116,16 +120,14 @@
       </div>
     </nav>
     <div class="content-wrapper py-3"><!--Start of the Content-->
-      <div class="container-fluid">
+      <div class="container-fluid" id="CONTAINER3">
         <!-- Example Tables Card -->
-        <div class="card mb-3" id="tablecards" style="display:none">
+        <div class="card mb-3" id="tablecards">
         <div class="card-header blue"><button id="AddMemberFunc" type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#AddMemberModal" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Members</button>
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" width="100%" id="memberTable" cellspacing="0" >
-              <table class="table table-bordered" id="memberTable" cellspacing="0">
-
+              <table class="table table-bordered" id="memberTable"  width="inherit" cellspacing="0">
                 <thead>
                   <tr>
                     <th></th>
@@ -178,7 +180,7 @@
       </div>
       <div class="modal-footer modal-backgroundHeader modal-footer-height ">
         <Button id="modalBan" type="submit" class="btn fa fa-ban animationButton style_prevu_kit" aria-hidden="true"></Button>
-          <Button id="modalSubmit" type="submit" class="btn fa fa-check animationButton style_prevu_kit submitMargin" aria-hidden="true"></Button>
+          <Button id="modalSubmit" type="submit" class="btn fa fa-check animationButton style_prevu_kit submitMargin modalSubmit" aria-hidden="true"></Button>
       </div>
     </div>
 

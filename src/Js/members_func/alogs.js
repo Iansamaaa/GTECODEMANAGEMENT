@@ -1,25 +1,23 @@
-
-
+var aidentifier;
+var identity=$("#usn").val();
 $(function(){
+
 	$(document).ready(function(){
 		$(".modalSubmitMem").bind({
 		click:function(){
-       aidentifier = "Member Added";
-      AddMembersLOGS();
+       aidentifier = "Added Member ";
+      MembersLOGS();
 		}
 	});
 	}); // End of document ready]
 });
 
-
-function AddMembersLOGS(){
+function MembersLOGS(){
 	//Set Ajax Status
 	var datastring;
-
-	 datastring= {actionM: aidentifier,
-
+	 datastring= {target: identity,
+		 						actionM: aidentifier,
 				};
-
         $.ajax({
           type: "POST",
           url: "../../Vb/commands/members/logs.asp",

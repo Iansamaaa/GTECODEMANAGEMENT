@@ -6,6 +6,10 @@
 {
 	width:100%;
 }
+#CONTAINER1
+{
+	width:80%;
+}
 #codeTA
 {
 	width:100%;
@@ -25,4 +29,8 @@
 .blue
 {
 	background: linear-gradient(to left, rgb(8, 39, 53), rgb(8, 39, 53)); /*Standard*/
+}
+#CONTAINER
+{
+	width:100%;
 }

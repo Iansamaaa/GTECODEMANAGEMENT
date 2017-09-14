@@ -1,9 +1,6 @@
-
 $(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecards').show();}, 1000);
-
-
   tblpending = $("#memberTable").DataTable( {
       dom: "Bfrtip",
         //"processing": true,

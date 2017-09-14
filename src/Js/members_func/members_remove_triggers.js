@@ -5,6 +5,8 @@ $(function(){
 	 click:function(){
 		 var Remm = $("#usntor").val();
 		 memREM(Remm);
+		 aidentifier = "Member Removed";
+		 MembersLOGS();
 	 }
  });
 

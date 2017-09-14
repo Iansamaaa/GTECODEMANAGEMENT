@@ -25,6 +25,7 @@
 			response.write "y"
 			else
 			add_code()
+			activity_logs()
 			response.write "x"
 
 	end if
@@ -40,7 +41,7 @@ function add_code()
 	'****************************
 	
 	'Initialize Variables
-	Dim cmd, dr_add, strSQL_add
+	Dim cmd, dr_add, strSQL_add, strSQL_activity
 	
 	'Create Objects
 	Set cmd= Server.CreateObject("ADODB.Command")
@@ -49,12 +50,32 @@ function add_code()
 	'QUERY COMMAND
 
 	strSQL_add = "INSERT INTO codes_masterlist (Language,FunctionName,Version,ContentScript,DateTimeAdded,DateTimeUpdated,UpdatedBy,AddedBy) values('"&Request("ctypes")&"','"&Request("fnames")&"','"&Request("versions")&"','"&Request("descs")&"',NOW(),NOW(),'"&Request("addedby")&"','"&Request("addedby")&"')"
+
 	cmd.CommandText = strSQL_add
+	
 	cmd.Prepared = True
 	
 	
 	Set dr_add = cmd.Execute()
 
 end function	
+
+function activity_logs()
+Dim cmd_act, dr_act, strSQL_act
 	
+	'Create Objects
+	Set cmd= Server.CreateObject("ADODB.Command")
+	cmd.ActiveConnection =  codemngt
+	
+	'QUERY COMMAND
+
+	strSQL_act = "INSERT into actlogs (ACTuser, ACTdate, ACTdescription) values ('"&Request.Cookies("USERNAME")&"', NOW(), 'Added a code')"
+
+	cmd.CommandText = strSQL_act
+	
+	cmd.Prepared = True
+	
+	
+	Set dr_add = cmd.Execute()
+end function 
 %>

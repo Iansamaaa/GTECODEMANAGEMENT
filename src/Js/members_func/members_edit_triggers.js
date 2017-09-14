@@ -1,15 +1,18 @@
 $(function(){
 	$(document).ready(function(){
-		$("#modalSubmit").bind({
+		$(".modalSubmit").bind({
 		click:function(){
+			identity=$("#usern").val();
 			var regx = /^[0-9 ]/;
-		 if((!($("#firstn").val()).match(/^[A-Za-z ]+$/)) || (!($("#lastn").val()).match(/^[A-Za-z ]+$/)))
+		 if((!($("#firstn").val()).match(/^[A-Za-z ]+$/)) || (!($("#lastn").val()).match(/^[A-Za-z ]{3,25}$/)))
 		{
 			toastr.warning("No alphanumeric in Firstname or Lastname", "Check Fields");
 		}
 		else
 		{
+			aidentifier = "Member Edited";
 			EditMember();
+			MembersLOGS();
 			 setTimeout(function () {
 			 	window.location.reload(true)
 			 }, 1500);
