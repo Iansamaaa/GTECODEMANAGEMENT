@@ -1,11 +1,18 @@
 $(function(){
 	$(document).ready(function(){
+		NProgress.start();
+		setTimeout(function() { NProgress.done(); $('.contentColor').show();}, 1000);
+ 
 		$(".confirmchangepass").bind({
 		click:function(){
     	var regx = /^[0-9 ]/;
 		if($('.currentpass').val()==''  || $('#newPass').val()=='' || $('#confirmPass').val()=='')
 		{
 			toastr.warning("Fill out Required Fields", "Check Fields");
+		}
+		else if($('#newPass').val() != $('#confirmPass').val())
+		{
+			toastr.warning("Wrong Confirm Password", "Check Fields");
 		}
 		else
 		{
