@@ -37,7 +37,7 @@
 
     <!-- SESSIONS -->
     <script src="../Js/sessions/usersession.js"></script>
-    
+
     <!-- TOAST FILES -->
     <link href="../Js/plugins/toastr/build/toastr.min.css" rel="stylesheet"/>
     <script src="../Js/plugins/toastr/build/toastr.min.js"></script>
@@ -128,7 +128,7 @@
       <div class="container-fluid" id="CONTAINER">
         <!-- Example Tables Card -->
         <div class="card mb-4" style="display:none" id="tablecard">
-          <div class="card-header white" ><h1></h1> Codes You Added! 
+          <div class="card-header white" ><h4><i class="fa fa-plus-square-o" aria-hidden="true"></i>&nbsp;Codes you Added</h4> 
           </div>
           <div class="card-body" id="TableBODY" >
             <div class="table-responsive">

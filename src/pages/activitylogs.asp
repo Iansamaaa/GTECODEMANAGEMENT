@@ -127,7 +127,7 @@
       <div class="container-fluid" id="CONTAINER1">
         <!-- Example Tables Card -->
         <div class="card mb-4" id="tablecard">
-          <div class="card-header white" ><p><h3>ACTIVITY LOGS</h3></p>
+          <div class="card-header white" ><p><h3> <i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;ACTIVITY LOGS</h3></p>
           </div>
           <div class="card-body" id="TableBODY" >
             <div class="table-responsive">

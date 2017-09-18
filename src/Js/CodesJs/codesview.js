@@ -146,4 +146,3 @@ function Modalview1(value){
     })
 
 }
- 
