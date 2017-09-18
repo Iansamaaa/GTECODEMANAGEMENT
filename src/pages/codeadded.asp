@@ -32,12 +32,12 @@
     <!-- TableSizeandContentsIzes -->
     <link href="pagedesigns/css/tablesizes.css" rel="stylesheet">
 
+
+
+
     <!-- SESSIONS -->
     <script src="../Js/sessions/usersession.js"></script>
-  
-
-
-
+    
     <!-- TOAST FILES -->
     <link href="../Js/plugins/toastr/build/toastr.min.css" rel="stylesheet"/>
     <script src="../Js/plugins/toastr/build/toastr.min.js"></script>
@@ -55,7 +55,7 @@
 
 
     <!-- JS -->
-    <script src="../Js/activitylogsjs/activitylogs.js"></script>
+    <script src="../Js/UserCodesJs/addedcodesview.user.js"></script>
   </head>
 
   <body class="fixed-nav" id="page-top">
@@ -83,8 +83,8 @@
               </li>
             </ul>
           </li>
-           <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Activity Logs">
-            <a class="nav-link" href="activitylogs.asp">
+           <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Activity Logs">
+            <a class="nav-link" href="activitylogs.user.asp">
               <i class="fa fa-file-text-o" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Activity Logs</span>
@@ -124,11 +124,11 @@
 
     <!-- END OF NAVIGATION -->
 
-    <div class="content-wrapper py-3" id="WRAPPER1"><!--Start of the Content-->
-      <div class="container-fluid" id="CONTAINER1">
+    <div class="content-wrapper py-3" id="WRAPPER"><!--Start of the Content-->
+      <div class="container-fluid" id="CONTAINER">
         <!-- Example Tables Card -->
-        <div class="card mb-4" id="tablecard">
-          <div class="card-header white" ><p><h3>ACTIVITY LOGS</h3></p>
+        <div class="card mb-4" style="display:none" id="tablecard">
+          <div class="card-header white" ><h1></h1> Codes You Added! 
           </div>
           <div class="card-body" id="TableBODY" >
             <div class="table-responsive">
@@ -136,9 +136,17 @@
                 <thead>
                   <tr>
                     <th></th>
-                    <th width="20%">User</th>
-                    <th width="20%">Activity date</th>
-                    <th>Description</th>
+                    <th></th>
+                    <th></th>
+                    <th>Code # </th>
+                    <th>Code Type</th>
+                    <th>Function Name</th>
+                    <th>Version #</th>
+                    <th>Date Added</th>
+                    <th>Added By</th>
+                    <th>Date Updated</th>
+                    <th>Update By</th>
+
                   </tr>
                 </thead>
               </table>
@@ -184,6 +192,168 @@
       </div>
     </div>
     <!-- END OF LOGOUT MODAL -->
+
+     <!-- ADD MODAL -->
+    <div class="modal fade" id="addModal1" tabindex="-1" role="dialog" aria-labelledby="addModalLabel1" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Codes</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+          <div class="container">
+
+          <form class="form-inline">
+
+          <div class="form-group">
+          <input type="text" class="form-control smallInput" id="ctype" Placeholder="Code Type">&nbsp;
+          </div>
+          <div class="form-group">
+          <input type="text" class="form-control smallInput" id="fname" placeholder="Function Name">&nbsp;
+          </div>
+          <div class="form-group">
+          <input type="text" class="form-control smallInput" id="version" placeholder="Version">
+          </div>
+          </form>
+          <br>
+          <form class="form-horizontal">
+          <div class="form-group">
+          <textarea class="form-control codeTS" id="codedesc" Placeholder="Code Description"></textarea>
+          </div>
+
+          <div class="form-group col-xs-2">
+          <input class="form-control smallInput" id="added" Placeholder="Added By" style="display:none" value="<% fname=Request.Cookies("USERNAME")
+                response.write(fname) %>">
+
+          </input>
+          </div>
+
+          </form>
+
+
+
+          </div>
+          </div>
+          <!-- HAYS -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="btnAdd">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF ADD MODAL -->
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="removeModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Code?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete Record?
+
+          <form class="form-inline">
+          <input type="text" class="form-control" id="IDrecord" style="display:none">
+          </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="btnREMOVE">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF Delete MODAL -->
+
+      <!-- View Modal -->
+    <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">CODE VIEW</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          <textarea class="form-control" id="codeTA" Placeholder="Code Description" disabled></textarea>
+
+          <form class="form-inline">
+          <input type="text" class="form-control" id="viewC" style="display:none">
+          </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF View MODAL -->
+
+    <!-- Edit Modal MODAL -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Codes</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+          <div class="container">
+
+          <form class="form-inline">
+          <input type="text" class="form-control" id="viewED" style="display:none">
+          <div class="form-group">
+          <input type="text" class="form-control" id="edit_ctype" Placeholder="Code Type" disabled>&nbsp;
+          </div>
+          <div class="form-group">
+          <input type="text" class="form-control" id="edit_fname" placeholder="Function Name">&nbsp;
+          </div>
+          <div class="form-group">
+          <input type="text" class="form-control" id="edit_version" placeholder="Version">
+          </div>
+          </form>
+          <br>
+          <form class="form-horizontal">
+          <div class="form-group">
+          <textarea class="form-control codeTS" id="edit_codedesc" Placeholder="Code Description"></textarea>
+          </div>
+          <div class="form-group col-xs-2">
+          <input class="form-control smallInput" id="edited" Placeholder="Edited By" style="display:none" value="<%fname=Request.Cookies("USERNAME")
+                response.write(fname)%>">
+          </input>
+          </div>
+          </form>
+
+
+
+          </div>
+          </div>
+          <!-- HAYS -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="btnEDIT">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF EDIT MODAL -->
+
+
+
+
 
 
 <!--                                                END OF MODALS                                              -->
