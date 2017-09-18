@@ -23,7 +23,6 @@
 
     <!-- Plugin CSS -->
     <link href="pagedesigns/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-   
 
     <!-- Custom styles for this template -->
     <link href="pagedesigns/css/sb-admin.css" rel="stylesheet">
@@ -34,7 +33,7 @@
 
     <!-- SESSIONS -->
     <script src="../Js/sessions/sessions.pages.js"></script>
-  
+
 
 
 
@@ -89,12 +88,17 @@
                 Activity Logs</span>
             </a>
           </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link" href="#">
-              <i class="fa fa-cog" aria-hidden="true"></i>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
+              <i class="fa fa-fw fa-wrench"></i>
               <span class="nav-link-text">
-               Settings</span>
+                Settings</span>
             </a>
+            <ul class="sidenav-second-level collapse" id="collapseComponents">
+              <li>
+                <a href='settingschangepass.asp'>Change Password</a>
+              </li>
+            </ul>
           </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
@@ -127,7 +131,7 @@
       <div class="container-fluid" id="CONTAINER1">
         <!-- Example Tables Card -->
         <div class="card mb-4" id="tablecard">
-          <div class="card-header white" ><p><h3> <i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;ACTIVITY LOGS</h3></p>
+          <div class="card-header white" ><p><h3>ACTIVITY LOGS</h3></p>
           </div>
           <div class="card-body" id="TableBODY" >
             <div class="table-responsive">

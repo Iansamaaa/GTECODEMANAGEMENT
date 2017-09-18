@@ -55,7 +55,7 @@ height: 44px;
 .spanAdjustLeft
 {
   left:15%;
-  
+
 }
 
 .spanAdjustRight
@@ -107,7 +107,7 @@ height: 44px;
 .style_prevu_kit_input
 {
     display:inline-block;
-    border:0;
+    border:1;
     width:inherit;
     height:inherit;
     position: relative;
@@ -150,4 +150,40 @@ height: 44px;
     -moz-transform: scale(0);
     transition: all 50ms ease-in;
     transform: scale(1);
+}
+.category-body {
+  margin-top: 10% !important;
+	margin-left: 20% !important;
+  background-color: inherit;
+  margin-right: 20% !important;
+  height: 415px;
+	width: 50%;
+}
+
+.category-header {
+	position: fixed;
+	top: 51px;
+	width: inherit;
+	background-color: inherit;
+}
+.contentColor{
+
+}
+.itextHeight
+{
+  height: 50px;
+  width: 70%;
+}
+.buttontip
+{
+  position: relative;
+  top: 2%;
+  left:55%
+}
+.inputtip{
+  top: 0.3%
+}
+.inputPos{
+  position: relative;
+  left:30%;
 }

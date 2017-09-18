@@ -1,5 +1,4 @@
 <!--#include file="../../connections/dsn.asp"-->
-
 <%
 	'**************************
 	'This code will be used

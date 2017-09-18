@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
 
+  <head>
+  <!--#include file="../Vb/commands/codes/codes.view.asp"-->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,14 +10,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Code Management System</title>
-    <link rel="SHORTCUT ICON" href="Index/css/img03.ico" type="image/x-icon">
     <!-- FILES INCLUDED -->
+    
     <!-- JQUERY -->
     <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="pagedesigns/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
 
     <!-- Custom fonts for this template -->
     <link href="pagedesigns/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -24,19 +24,15 @@
     <!-- Plugin CSS -->
     <link href="pagedesigns/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
-
     <!-- Custom styles for this template -->
     <link href="pagedesigns/css/sb-admin.css" rel="stylesheet">
-    <link href="pagedesigns/css/buttons.css" rel="stylesheet">
 
     <!-- TableSizeandContentsIzes -->
     <link href="pagedesigns/css/tablesizes.css" rel="stylesheet">
 
     <!-- SESSIONS -->
     <script src="../Js/sessions/sessions.pages.js"></script>
-
-
-
+    
 
     <!-- TOAST FILES -->
     <link href="../Js/plugins/toastr/build/toastr.min.css" rel="stylesheet"/>
@@ -49,13 +45,6 @@
     <script type= "text/javascript" src="../Js/CodesJs/codeview.js"></script>
     <script type= "text/javascript" src="../Js/CodesJs/codeedit.js"></script>
 
-    <!-- PLUGINS -->
-    <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
-    <link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
-
-
-    <!-- JS -->
-    <script src="../Js/CodesJs/codesview.js"></script>
   </head>
 
   <body class="fixed-nav" id="page-top">
@@ -69,37 +58,18 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
           <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Codes">
-            <a class="nav-link" href="homepage.asp">
+            <a class="nav-link" href="#">
               <i class="fa fa-code" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Codes</span>
             </a>
           </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Members">
-            <a class="nav-link" href="loginpage.asp">
-              <i class="fa fa-users" aria-hidden="true"></i>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
+            <a class="nav-link" href="#">
+              <i class="fa fa-cog" aria-hidden="true"></i>
               <span class="nav-link-text">
-                Members</span>
+               Settings</span>
             </a>
-          </li>
-           <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Activity Logs">
-            <a class="nav-link" href="activitylogs.asp">
-              <i class="fa fa-file-text-o" aria-hidden="true"></i>
-              <span class="nav-link-text">
-                Activity Logs</span>
-            </a>
-          </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
-              <i class="fa fa-fw fa-wrench"></i>
-              <span class="nav-link-text">
-                Settings</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseComponents">
-              <li>
-                <a href='settingschangepass.asp'>Change Password</a>
-              </li>
-            </ul>
           </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
@@ -124,24 +94,20 @@
           </ul>
       </div>
     </nav>
-
-
     <!-- END OF NAVIGATION -->
 
     <div class="content-wrapper py-3" id="WRAPPER"><!--Start of the Content-->
       <div class="container-fluid" id="CONTAINER">
         <!-- Example Tables Card -->
-        <div class="card mb-4" style="display:none" id="tablecard">
-          <div class="card-header blue" ><button type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Codes</button>
+        <div class="card mb-4">
+          <div class="card-header blue"><button type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Codes</button>
           </div>
-          <div class="card-body" id="TableBODY" >
+          <div class="card-body" id="TableBODY">
             <div class="table-responsive">
               <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
                 <thead>
                   <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                  <th>Actions</th>
                     <th>Code # </th>
                     <th>Code Type</th>
                     <th>Function Name</th>
@@ -150,14 +116,49 @@
                     <th>Added By</th>
                     <th>Date Updated</th>
                     <th>Update By</th>
-
+                    
                   </tr>
                 </thead>
+                <tbody>
+                 <%
+                  While not dr.EOF 
+                 %>
+                <tr>
+                <td>
+
+                <button type="submit" class="btn btn-default btn-xs btnED" data-toggle="modal" data-target="#editModal" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true" title="Edit"></i></button> 
+
+                <button type="submit" class="btn btn-default btn-xs btnRECORD" data-toggle="modal" data-target="#removeModal" title="Remove"><i class="fa fa-times" aria-hidden="true"></i></button> 
+
+                <button type="submit" class="btn btn-default btn-xs btnEN" data-toggle="modal" data-target="#viewModal" title="View"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                </td>
+                <td><%=dr("IDcode")%></td>
+                <td><%=dr("Language")%></td>
+                <td><%=dr("FunctionName")%></td>
+                <td><%=dr("Version")%></td>
+                <td><%=dr("DateTimeAdded")%></td>
+                <td><%=dr("AddedBy")%></td>
+                <td><%=dr("DateTimeUpdated")%></td>
+                <td><%=dr("UpdatedBy")%></td>
+
+                
+                </tr>
+                <%
+                dr.Movenext()
+                Wend
+                %>
+
+                <% 
+                dr.Close()
+                Set dr = nothing
+                Set cmd = nothing
+                %>
+                </tbody>
               </table>
             </div>
           </div>
           <div class="card-footer small text-muted">
-            Made by #GTE OJT
+            Made by #GTE OJT 
           </div>
         </div>
 
@@ -171,7 +172,6 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
-
 <!--                                                       MODALS                                              -->
     <!-- Logout Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -210,7 +210,7 @@
           <div class="modal-body">
 
           <div class="container">
-
+          
           <form class="form-inline">
 
           <div class="form-group">
@@ -232,16 +232,16 @@
           <div class="form-group col-xs-2">
           <input class="form-control smallInput" id="added" Placeholder="Added By" style="display:none" value="<% fname=Request.Cookies("USERNAME")
                 response.write(fname) %>">
-
+            
           </input>
           </div>
 
           </form>
-
-
+          
+      
 
           </div>
-          </div>
+          </div> 
           <!-- HAYS -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -264,7 +264,7 @@
           </div>
           <div class="modal-body">
             Are you sure you want to delete Record?
-
+              
           <form class="form-inline">
           <input type="text" class="form-control" id="IDrecord" style="display:none">
           </form>
@@ -290,7 +290,7 @@
           </div>
           <div class="modal-body">
           <textarea class="form-control" id="codeTA" Placeholder="Code Description" disabled></textarea>
-
+              
           <form class="form-inline">
           <input type="text" class="form-control" id="viewC" style="display:none">
           </form>
@@ -316,7 +316,7 @@
           <div class="modal-body">
 
           <div class="container">
-
+          
           <form class="form-inline">
           <input type="text" class="form-control" id="viewED" style="display:none">
           <div class="form-group">
@@ -340,11 +340,11 @@
           </input>
           </div>
           </form>
-
-
+          
+      
 
           </div>
-          </div>
+          </div> 
           <!-- HAYS -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

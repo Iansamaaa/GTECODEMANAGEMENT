@@ -11,7 +11,7 @@
     <title>Code Management System</title>
     <link rel="SHORTCUT ICON" href="Index/css/img03.ico" type="image/x-icon">
     <!-- FILES INCLUDED -->
-    
+
     <!-- JQUERY -->
     <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
 
@@ -23,7 +23,7 @@
 
     <!-- Plugin CSS -->
     <link href="pagedesigns/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-   
+
 
     <!-- Custom styles for this template -->
     <link href="pagedesigns/css/sb-admin.css" rel="stylesheet">
@@ -49,7 +49,6 @@
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
     <link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
     <script src="../Js/plugins/cookies.js"></script>
-    <script src="../Js/plugins/moment.js"></script>
 
     <!-- JS -->
     <script src="../Js/UserCodesJs/codesview.user.js"></script>
@@ -65,20 +64,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="codes">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
+          <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Codes">
+            <a class="nav-link" href="homepage.user.asp">
               <i class="fa fa-code" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Codes</span>
             </a>
-            <ul class="sidenav-second-level collapse" id="collapseComponents">
-              <li>
-                <a href="homepage.user.asp" class="nav-item active">&nbsp;View Codes</a>
-              </li>
-              <li>
-                <a href="codeadded.asp" class="nav-item active">&nbsp;Added Codes</a>
-              </li>
-            </ul>
           </li>
              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Activity Logs">
             <a class="nav-link" href="activitylogs.user.asp">
@@ -87,12 +78,17 @@
                 Activity Logs</span>
             </a>
           </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link" href="#">
-              <i class="fa fa-cog" aria-hidden="true"></i>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
+              <i class="fa fa-fw fa-wrench"></i>
               <span class="nav-link-text">
-               Settings</span>
+                Settings</span>
             </a>
+            <ul class="sidenav-second-level collapse" id="collapseComponents">
+              <li>
+                <a href='settingschangepassuser.asp'>Change Password</a>
+              </li>
+            </ul>
           </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
@@ -147,7 +143,7 @@
             </div>
           </div>
           <div class="card-footer small text-muted">
-            Made by #GTE OJT 
+            Made by #GTE OJT
           </div>
         </div>
 
@@ -199,7 +195,7 @@
           <div class="modal-body">
 
           <div class="container">
-          
+
           <form class="form-inline">
 
           <div class="form-group">
@@ -221,16 +217,16 @@
           <div class="form-group col-xs-2">
           <input class="form-control smallInput" id="added" Placeholder="Added By" style="display:none" value="<% fname=Request.Cookies("USERNAME")
                 response.write(fname) %>">
-            
+
           </input>
           </div>
 
           </form>
-          
-      
+
+
 
           </div>
-          </div> 
+          </div>
           <!-- HAYS -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -253,7 +249,7 @@
           </div>
           <div class="modal-body">
           <textarea class="form-control" id="codeTA" Placeholder="Code Description" disabled></textarea>
-              
+
           <form class="form-inline">
           <input type="text" class="form-control" id="viewC" style="display:none">
           </form>
@@ -279,7 +275,7 @@
           <div class="modal-body">
 
           <div class="container">
-          
+
           <form class="form-inline">
           <input type="text" class="form-control" id="viewED" style="display:none">
           <div class="form-group">
@@ -303,11 +299,11 @@
           </input>
           </div>
           </form>
-          
-      
+
+
 
           </div>
-          </div> 
+          </div>
           <!-- HAYS -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
