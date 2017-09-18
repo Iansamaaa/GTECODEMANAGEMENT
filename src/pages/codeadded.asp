@@ -68,7 +68,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="codes">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Codes">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
               <i class="fa fa-code" aria-hidden="true"></i>
               <span class="nav-link-text">
@@ -90,12 +90,17 @@
                 Activity Logs</span>
             </a>
           </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link" href="#">
+           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
               <i class="fa fa-cog" aria-hidden="true"></i>
               <span class="nav-link-text">
-               Settings</span>
+                Settings</span>
             </a>
+            <ul class="sidenav-second-level collapse" id="collapseMulti">
+              <li>
+                <a href="settingschangepassuser.asp">Change Password</a>
+              </li>
+            </ul>
           </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">

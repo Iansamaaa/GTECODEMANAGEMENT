@@ -38,8 +38,8 @@
 <script src="../Js/plugins/toastr/build/toastr.min.js"></script>
 <script src="../Js/members_func/toast_members.js"></script>
 
-<!-- SESSIONS -->
-<script src="../Js/sessions/sessions.pages1.js"></script>
+ <!-- SESSIONS -->
+    <script src="../Js/sessions/usersession.js"></script>
 
 <!-- LOADINGPLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
@@ -58,30 +58,38 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
-          <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Codes">
-            <a class="nav-link" href="homepage.asp">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Codes">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
               <i class="fa fa-code" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Codes</span>
             </a>
+            <ul class="sidenav-second-level collapse" id="collapseComponents">
+              <li>
+                <a href="homepage.user.asp" class="nav-item active">&nbsp;View Codes</a>
+              </li>
+              <li>
+                <a href="codeadded.asp" class="nav-item active">&nbsp;Added Codes</a>
+              </li>
+            </ul>
           </li>
              <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Activity Logs">
-            <a class="nav-link" href="activitylogs.asp">
+            <a class="nav-link" href="activitylogs.user.asp">
               <i class="fa fa-file-text-o" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Activity Logs</span>
             </a>
           </li>
 
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-            <a class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseComponents">
-              <i class="fa fa-fw fa-wrench"></i>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+              <i class="fa fa-cog" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Settings</span>
             </a>
-            <ul class="sidenav-second-level collapse show" id="collapseComponents">
-              <li class="active">
-                <a  href='settingschangepass.asp'>Change Password</a>
+            <ul class="sidenav-second-level collapse" id="collapseMulti">
+              <li>
+                <a href="settingschangepassuser.asp">Change Password</a>
               </li>
             </ul>
           </li>

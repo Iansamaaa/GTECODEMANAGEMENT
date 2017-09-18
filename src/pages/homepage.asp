@@ -89,15 +89,15 @@
                 Activity Logs</span>
             </a>
           </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
-              <i class="fa fa-fw fa-wrench"></i>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+              <i class="fa fa-cog" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Settings</span>
             </a>
-            <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <ul class="sidenav-second-level collapse" id="collapseMulti">
               <li>
-                <a href='settingschangepass.asp'>Change Password</a>
+                <a href="settingschangepass.asp">Change Password</a>
               </li>
             </ul>
           </li>
