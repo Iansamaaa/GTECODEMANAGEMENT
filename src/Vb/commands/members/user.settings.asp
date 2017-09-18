@@ -18,8 +18,8 @@
 	cmd_add.Prepared = True
 	Set dr_add = cmd_add.Execute()
 	if NOT dr_add.EOF then
-			response.write "x"
       changepass()
+			response.write "x"
 			Else
 			response.write "y"
 			end if
