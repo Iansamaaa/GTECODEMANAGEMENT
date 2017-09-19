@@ -1,5 +1,8 @@
 $(function(){
 	$(document).ready(function(){
+		NProgress.start();
+		setTimeout(function() { NProgress.done(); $('.contentColor').show();}, 1000);
+
 		$(".confirmchangepass").bind({
 		click:function(){
     	var regx = /^[0-9 ]/;
@@ -7,14 +10,36 @@ $(function(){
 		{
 			toastr.warning("Fill out Required Fields", "Check Fields");
 		}
+		else if($('#newPass').val() != $('#confirmPass').val())
+		{
+			toastr.warning("Wrong Confirm Password", "Check Fields");
+		}
 		else
 		{
 				changepass();
 		}
 		}
+
+
+
+
 	});
+
+			$(".currentpass, .newPass,.confirmPass").bind({
+				keypress: function(e){
+					if (e.which == 13){
+						changepass();
+					}
+				}
+			});
+
+
+
 	}); // End of document ready]
 });
+
+
+
 
 /**********
 FUNCTIONS

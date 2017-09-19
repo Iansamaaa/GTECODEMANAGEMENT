@@ -84,7 +84,7 @@
             </ul>
           </li>
            <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Activity Logs">
-            <a class="nav-link" href="activitylogs.asp">
+            <a class="nav-link" href="activitylogs.user.asp">
               <i class="fa fa-file-text-o" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Activity Logs</span>
@@ -132,8 +132,8 @@
     <div class="content-wrapper py-3" id="WRAPPER1"><!--Start of the Content-->
       <div class="container-fluid" id="CONTAINER1">
         <!-- Example Tables Card -->
-        <div class="card mb-4" id="tablecard">
-          <div class="card-header white" ><p><h3>ACTIVITY LOGS</h3></p>
+        <div class="card mb-4" id="tablecardact" style="display:none">
+          <div class="card-header white" ><p><h3> <i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;ACTIVITY LOGS</h3></p>
           </div>
           <div class="card-body" id="TableBODY" >
             <div class="table-responsive">

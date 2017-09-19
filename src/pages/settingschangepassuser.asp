@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Code Management System</title>
+      <link rel="SHORTCUT ICON" href="Index/css/img03.ico" type="image/x-icon">
 
     <!--DataTables JS JSON-->
 
@@ -81,18 +82,18 @@
             </a>
           </li>
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
-              <i class="fa fa-cog" aria-hidden="true"></i>
-              <span class="nav-link-text">
-                Settings</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseMulti">
-              <li>
-                <a href="settingschangepassuser.asp">Change Password</a>
-              </li>
-            </ul>
-          </li>
+          <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Settings">
+          <a class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseMulti">
+            <i class="fa fa-cog " aria-hidden="true"></i>
+            <span class="nav-link-text">
+              Settings</span>
+          </a>
+          <ul class="sidenav-second-level" id="collapseMulti">
+            <li class = "active">
+              <a href="settingschangepassuser.asp">Change Password</a>
+            </li>
+          </ul>
+        </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
           <li class="nav-item">
@@ -117,7 +118,7 @@
       </div>
     </nav>
     <div class="content-wrapper py-3  "><!--Start of the Content-->
-      <div class="category-body contentColor">
+      <div class="category-body contentColor" style="display:none">
           <input  type="password" id="currentPass" class="form-control style_prevu_kit_input itextHeight  inputPos currentPass"    name="ChangePass"   placeholder="Current Password"></input>
               <input  type="password" id="newPass" class="form-control style_prevu_kit_input itextHeight inputtip inputPos"   name="ChangePass" id="changepass"   placeholder="Change Password"></input>
               <input  type="password" id="confirmPass" class="form-control style_prevu_kit_input itextHeight inputtip inputPos"    name="ChangePass" id="changepass"   placeholder="Confirm Change Password"></input><br>
@@ -158,20 +159,20 @@
 
 
 
+
     <!-- Bootstrap core JavaScript -->
-    <script src='pagedesigns\vendor\jquery\jquery.min.js'
-></script>
-    <script src='pagedesigns\vendor\popper\popper.min.js'
-></script>
-    <script src='pagedesigns\vendor\bootstrap\js\bootstrap.min.js'
-></script>
+    <script src="pagedesigns/vendor/jquery/jquery.min.js"></script>
+    <script src="pagedesigns/vendor/popper/popper.min.js"></script>
+    <script src="pagedesigns/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src='pagedesigns\vendor\jquery-easing\jquery.easing.min.js'
-></script>
+    <script src="pagedesigns/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="pagedesigns/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="pagedesigns/vendor/datatables/dataTables.bootstrap4.js"></script>
+
     <!-- Custom scripts for this template -->
-    <script src='pagedesigns\js\sb-admin.min.js'
-></script>
+    <script src="pagedesigns/js/sb-admin.min.js"></script>
+
 
 
 

@@ -4,7 +4,7 @@ $(function(){
 		click:function(){
 			RadioUserType();
     	var regx = /^[0-9 ]/;
-		if($('#usn').val()==''  || $('#pwd').val()=='' || $('#frstn').val()=='' || $('#lstn').val()=='' || !($('#usn').val()).match(/^[A-Za-z ]{3,25}$/))
+		if($('#usn').val()==''  || $('#pwd').val()=='' || $('#frstn').val()=='' || $('#lstn').val()=='' || !($('#usn').val()).match(/^[A-Za-z0-9]{3,25}$/))
 		{
 			toastr.warning("Fill out Required Fields", "Check Fields");
 		}

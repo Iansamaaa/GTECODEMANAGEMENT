@@ -23,7 +23,7 @@
 
     <!-- Plugin CSS -->
     <link href="pagedesigns/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-   
+
 
     <!-- Custom styles for this template -->
     <link href="pagedesigns/css/sb-admin.css" rel="stylesheet">
@@ -68,21 +68,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Codes">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
-              <i class="fa fa-code" aria-hidden="true"></i>
-              <span class="nav-link-text">
-                Codes</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseComponents">
-              <li>
-                <a href="homepage.user.asp" class="nav-item active">&nbsp;View Codes</a>
-              </li>
-              <li>
-                <a href="codeadded.asp" class="nav-item active">&nbsp;Added Codes</a>
-              </li>
-            </ul>
-          </li>
+          <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Settings">
+          <a class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseComponents">
+            <i class="fa fa-code " aria-hidden="true"></i>
+            <span class="nav-link-text">Codes
+              </span>
+          </a>
+          <ul class="sidenav-second-level" id="collapseComponents">
+            <li>
+              <a href="homepage.user.asp">View Codes</a>
+            </li>
+            <li class = "active">
+              <a href="codeadded.asp">Added Codes</a>
+            </li>
+          </ul>
+        </li>
            <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Activity Logs">
             <a class="nav-link" href="activitylogs.user.asp">
               <i class="fa fa-file-text-o" aria-hidden="true"></i>
@@ -133,7 +133,7 @@
       <div class="container-fluid" id="CONTAINER">
         <!-- Example Tables Card -->
         <div class="card mb-4" style="display:none" id="tablecard">
-          <div class="card-header white" ><h4><i class="fa fa-plus-square-o" aria-hidden="true"></i>&nbsp;Codes you Added</h4> 
+          <div class="card-header white" ><h4><i class="fa fa-plus-square-o" aria-hidden="true"></i>&nbsp;Codes you Added</h4>
           </div>
           <div class="card-body" id="TableBODY" >
             <div class="table-responsive">

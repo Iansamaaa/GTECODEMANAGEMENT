@@ -64,21 +64,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Codes">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
-              <i class="fa fa-code" aria-hidden="true"></i>
-              <span class="nav-link-text">
-                Codes</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseComponents">
-              <li>
-                <a href="homepage.user.asp" class="nav-item active">&nbsp;View Codes</a>
-              </li>
-              <li>
-                <a href="codeadded.asp" class="nav-item active">&nbsp;Added Codes</a>
-              </li>
-            </ul>
-          </li>
+          <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Settings">
+          <a class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseComponents">
+            <i class="fa fa-code " aria-hidden="true"></i>
+            <span class="nav-link-text">Codes
+              </span>
+          </a>
+          <ul class="sidenav-second-level" id="collapseComponents">
+            <li class="active">
+              <a href="homepage.user.asp">View Codes</a>
+            </li>
+            <li>
+              <a href="codeadded.asp">Added Codes</a>
+            </li>
+          </ul>
+        </li>
              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Activity Logs">
             <a class="nav-link" href="activitylogs.user.asp">
               <i class="fa fa-file-text-o" aria-hidden="true"></i>
@@ -87,7 +87,7 @@
             </a>
           </li>
            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+            <a class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseMulti">
               <i class="fa fa-cog" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Settings</span>

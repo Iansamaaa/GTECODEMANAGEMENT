@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Code Management System</title>
+    <link rel="SHORTCUT ICON" href="Index/css/img03.ico" type="image/x-icon">
 
     <!--DataTables JS JSON-->
 
@@ -49,7 +50,7 @@
 <script src="../Js/members_func/toast_members.js"></script>
 
 <!-- SESSIONS -->
-<script src="../Js/sessions/sessions.pages1.js"></script>
+<script src="../Js/sessions/sessions.pages.js"></script>
 
 <!-- LOADINGPLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
@@ -89,15 +90,15 @@
                 Activity Logs</span>
             </a>
           </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
-              <i class="fa fa-fw fa-wrench"></i>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+              <i class="fa fa-cog" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Settings</span>
             </a>
-            <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <ul class="sidenav-second-level collapse" id="collapseMulti">
               <li>
-                <a href='settingschangepass.asp'>Change Password</a>
+                <a href="settingschangepass.asp">Change Password</a>
               </li>
             </ul>
           </li>
@@ -127,7 +128,7 @@
     <div class="content-wrapper py-3"><!--Start of the Content-->
       <div class="container-fluid" id="CONTAINER3">
         <!-- Example Tables Card -->
-        <div class="card mb-3" id="tablecards">
+        <div class="card mb-3" id="tablecardsmembers" style="display:none">
         <div class="card-header blue"><button id="AddMemberFunc" type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#AddMemberModal" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Members</button>
           </div>
           <div class="card-body">
