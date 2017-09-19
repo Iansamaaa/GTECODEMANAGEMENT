@@ -80,6 +80,7 @@
             </a>
           </li>
 
+<<<<<<< HEAD
             <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Settings">
             <a class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseMulti">
               <i class="fa fa-cog " aria-hidden="true"></i>
@@ -88,6 +89,16 @@
             </a>
             <ul class="sidenav-second-level" id="collapseMulti">
               <li class = "active">
+=======
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+              <i class="fa fa-cog" aria-hidden="true"></i>
+              <span class="nav-link-text">
+                Settings</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseMulti">
+              <li>
+>>>>>>> cfbb90405bfc2c9e0656c8efc5ae70bb12605bef
                 <a href="settingschangepass.asp">Change Password</a>
               </li>
             </ul>
@@ -157,7 +168,11 @@
 
 
 
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> cfbb90405bfc2c9e0656c8efc5ae70bb12605bef
     <!-- Bootstrap core JavaScript -->
     <script src="pagedesigns/vendor/jquery/jquery.min.js"></script>
     <script src="pagedesigns/vendor/popper/popper.min.js"></script>

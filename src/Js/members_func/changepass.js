@@ -2,7 +2,11 @@ $(function(){
 	$(document).ready(function(){
 		NProgress.start();
 		setTimeout(function() { NProgress.done(); $('.contentColor').show();}, 1000);
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> cfbb90405bfc2c9e0656c8efc5ae70bb12605bef
 		$(".confirmchangepass").bind({
 		click:function(){
     	var regx = /^[0-9 ]/;
