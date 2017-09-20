@@ -2,26 +2,29 @@
 $(function(){
 
 	$(document).ready(function(){
+		for(var i=0;i<2;i++){
+				document.getElementById("cde").click();
+		}
 		$("#btnAdd").bind({
 			click:function(){
 			 if($('#ctype').val()=='' || $('#fname').val()=='' || $('#codedesc').val()=='' || $('#version').val()==''|| $('#added').val()=='')
 			{
-				toastr.warning("Fill out Required Fields", "Check Fields"); 
+				toastr.warning("Fill out Required Fields", "Check Fields");
 				return false;
 			}
 			else if(!($('#version').val()).match(/^[0-9.]{1,6}$/))
 			{
-			toastr.warning("Type in version Number", "Check Fields"); 
+			toastr.warning("Type in version Number", "Check Fields");
 			return false;
 			}
 			else if(!($('#ctype').val()).match(/^[a-zA-Z. ]{1,10}$/))
 			{
-			toastr.warning("Type valid Code type", "Check Fields"); 
+			toastr.warning("Type valid Code type", "Check Fields");
 			return false;
 			}
 			else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{3,20}$/))
 			{
-			toastr.warning("Type valid Function Name", "Check Fields"); 
+			toastr.warning("Type valid Function Name", "Check Fields");
 			return false;
 			}
 			else
@@ -29,10 +32,10 @@ $(function(){
 				code_adding();
 			}
 			}
-		
+
 		});
 		//Keypress Enter
-		
+
 	}); // End of document ready
 
 }); // End of jQuery function
@@ -45,7 +48,7 @@ FUNCTIONS
 function code_adding(){
 	//Set Ajax Status
 	var datastring;
-	datastring= {ctypes: $("#ctype").val(), 
+	datastring= {ctypes: $("#ctype").val(),
 				fnames: $("#fname").val(),
 				descs: btoa($("#codedesc").val()),
 				versions: $('#version').val(),
@@ -60,21 +63,21 @@ function code_adding(){
 			$('#addModal1').modal('toggle');
 			 window.setTimeout(function(){location.reload()},2000);
 
-		}, 
+		},
 		error:  function(){
 			toastr.warning("Submission Failed");}
-	})					
+	})
 }
 //redirect login
 function code_status(codestat){
-	
+
 	switch (codestat){
-		
+
 		case 'x': toastr.success("Add Success");
 
 				break;
 		case 'y': toastr.warning("Function Name Already Exists")
 				break;
 		default: toastr.warning("Code not Added");
-	}	
+	}
 }

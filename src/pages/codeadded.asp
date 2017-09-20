@@ -69,7 +69,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
           <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Settings">
-          <a class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseComponents">
+          <a id="cde" class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseComponents">
             <i class="fa fa-code " aria-hidden="true"></i>
             <span class="nav-link-text">Codes
               </span>

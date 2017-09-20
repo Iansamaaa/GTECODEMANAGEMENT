@@ -82,13 +82,13 @@
           </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+            <a id="sett" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
               <i class="fa fa-cog" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Settings</span>
             </a>
             <ul class="sidenav-second-level" id="collapseMulti">
-              <li>
+              <li class="active">
                 <a href="settingschangepassuser.asp">Change Password</a>
               </li>
             </ul>

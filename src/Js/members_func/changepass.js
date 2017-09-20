@@ -1,6 +1,11 @@
 $(function(){
+
 	$(document).ready(function(){
 		NProgress.start();
+		for(var i=0;i<2;i++){
+				document.getElementById("sett").click();
+		}
+
 		setTimeout(function() { NProgress.done(); $('.contentColor').show();}, 1000);
 		$(".confirmchangepass").bind({
 		click:function(){
@@ -8,6 +13,7 @@ $(function(){
 		if($('.currentpass').val()==''  || $('#newPass').val()=='' || $('#confirmPass').val()=='')
 		{
 			toastr.warning("Fill out Required Fields", "Check Fields");
+
 		}
 		else if($('#newPass').val() != $('#confirmPass').val())
 		{
@@ -15,6 +21,7 @@ $(function(){
 		}
 		else
 		{
+
 				changepass();
 		}
 		}

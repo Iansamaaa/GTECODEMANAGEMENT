@@ -15,7 +15,7 @@
 
     <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
     <script src='..\Js\members_func\changepass.js'></script>
-    <script src='..\Js\template_func.js'></script>
+
    <!-- FILES INCLUDED FOR BUTTONS -->
 <!-- FILES INCLUDED FOR TABLES -->
 
@@ -82,7 +82,7 @@
             </a>
           </li>
             <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseMulti">
+            <a id="sett" class="nav-link nav-link-collapse sett" data-toggle="collapse" href="#collapseMulti">
               <i class="fa fa-cog " aria-hidden="true"></i>
               <span class="nav-link-text">
                 Settings</span>
@@ -165,7 +165,7 @@
     <script src="pagedesigns/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="pagedesigns/vendor/datatables/jquery.dataTables.js"></script>
     <script src="pagedesigns/vendor/datatables/dataTables.bootstrap4.js"></script>
-
+          <script src='..\Js\template_func.js'></script>
     <!-- Custom scripts for this template -->
     <script src="pagedesigns/js/sb-admin.min.js"></script>
 

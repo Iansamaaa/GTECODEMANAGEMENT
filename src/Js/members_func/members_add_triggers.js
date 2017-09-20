@@ -4,13 +4,17 @@ $(function(){
 		click:function(){
 			RadioUserType();
     	var regx = /^[0-9 ]/;
-		if($('#usn').val()==''  || $('#pwd').val()=='' || $('#frstn').val()=='' || $('#lstn').val()=='' || !($('#usn').val()).match(/^[A-Za-z0-9]{3,25}$/))
+		if($('#usn').val()=='' || $('#email').val()=='' || $('#pwd').val()=='' || $('#frstn').val()=='' || $('#lstn').val()=='' || !($('#usn').val()).match(/^[A-Za-z0-9]{3,25}$/))
 		{
 			toastr.warning("Fill out Required Fields", "Check Fields");
 		}
 		else if(!($('#frstn').val()).match(/^[A-Za-z ]{3,13}$/) || !($('#lstn').val()).match(/^[A-Za-z ]{3,13}$/))
 		{
 			toastr.warning("No alphanumeric in Firstname or Lastname", "Check Fields");
+		}
+		else if(!($('#email').val()).match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+		{
+			toastr.warning("Invalid Email");
 		}
 		else if($('#usn').val().indexOf(' ')>=0)
 		{
@@ -43,12 +47,14 @@ function AddMembers(){
 	//Set Ajax Status
 
 	var f = $("#frstn").val();
-	var u = $("#usn").val()
+	var u = $("#usn").val();
+	var e = $("#email").val();
 	var datastring;
 
 	datastring= {firstn: $("#frstn").val(),
-				firstnamexml:"<firstname>"+f+"</firstname>"+"<username>"+u+"</username>"+"<password>"+passgen+"</password>",
+				firstnamexml:"<firstname>"+f+"</firstname>"+"<email>"+e+"</email>"+"<username>"+u+"</username>"+"<password>"+passgen+"</password>",
 				lastn: $("#lstn").val(),
+				email:$("#email").val(),
 				usn: $("#usn").val(),
 				pwds: passgen,
 				atype: radio,

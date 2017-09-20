@@ -22,7 +22,6 @@
     </script>
     <script src='..\Js\members_func\members_add_triggers.js'>
     </script>
-    <script src='..\Js\members_func\alogs.js'></script>
     <script src='..\Js\notification\notification.js'></script>
 
 
@@ -267,6 +266,7 @@
 
   <form class="form-horizontal">
       <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usn"  placeholder="UserName"></input>
+      <input  type="email" name="email" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="email"  placeholder="Email"></input>
       <div   class="input-group">
       <span  class="input-group-addon spanAdjustLeft spanAdjustRight style_prevu_kit_input style_prevu_kit_input:hover">
       <label><input id="atype" type="radio" name="optradio" value="ADMIN">Admin</label>

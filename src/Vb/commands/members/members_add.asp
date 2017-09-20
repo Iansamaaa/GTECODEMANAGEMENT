@@ -36,7 +36,7 @@ function add()
 	cmd.ActiveConnection =  codemngt
 
 	'QUERY COMMAND
-	strSQL_add = "INSERT INTO users(FirstName,AccountType,LastName,Username,`Password`)values('"&Request("firstn")&"','"&Request("atype")&"','"&Request("lastn")&"','"&Request("usn")&"',SHA1('"&Request("user")&""&Request("pwds")&"'))"
+	strSQL_add = "INSERT INTO users(FirstName,AccountType,LastName,Username,`Password`,Email)values('"&Request("firstn")&"','"&Request("atype")&"','"&Request("lastn")&"','"&Request("usn")&"',SHA1('"&Request("user")&""&Request("pwds")&"'),'"&Request("email")&"')"
 	cmd.CommandText = strSQL_add
 	cmd.Prepared = True
 	Set dr_add = cmd.Execute()
