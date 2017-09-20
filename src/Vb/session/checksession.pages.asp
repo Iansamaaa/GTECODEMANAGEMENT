@@ -6,6 +6,7 @@ Elseif Request.Cookies("USERTYPE")="USER" then
 	Response.Cookies("USERNAME").Expires = DateAdd("d",-1,now())
 	Response.Cookies("USERTYPE").Expires = DateAdd("d",-1,now())
 	Response.Cookies("FIRSTNAME").Expires = DateAdd("d",-1,now())
+	Response.Cookies("USERID").Expires = DateAdd("d",-1,now())
 	Response.write "2"
 	Response.End()
 Else 

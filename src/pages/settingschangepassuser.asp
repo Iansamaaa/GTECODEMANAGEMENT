@@ -156,14 +156,6 @@
             </div>
           </div>
         </div>
-
-
-
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> cfbb90405bfc2c9e0656c8efc5ae70bb12605bef
     <!-- Bootstrap core JavaScript -->
     <script src="pagedesigns/vendor/jquery/jquery.min.js"></script>
     <script src="pagedesigns/vendor/popper/popper.min.js"></script>
