@@ -81,17 +81,14 @@
                 Activity Logs</span>
             </a>
           </li>
-
-
-
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-            <a id="settingst" class="nav-link nav-link-collapse settingst" data-toggle="collapse" href="#collapseMulti">
-              <i class="fa fa-cog" aria-hidden="true"></i>
+            <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Settings">
+            <a class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseMulti">
+              <i class="fa fa-cog " aria-hidden="true"></i>
               <span class="nav-link-text">
                 Settings</span>
             </a>
             <ul class="sidenav-second-level" id="collapseMulti">
-              <li>
+              <li class = "active">
                 <a href="settingschangepass.asp">Change Password</a>
               </li>
             </ul>
@@ -158,7 +155,6 @@
             </div>
           </div>
         </div>
-
 
     <!-- Bootstrap core JavaScript -->
     <script src="pagedesigns/vendor/jquery/jquery.min.js"></script>

@@ -27,6 +27,7 @@
 		Response.Cookies("USERNAME") = dr_login("Username")
 		Response.Cookies("FIRSTNAME") = dr_login("FirstName")
 		Response.Cookies("USERTYPE") = dr_login("Accounttype")
+		Response.Cookies("USERID") = dr_login("ID")
 		if dr_login("Accounttype")="ADMIN" then
 			Response.Write "y"
 		else

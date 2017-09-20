@@ -155,13 +155,15 @@
             </div>
           </div>
         </div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="pagedesigns/vendor/jquery/jquery.min.js"></script>
+    <script src="pagedesigns/vendor/popper/popper.min.js"></script>
+    <script src="pagedesigns/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-
-
-        <!-- Bootstrap core JavaScript -->
-        <script src="pagedesigns/vendor/jquery/jquery.min.js"></script>
-        <script src="pagedesigns/vendor/popper/popper.min.js"></script>
-        <script src="pagedesigns/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="pagedesigns/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="pagedesigns/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="pagedesigns/vendor/datatables/dataTables.bootstrap4.js"></script>
 
         <!-- Plugin JavaScript -->
         <script src="pagedesigns/vendor/jquery-easing/jquery.easing.min.js"></script>
