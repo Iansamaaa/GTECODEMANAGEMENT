@@ -15,7 +15,7 @@
 
     <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
     <script src='..\Js\members_func\changepass.js'></script>
-
+    <script src='..\Js\template_func.js'></script>
    <!-- FILES INCLUDED FOR BUTTONS -->
 <!-- FILES INCLUDED FOR TABLES -->
 
@@ -32,6 +32,8 @@
 
 <!-- TableSizeandContentsIzes -->
 <link href="pagedesigns/css/tablesizes.css" rel="stylesheet">
+
+<!--Template Func-->
 
 
 <!-- TOAST FILES -->
@@ -80,25 +82,16 @@
             </a>
           </li>
 
-<<<<<<< HEAD
-            <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseMulti">
-              <i class="fa fa-cog " aria-hidden="true"></i>
-              <span class="nav-link-text">
-                Settings</span>
-            </a>
-            <ul class="sidenav-second-level" id="collapseMulti">
-              <li class = "active">
-=======
+
+
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+            <a id="settingst" class="nav-link nav-link-collapse settingst" data-toggle="collapse" href="#collapseMulti">
               <i class="fa fa-cog" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Settings</span>
             </a>
-            <ul class="sidenav-second-level collapse" id="collapseMulti">
+            <ul class="sidenav-second-level" id="collapseMulti">
               <li>
->>>>>>> cfbb90405bfc2c9e0656c8efc5ae70bb12605bef
                 <a href="settingschangepass.asp">Change Password</a>
               </li>
             </ul>
@@ -106,7 +99,7 @@
         </ul>
         <ul class="navbar-nav sidenav-toggler">
           <li class="nav-item">
-            <a class="nav-link text-center" id="sidenavToggler">
+            <a class="nav-link text-center sidenavtoggle" id="sidenavToggler">
               <i class="fa fa-fw fa-angle-left"></i>
             </a>
           </li>
@@ -167,12 +160,6 @@
         </div>
 
 
-
-<<<<<<< HEAD
-
-=======
-   
->>>>>>> cfbb90405bfc2c9e0656c8efc5ae70bb12605bef
     <!-- Bootstrap core JavaScript -->
     <script src="pagedesigns/vendor/jquery/jquery.min.js"></script>
     <script src="pagedesigns/vendor/popper/popper.min.js"></script>

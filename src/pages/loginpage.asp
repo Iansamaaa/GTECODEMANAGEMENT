@@ -23,6 +23,8 @@
     <script src='..\Js\members_func\members_add_triggers.js'>
     </script>
     <script src='..\Js\members_func\alogs.js'></script>
+    <script src='..\Js\notification\notification.js'></script>
+
 
    <!-- FILES INCLUDED FOR BUTTONS -->
 <!-- FILES INCLUDED FOR TABLES -->
@@ -273,7 +275,6 @@
         </div>
       <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="FirstName" id="frstn" placeholder="Firstname"></input>
       <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="LastName" id="lstn"  placeholder="LastName"></input>
-      <input  type="password" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="Password" id="pwd"  placeholder="Password"></input>
 
   </form>
 

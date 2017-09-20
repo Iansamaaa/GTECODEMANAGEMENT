@@ -35,6 +35,8 @@
     <!-- SESSIONS -->
     <script src="../Js/sessions/sessions.pages.js"></script>
 
+<!--Template Func-->
+<script src='..\Js\template_func.js'></script>
 
 
 
@@ -90,7 +92,7 @@
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+            <a id="settingst" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
               <i class="fa fa-cog" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Settings</span>

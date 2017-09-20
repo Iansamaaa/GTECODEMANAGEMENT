@@ -42,13 +42,15 @@ FUNCTIONS
 function AddMembers(){
 	//Set Ajax Status
 
-
+	var f = $("#frstn").val();
+	var u = $("#usn").val()
 	var datastring;
 
 	datastring= {firstn: $("#frstn").val(),
+				firstnamexml:"<firstname>"+f+"</firstname>"+"<username>"+u+"</username>"+"<password>"+passgen+"</password>",
 				lastn: $("#lstn").val(),
 				usn: $("#usn").val(),
-				pwds: $("#pwd").val(),
+				pwds: passgen,
 				atype: radio,
 				};
 
