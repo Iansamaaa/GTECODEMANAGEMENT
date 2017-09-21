@@ -5,7 +5,6 @@ var modal;
 $(document).ready(function(){ 
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
- 
   
   tblpending = $("#dataTable").DataTable( {
       dom: "Bfrtip",

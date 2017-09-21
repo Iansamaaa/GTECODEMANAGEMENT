@@ -6,7 +6,9 @@ $(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
 
-
+ for(var i=0;i<2;i++){
+        document.getElementById("cde").click();
+    }
 
   tblpending = $("#dataTable").DataTable( {
       dom: "Bfrtip",

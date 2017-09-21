@@ -47,7 +47,7 @@ function validate_login(){
 		success: function(data){redirect_login(data);
 			}, 
 		error:  function(){
-			toastr.warning("error");}
+			toastr.warning("Account not found");}
 	})
 						
 }
@@ -57,7 +57,7 @@ function redirect_login(loginstat){
 	
 	switch (loginstat){
 		case 'x':NProgress.start();
-   				 setTimeout(function() { NProgress.done(); toastr.warning("Username or Password is Incorrect", "Check Fields").css("height","100px").css("font-size","12pt").css("padding-top","30px"); }, 500);
+   				 setTimeout(function() { NProgress.done(); toastr.warning("Username or Password is Incorrect", "Check Fields"); }, 500);
 				 break;
 		case 'y':NProgress.start();
    				 setTimeout(function() { NProgress.done(); window.location="../homepage.asp"; }, 4000);
@@ -65,5 +65,8 @@ function redirect_login(loginstat){
 		case 'z':NProgress.start();
    				 setTimeout(function() { NProgress.done(); window.location="../homepage.user.asp"; }, 4000);
 				 break;
-	}	
+		case 'k':NProgress.start();
+   				 setTimeout(function() { NProgress.done(); toastr.warning("Your account is Deactivated Please ask your administrator about this issue", "Account validation"); }, 500);
+				 break;
+}
 }

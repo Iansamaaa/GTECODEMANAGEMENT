@@ -2,9 +2,6 @@
 $(function(){
 
 	$(document).ready(function(){
-		for(var i=0;i<2;i++){
-				document.getElementById("cde").click();
-		}
 		$("#btnAdd").bind({
 			click:function(){
 			 if($('#ctype').val()=='' || $('#fname').val()=='' || $('#codedesc').val()=='' || $('#version').val()==''|| $('#added').val()=='')
