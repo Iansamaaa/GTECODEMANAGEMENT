@@ -49,6 +49,7 @@ function AddMembers(){
 	var f = $("#frstn").val();
 	var u = $("#usn").val();
 	var e = $("#email").val();
+	var s= "0";
 	var datastring;
 
 	datastring= {firstn: $("#frstn").val(),
@@ -56,6 +57,7 @@ function AddMembers(){
 				lastn: $("#lstn").val(),
 				email:$("#email").val(),
 				usn: $("#usn").val(),
+				status:s,
 				pwds: passgen,
 				atype: radio,
 				};

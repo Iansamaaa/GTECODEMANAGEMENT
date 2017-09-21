@@ -77,12 +77,22 @@
                 Codes</span>
             </a>
           </li>
+
+
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Members">
-            <a class="nav-link" href="loginpage.asp">
+            <a id="mems" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMultimember">
               <i class="fa fa-users" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Members</span>
             </a>
+            <ul class="sidenav-second-level collapse" id="collapseMultimember">
+              <li>
+                <a href="loginpage.asp">Active Members</a>
+              </li>
+              <li>
+                <a href="inactiveloginpage.asp">Inactive   Members</a>
+              </li>
+            </ul>
           </li>
            <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Activity Logs">
             <a class="nav-link" href="activitylogs.asp">

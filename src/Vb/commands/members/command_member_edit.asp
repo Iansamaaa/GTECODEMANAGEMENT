@@ -2,15 +2,11 @@
 
 <%
 	'****************************
-
 	'This code will be used
 	'for login validation
-
 	'****************************
-
 	'Initialize Variables
 	Dim cmd_edit, dr_edit, strSQL_edit
-
 	'Create Objects
 	Set cmd_edit= Server.CreateObject("ADODB.Command")
 	cmd_edit.ActiveConnection =  codemngt

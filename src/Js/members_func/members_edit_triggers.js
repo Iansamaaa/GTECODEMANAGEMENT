@@ -13,9 +13,7 @@ $(function(){
 			aidentifier = "Member Edited";
 			EditMember();
 			MembersLOGS();
-			 setTimeout(function () {
-			 	window.location.reload(true)
-			 }, 1500);
+
 		}
 		}
 	});
@@ -42,6 +40,9 @@ function EditMember(){
 		success: function(data){;
 
 			toastr.success("Member Edited!", "Sucess");
+			setTimeout(function () {
+			 window.location.reload(true)
+			}, 1500);
 			},
 		error:  function(){
 			toastr.warning("Error", "It's Error!");}

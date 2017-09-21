@@ -25,9 +25,7 @@
 	cmd.ActiveConnection =  codemngt
 
 	'QUERY COMMAND
-	strsql = "SELECT * FROM users WHERE Status='1'"
-
-
+	strsql = "SELECT * FROM users WHERE Status='0' "
 	cmd.CommandText = strsql
 	cmd.Prepared = True
 	'EXECUTE COMMAND

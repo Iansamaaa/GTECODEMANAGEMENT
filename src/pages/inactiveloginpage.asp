@@ -14,16 +14,15 @@
     <!--DataTables JS JSON-->
 
     <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
-    <script src='..\Js\members_func\membersDataovveride.js'>
-    </script>
     <script src='..\Js\members_func\members_edit_triggers.js'>
     </script>
-    <script src='..\Js\members_func\members_remove_triggers.js'>
+    <script src='..\Js\members_func\inmembersOverride.js'>
     </script>
     <script src='..\Js\members_func\members_add_triggers.js'>
     </script>
     <script src='..\Js\notification\notification.js'></script>
-
+    <script src='..\Js\members_func\membersreactivate.js'
+>  </script>
 
    <!-- FILES INCLUDED FOR BUTTONS -->
 <!-- FILES INCLUDED FOR TABLES -->
@@ -84,10 +83,10 @@
                 Members</span>
             </a>
             <ul class="sidenav-second-level collapse show" id="collapseMultimember">
-              <li class="active">
+              <li>
                 <a href="loginpage.asp">Active Members</a>
               </li>
-              <li>
+              <li class="active">
                 <a href="inactiveloginpage.asp">Inactive   Members</a>
               </li>
             </ul>
@@ -137,13 +136,12 @@
     <div class="content-wrapper py-3"><!--Start of the Content-->
       <div class="container-fluid" id="CONTAINER3">
         <!-- Example Tables Card -->
-        <div class="card mb-3" id="tablecardsmembers" style="display:none">
-        <div class="card-header gray"><h3 class="fa fa-users">Active Members</h3><br><button id="AddMemberFunc" type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#AddMemberModal" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Members</button>
-
+        <div class="card mb-3" id="tablecardsmembersinactive" style="display:none">
+        <div class="card-header gray"><h3 class="fa fa-users">Inactive Members</h3><br>
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" id="memberTable"  width="inherit" cellspacing="0">
+              <table class="table table-bordered" id="memberinactiveTable"  width="inherit" cellspacing="0">
                 <thead>
                   <tr>
                     <th></th>
@@ -303,22 +301,22 @@
 <!-- END OF ADD MODAL -->
 
 <!--"REMOVEMODAL"-->
-<div id="RemoveMemberModal" class="modal fade RemoveMemberModal editsModal " role="dialog" >
+<div id="ReactivateModal" class="modal fade ReactivateModal editsModal " role="dialog" >
 <div class="modal-dialog modalSIZE">
 <!-- Modal content-->
 <div class="modal-content">
   <div class="modal-header modal-backgroundHeader modal-header-height" >
-      <h5 class="modal-title">Deactivating Member</h5>
+      <h5 class="modal-title">Reactivating Member</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
               </button>
   </div>
   <div class="modal-body">
     <input type="text" class="form-control" id="usntor" style="display:none">
-    <h3> Do you wish to Deactivate this member? </h3>
+    <h3> Do you wish to Reactivate this member? </h3>
   </div>
   <div class="modal-footer modal-backgroundHeader modal-footer-height ">
-      <Button id="modalYESremove" type="submit" class="btn fa fa-check animationButton modalYESremove style_prevu_kit submitMargin" aria-hidden="true"></Button>
+      <Button id="modalYESreactivate" type="submit" class="btn fa fa-check animationButton modalYESreactivate style_prevu_kit submitMargin" aria-hidden="true"></Button>
   </div>
 </div>
 
