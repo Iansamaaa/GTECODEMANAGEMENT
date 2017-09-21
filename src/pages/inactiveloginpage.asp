@@ -87,7 +87,7 @@
                 <a href="loginpage.asp">Active Members</a>
               </li>
               <li class="active">
-                <a href="inactiveloginpage.asp">Inactive   Members</a>
+                <a href="inactiveloginpage.asp">Inactive Members</a>
               </li>
             </ul>
           </li>
@@ -137,7 +137,7 @@
       <div class="container-fluid" id="CONTAINER3">
         <!-- Example Tables Card -->
         <div class="card mb-3" id="tablecardsmembersinactive" style="display:none">
-        <div class="card-header gray"><h3 class="fa fa-users">Inactive Members</h3><br>
+        <div class="card-header gray"><h3><i class="fa fa-users" aria-hidden="true"></i>Inactive Members</h3><br>
           </div>
           <div class="card-body">
             <div class="table-responsive">
