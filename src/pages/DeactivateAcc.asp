@@ -121,9 +121,7 @@
     </nav>
     <div class="content-wrapper py-3  "><!--Start of the Content-->
       <div class="category-body contentColor">
-          <input  type="password" id="currentPass" class="form-control style_prevu_kit_input itextHeight  inputPos currentPass"    name="ChangePass"   placeholder="Current Password"></input>
-              <input  type="password" id="newPass" class="form-control style_prevu_kit_input itextHeight inputtip inputPos"   name="ChangePass" id="changepass"   placeholder="Change Password"></input>
-              <input  type="password" id="confirmPass" class="form-control style_prevu_kit_input itextHeight inputtip inputPos"    name="ChangePass" id="changepass"   placeholder="Confirm Change Password"></input><br>
+          <input  type="password" id="currentPass" class="form-control style_prevu_kit_input itextHeight  inputPos currentPass"    name="ChangePass"   placeholder="Input Current Password"></input>
               <Button id="confirmchangepass" type="submit" class="btn animationButton buttontip confirmchangepass"  aria-hidden="true">Confirm</Button>
       </div>
       <!-- /.container-fluid -->

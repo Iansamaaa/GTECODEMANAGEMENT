@@ -49,7 +49,7 @@ function AddMembers(){
 	var f = $("#frstn").val();
 	var u = $("#usn").val();
 	var e = $("#email").val();
-	var s= "0";
+	var s= "1";
 	var datastring;
 
 	datastring= {firstn: $("#frstn").val(),
