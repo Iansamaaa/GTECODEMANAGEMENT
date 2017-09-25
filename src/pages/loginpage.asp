@@ -23,7 +23,7 @@
     <script src='..\Js\members_func\members_add_triggers.js'>
     </script>
     <script src='..\Js\notification\notification.js'></script>
-
+    <script src='..\Js\members_func\resetPass.js'></script>
 
    <!-- FILES INCLUDED FOR BUTTONS -->
 <!-- FILES INCLUDED FOR TABLES -->
@@ -151,9 +151,11 @@
                   <tr>
                     <th></th>
                     <th></th>
+                    <th></th>
                     <th width="20%">UserName</th>
                     <th width="20%">First Name</th>
                     <th width="25%">Last Name</th>
+                    <th width="25%">Email</th>
                    <th width="20%">Type</th>
                   </tr>
                 </thead>
@@ -328,7 +330,31 @@
 </div>
 </div>
 <!-- END OF REMOVE MODAL -->
-
+<!-- Reset Modal -->
+    <div class="modal fade" id="resetMod" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Reset Password</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="text" class="form-control userR" id="userR" style="display:none">
+            <input type="text" class="form-control firstR" id="firstR" style="display:none">
+            <input type="text" class="form-control lastR" id="lastR" style="display:none">
+            <input type="text" class="form-control emailR" id="emailR" style="display:none">
+            Reset Password of this account?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary confirmReset" id="confirmReset">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- END OF Reset MODAL -->
 <!-- END OF MODALS -->
 
     <!-- Bootstrap core JavaScript -->

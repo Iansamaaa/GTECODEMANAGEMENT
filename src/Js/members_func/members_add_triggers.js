@@ -45,7 +45,7 @@ FUNCTIONS
 //validate to server
 function AddMembers(){
 	//Set Ajax Status
-
+	a="Members Add"
 	var f = $("#frstn").val();
 	var u = $("#usn").val();
 	var e = $("#email").val();
@@ -58,6 +58,7 @@ function AddMembers(){
 				email:$("#email").val(),
 				usn: $("#usn").val(),
 				status:s,
+				act:a,
 				pwds: passgen,
 				atype: radio,
 				};
@@ -102,7 +103,7 @@ function RadioUserType(){
 function SuccessfulAdd(loginstats){
 
 	switch (loginstats){
-		case "y": (toastr.warning("Username has been taken", "Submission Failed"))
+		case "y": (toastr.warning("Username or Email has been taken", "Submission Failed"))
 								;
 				break;
 		case "x": (toastr.success("Member added!", "Success"));

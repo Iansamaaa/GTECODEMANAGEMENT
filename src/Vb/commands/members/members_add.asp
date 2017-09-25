@@ -9,7 +9,7 @@
 	cmd_add.ActiveConnection =  codemngt
 
 	'QUERY COMMAND
-	strSQL_add = "Select * from users where Username = '"&Request("usn")&"'"
+	strSQL_add = "Select * from users where Username = '"&Request("usn")&"' OR Email = '"&Request("email")&"'"
 
 	cmd_add.CommandText = strSQL_add
 	cmd_add.Prepared = True
@@ -57,7 +57,7 @@ function notify()
 	cmd.ActiveConnection =  codemngt
 
 	'QUERY COMMAND
-	strSQL_add = "INSERT INTO notifications_queue(UserID,Details)values('"&Request.Cookies("USERID")&"','"&Request("firstnamexml")&"')"
+	strSQL_add = "INSERT INTO notifications_queue(UserID,Details,Action)values('"&Request.Cookies("USERID")&"','"&Request("firstnamexml")&"','"&Request("act")&"')"
 	cmd.CommandText = strSQL_add
 	cmd.Prepared = True
 	Set dr_add = cmd.Execute()

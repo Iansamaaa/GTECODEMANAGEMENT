@@ -37,11 +37,24 @@ setTimeout(function() { NProgress.done(); $('#tablecardsmembers').show();}, 1000
                      },
                  width:"15px"
             },
+           {
+                  "className":      'details-control',
+                  "orderable":      false,
+                  "data":           null,
+                  "defaultContent": '',
+                  "render": function () {
+                         return '<i class="fa fa-share" aria-hidden="true">';
+                          },
+                  width:"15px"
+                    },
+
 
             { data: "Username" },
             { data: "FirstName" },
             { data: "LastName" },
+            {data:  "Email"},
             { data: "Accounttype"},
+
 
         ],
     select: 'single',
@@ -49,22 +62,32 @@ setTimeout(function() { NProgress.done(); $('#tablecardsmembers').show();}, 1000
 
 
      $('#memberTable tbody').on('click', 'td.details-control3', function () {
-       var F = $(this).closest('tr').find('td:eq(3)').text();
+       var F = $(this).closest('tr').find('td:eq(4)').text();
        $('#firstn').val(F);
-       var L = $(this).closest('tr').find('td:eq(4)').text();
+       var L = $(this).closest('tr').find('td:eq(5)').text();
        $('#lastn').val(L);
-       var U = $(this).closest('tr').find('td:eq(2)').text();
+       var U = $(this).closest('tr').find('td:eq(3)').text();
        $('#usern').val(U);
        $('#editModal').modal('toggle');
 
      });
      $('#memberTable tbody').on('click', 'td.details-control2', function () {
-       var U = $(this).closest('tr').find('td:eq(2)').text();
+       var U = $(this).closest('tr').find('td:eq(3)').text();
        $('#usntor').val(U);
        $('#RemoveMemberModal').modal('toggle');
 
      });
-
+     $('#memberTable tbody').on('click', 'td.details-control', function () {
+       var UR = $(this).closest('tr').find('td:eq(3)').text();
+        $('.userR').val(UR);
+       var R = $(this).closest('tr').find('td:eq(6)').text();
+        $('.emailR').val(R);
+        var F = $(this).closest('tr').find('td:eq(4)').text();
+         $('.firstR').val(F);
+         var L = $(this).closest('tr').find('td:eq(5)').text();
+          $('.lastR').val(L);
+       $('#resetMod').modal('toggle');
+     });
 
 
   });
