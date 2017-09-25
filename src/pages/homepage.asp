@@ -35,9 +35,6 @@
     <!-- SESSIONS -->
     <script src="../Js/sessions/sessions.pages.js"></script>
 
-<!--Template Func-->
-<script src='..\Js\template_func.js'></script>
-
 
 
     <!-- TOAST FILES -->
