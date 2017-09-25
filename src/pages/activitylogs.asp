@@ -106,6 +106,9 @@
               <li>
                 <a href="settingschangepass.asp">Change Password</a>
               </li>
+              <li>
+                <a href="DeactivateAcc.asp">Deactivate Account</a>
+              </li>
             </ul>
           </li>
         </ul>

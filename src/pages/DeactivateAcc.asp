@@ -13,8 +13,7 @@
     <!--DataTables JS JSON-->
 
     <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
-    <script src='..\Js\members_func\changepass.js'></script>
-
+    <script src='..\Js\members_func\memdeact.js'></script>
    <!-- FILES INCLUDED FOR BUTTONS -->
 <!-- FILES INCLUDED FOR TABLES -->
 
@@ -39,7 +38,7 @@
 <script src="../Js/members_func/toast_members.js"></script>
 
  <!-- SESSIONS -->
-    <script src="../Js/sessions/usersession.js"></script>
+    <script src="../Js/sessions/sessions.pages.js"></script>
 
 <!-- LOADINGPLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
@@ -51,6 +50,7 @@
     <link rel="stylesheet" href='pagedesigns\css\modalstyle.css' />
 
     <!-- Navigation -->
+   <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
       <a class="navbar-brand" href="#"><i class="fa fa-television" aria-hidden="true"></i> Code Management System</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,22 +59,29 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Codes">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
+            <a class="nav-link" href="homepage.asp">
               <i class="fa fa-code" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Codes</span>
             </a>
-            <ul class="sidenav-second-level collapse" id="collapseComponents">
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Members">
+            <a id="mems" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMultimember">
+              <i class="fa fa-users" aria-hidden="true"></i>
+              <span class="nav-link-text">
+                Members</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseMultimember">
               <li>
-                <a href="homepage.user.asp" class="nav-item active">&nbsp;View Codes</a>
+                <a href="loginpage.asp">Active Members</a>
               </li>
               <li>
-                <a href="codeadded.asp" class="nav-item active">&nbsp;Added Codes</a>
+                <a href="inactiveloginpage.asp">Inactive   Members</a>
               </li>
             </ul>
           </li>
-             <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Activity Logs">
-            <a class="nav-link" href="activitylogs.user.asp">
+               <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Activity Logs">
+            <a class="nav-link" href="activitylogs.asp">
               <i class="fa fa-file-text-o" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Activity Logs</span>
@@ -88,10 +95,10 @@
                 Settings</span>
             </a>
             <ul class="sidenav-second-level" id="collapseMulti">
-              <li class="active">
-                <a href="settingschangepassuser.asp">Change Password</a>
+              <li >
+                <a href="settingschangepass.asp">Change Password</a>
               </li>
-              <li>
+              <li class="active">
                 <a href="DeactivateAcc.asp">Deactivate Account</a>
               </li>
             </ul>
@@ -119,10 +126,13 @@
         </ul> <!--End of UL-->
       </div>
     </nav>
+
+
+
     <div class="content-wrapper py-3  "><!--Start of the Content-->
       <div class="category-body contentColor">
-          <input  type="password" id="currentPass" class="form-control style_prevu_kit_input itextHeight  inputPos currentPass"    name="ChangePass"   placeholder="Input Current Password"></input>
-              <Button id="confirmchangepass" type="submit" class="btn animationButton buttontip confirmchangepass"  aria-hidden="true">Confirm</Button>
+          <input  type="password" id="currentPass" class="form-control style_prevu_kit_input itextHeight  inputPos currentPass"    name="ChangePass"   placeholder="Input Current Password"></input><br>
+              <Button id="confirmdeact" type="submit" class="btn animationButton buttontip confirmchangepass"  aria-hidden="true">Confirm</Button>
       </div>
       <!-- /.container-fluid -->
     </div>
@@ -140,6 +150,29 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Select "Logout" below if you are ready to end your current session.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <form action="Logout.asp">
+                <button type="submit" class="btn btn-primary">Logout</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <!-- Deactivate Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Account Deactivated</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>

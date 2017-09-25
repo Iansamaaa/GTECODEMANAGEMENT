@@ -9,13 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Code Management System</title>
-      <link rel="SHORTCUT ICON" href="Index/css/img03.ico" type="image/x-icon">
 
     <!--DataTables JS JSON-->
 
     <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
-    <script src='..\Js\members_func\changepass.js'></script>
-
+    <script src='..\Js\members_func\memdeact.js'></script>
    <!-- FILES INCLUDED FOR BUTTONS -->
 <!-- FILES INCLUDED FOR TABLES -->
 
@@ -33,16 +31,15 @@
 <!-- TableSizeandContentsIzes -->
 <link href="pagedesigns/css/tablesizes.css" rel="stylesheet">
 
-<!--Template Func-->
-
 
 <!-- TOAST FILES -->
 <link href="../Js/plugins/toastr/build/toastr.min.css" rel="stylesheet"/>
 <script src="../Js/plugins/toastr/build/toastr.min.js"></script>
 <script src="../Js/members_func/toast_members.js"></script>
 
-<!-- SESSIONS -->
-<script src="../Js/sessions/sessions.pages.js"></script>
+ <!-- SESSIONS -->
+    <script src="../Js/sessions/usersession.js"></script>
+
 <!-- LOADINGPLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
     <link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
@@ -60,54 +57,48 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
-          <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Codes">
-            <a class="nav-link" href="homepage.asp">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Codes">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
               <i class="fa fa-code" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Codes</span>
             </a>
-          </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Members">
-            <a id="mems" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMultimember">
-              <i class="fa fa-users" aria-hidden="true"></i>
-              <span class="nav-link-text">
-                Members</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseMultimember">
+            <ul class="sidenav-second-level collapse" id="collapseComponents">
               <li>
-                <a href="loginpage.asp">Active Members</a>
+                <a href="homepage.user.asp" class="nav-item active">&nbsp;View Codes</a>
               </li>
               <li>
-                <a href="inactiveloginpage.asp">Inactive Members</a>
+                <a href="codeadded.asp" class="nav-item active">&nbsp;Added Codes</a>
               </li>
             </ul>
           </li>
              <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Activity Logs">
-            <a class="nav-link" href="activitylogs.asp">
+            <a class="nav-link" href="activitylogs.user.asp">
               <i class="fa fa-file-text-o" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Activity Logs</span>
             </a>
           </li>
-            <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Settings">
-            <a id="sett" class="nav-link nav-link-collapse sett" data-toggle="collapse" href="#collapseMulti">
-              <i class="fa fa-cog " aria-hidden="true"></i>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
+            <a id="sett" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+              <i class="fa fa-cog" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Settings</span>
             </a>
             <ul class="sidenav-second-level" id="collapseMulti">
-              <li class = "active">
-                <a href="settingschangepass.asp">Change Password</a>
+              <li >
+                <a href="settingschangepassuser.asp">Change Password</a>
               </li>
-                <li>
-                <a href="DeactivateAcc.asp">Deactivate Account</a>
+              <li class="active">
+                <a href="DeactivateAcc.user.asp">Deactivate Account</a>
               </li>
             </ul>
           </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
           <li class="nav-item">
-            <a class="nav-link text-center sidenavtoggle" id="sidenavToggler">
+            <a class="nav-link text-center" id="sidenavToggler">
               <i class="fa fa-fw fa-angle-left"></i>
             </a>
           </li>
@@ -128,11 +119,9 @@
       </div>
     </nav>
     <div class="content-wrapper py-3  "><!--Start of the Content-->
-      <div class="category-body contentColor" style="display:none">
-          <input  type="password" id="currentPass" class="form-control style_prevu_kit_input itextHeight  inputPos currentPass"    name="ChangePass"   placeholder="Current Password"></input>
-              <input  type="password" id="newPass" class="form-control style_prevu_kit_input itextHeight inputtip inputPos newPass"   name="ChangePass" id="changepass"   placeholder="Change Password"></input>
-              <input  type="password" id="confirmPass" class="form-control style_prevu_kit_input itextHeight inputtip inputPos confirmPass"    name="ChangePass" id="changepass"   placeholder="Confirm Change Password"></input><br>
-              <Button id="confirmchangepass" type="submit" class="btn animationButton buttontip confirmchangepass"  aria-hidden="true">Confirm</Button>
+      <div class="category-body contentColor">
+          <input  type="password" id="currentPass" class="form-control style_prevu_kit_input itextHeight  inputPos currentPass"    name="ChangePass"   placeholder="Input Current Password"></input><br>
+              <Button id="confirmdeact" type="submit" class="btn animationButton buttontip confirmchangepass"  aria-hidden="true">Confirm</Button>
       </div>
       <!-- /.container-fluid -->
     </div>
@@ -167,6 +156,28 @@
           </div>
         </div>
 
+    <!-- Deactivate Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Account Deactivated</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Select "Logout" below if you are ready to end your current session.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <form action="Logout.asp">
+                <button type="submit" class="btn btn-primary">Logout</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
     <!-- Bootstrap core JavaScript -->
     <script src="pagedesigns/vendor/jquery/jquery.min.js"></script>
     <script src="pagedesigns/vendor/popper/popper.min.js"></script>
@@ -176,10 +187,14 @@
     <script src="pagedesigns/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="pagedesigns/vendor/datatables/jquery.dataTables.js"></script>
     <script src="pagedesigns/vendor/datatables/dataTables.bootstrap4.js"></script>
-          <script src='..\Js\template_func.js'></script>
-    <!-- Custom scripts for this template -->
-    <script src="pagedesigns/js/sb-admin.min.js"></script>
 
+        <!-- Plugin JavaScript -->
+        <script src="pagedesigns/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="pagedesigns/vendor/datatables/jquery.dataTables.js"></script>
+        <script src="pagedesigns/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+        <!-- Custom scripts for this template -->
+        <script src="pagedesigns/js/sb-admin.min.js"></script>
 
 
 

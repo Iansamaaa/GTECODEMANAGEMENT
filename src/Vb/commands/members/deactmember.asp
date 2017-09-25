@@ -1,0 +1,52 @@
+<!--#include file='..\..\..\connections\dsn.asp'-->
+<%
+
+
+
+
+    Dim cmd_add, dr_add, strSQL_add
+    Dim currentlogin
+
+	'Create Objects
+	Set cmd_add = Server.CreateObject("ADODB.Command")
+	cmd_add.ActiveConnection =  codemngt
+
+	'QUERY COMMAND
+	strSQL_add = "Select * from users where Password = SHA1('"&Request("current")&"')"
+	cmd_add.CommandText = strSQL_add
+	cmd_add.Prepared = True
+	Set dr_add = cmd_add.Execute()
+	if NOT dr_add.EOF then
+     		deactmember()
+     		Response.Cookies("USERNAME").Expires = DateAdd("d",-1,now())
+			Response.Cookies("USERTYPE").Expires = DateAdd("d",-1,now())
+			Response.Cookies("FIRSTNAME").Expires = DateAdd("d",-1,now())
+			Response.Cookies("USERID").Expires = DateAdd("d",-1,now())
+			response.write "x"
+			Else
+			response.write "y"
+			end if
+
+	'****************************
+	'This code will be used
+        'for changepass validation
+
+	'****************************
+function deactmember()
+	'Initialize Variables
+	Dim cmd_deact, dr_deact, strSQL_deact
+
+	'Create Objects
+	Set cmd_deact= Server.CreateObject("ADODB.Command")
+	cmd_deact.ActiveConnection =  codemngt
+	'QUERY COMMAND
+	strSQL_deact= "UPDATE users SET Status='0' WHERE Username='"&Request.Cookies("USERNAME")&"'"
+
+	cmd_deact.CommandText = strSQL_deact
+	cmd_deact.Prepared = True
+
+	'EXECUTE COMMAND
+	Set dr_deact= cmd_deact.Execute()
+end function
+
+%>

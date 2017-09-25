@@ -97,7 +97,7 @@
                 <a href="settingschangepassuser.asp">Change Password</a>
               </li>
               <li>
-                <a href="DeactivateAcc.asp">Deactivate Account</a>
+                <a href="DeactivateAcc.user.asp">Deactivate Account</a>
               </li>
             </ul>
           </li>
