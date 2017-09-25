@@ -176,7 +176,6 @@
     <script src="pagedesigns/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="pagedesigns/vendor/datatables/jquery.dataTables.js"></script>
     <script src="pagedesigns/vendor/datatables/dataTables.bootstrap4.js"></script>
-          <script src='..\Js\template_func.js'></script>
     <!-- Custom scripts for this template -->
     <script src="pagedesigns/js/sb-admin.min.js"></script>
 

@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Code Management System</title>
+    <link rel="SHORTCUT ICON" href="Index/css/img03.ico" type="image/x-icon">
 
     <!--DataTables JS JSON-->
 

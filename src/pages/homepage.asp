@@ -301,7 +301,7 @@
             </button>
           </div>
           <div class="modal-body">
-          <textarea class="form-control" id="codeTA" Placeholder="Code Description" disabled></textarea>
+          <textarea class="form-control desc" id="codeTA" Placeholder="Code Description" disabled><p></p></textarea>
 
           <form class="form-inline">
           <input type="text" class="form-control" id="viewC" style="display:none">

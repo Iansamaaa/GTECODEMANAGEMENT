@@ -7,7 +7,7 @@ NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
 
 
-
+// DATA IN THE DATA TABLES
   tblpending = $("#dataTable").DataTable( {
       dom: "Bfrtip",
         //"processing": true,
@@ -74,20 +74,21 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
        } ],
     select: 'single',
      });
-
+// VIEWW FUNCTION
     $('#dataTable tbody').on('click', 'td.details-control', function () {
       var HAHA = $(this).closest('tr').find('td:eq(3)').text();
       $('#viewC').text(HAHA);
       Modalview(HAHA);
       $('#viewModal').modal('toggle');
   });
+// REMOVE CODE FUNCTION
 
       $('#dataTable tbody').on('click', 'td.details-control2', function () {
       var KAFOY = $(this).closest('tr').find('td:eq(3)').text();
       $('#IDrecord').val(KAFOY);
       $('#removeModal').modal('toggle');
   });
-
+// EDIT CODE FUNCTION
      $('#dataTable tbody').on('click', 'td.details-control3', function () {
       var KAFOY = $(this).closest('tr').find('td:eq(3)').text();
       var A = $(this).closest('tr').find('td:eq(4)').text();
@@ -139,6 +140,7 @@ function Modalview1(value){
     success: function(data){
 
       $('#edit_codedesc').val(atob(data));
+
 
       },
     error:  function(){
