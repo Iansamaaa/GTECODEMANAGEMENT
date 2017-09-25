@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <title>Code Management System</title>
   <link rel="SHORTCUT ICON" href="css/img03.ico" type="image/x-icon">
-  
-  
-  
+
+
+
       <style>
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
       @import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
@@ -170,6 +170,8 @@ body{
     <script src="../../Js/plugins/nprogress-master/nprogress.js"></script>
     <link rel="stylesheet" href="../../Js/plugins/nprogress-master/nprogress.css">
 
+
+
 </head>
 
 <body>
@@ -178,14 +180,14 @@ body{
 		<div class="header">
 			<div>Code&nbsp;<br><span>Management</span><br>System</div>
 		</div>
-	
+
 		<div class="login">
-				<input type="text" placeholder="username" name="user" id="username"><br>
+				<input type="text" maxlength="15"   onkeyup="this.value = this.value.replace(/[^A-Za-z0-9]  /, '')"  onkeypress="this.value = this.value.replace(/[^A-Za-z0-9]/, '')" placeholder="username" name="user" id="username"><br>
 				<input type="password" placeholder="password" name="password" id="password"><br>
 				<input type="button" value="Login" id="subINDEX">
 		</div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-  
+
 </body>
 </html>

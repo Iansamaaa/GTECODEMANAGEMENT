@@ -1,17 +1,18 @@
 $(function(){
 	NProgress.start();
 	$(document).ready(function(){
+
    	setTimeout(function() { NProgress.done(); }, 1000);
-  
-	
+
+
 		$("#subINDEX").bind({
-		
+
 			click:function(){
 			 validate_login();
 			}
-		
+
 		});
-		
+
 		//Keypress Enter
 		$("#username, #password").bind({
 			keypress: function(e){
@@ -20,7 +21,7 @@ $(function(){
 				}
 			}
 		});
-		
+
 	}); // End of document ready
 
 }); // End of jQuery function
@@ -32,29 +33,29 @@ FUNCTIONS
 //check_fields
 //validate to server
 function validate_login(){
-	
+
 	//Set Ajax Status
 	var datastring;
-	datastring= {user: $("#username").val(), 
-				pass: $("#password").val(), 
+	datastring= {user: $("#username").val(),
+				pass: $("#password").val(),
 				e: Number(new Date())};
-	
+
 	$.ajax({
 		type: "POST",
 		url: "../../../Vb/session/login.asp",
 		data: datastring,
 		async: false,
 		success: function(data){redirect_login(data);
-			}, 
+			},
 		error:  function(){
 			toastr.warning("Account not found");}
 	})
-						
+
 }
 
 //redirect login
 function redirect_login(loginstat){
-	
+
 	switch (loginstat){
 		case 'x':NProgress.start();
    				 setTimeout(function() { NProgress.done(); toastr.warning("Username or Password is Incorrect", "Check Fields"); }, 500);
