@@ -42,20 +42,13 @@
     <link href="../Js/plugins/toastr/build/toastr.min.css" rel="stylesheet"/>
     <script src="../Js/plugins/toastr/build/toastr.min.js"></script>
     <script src="../Js/members_func/toast_members.js"></script>
-
-    <!-- TRIGGERS -->
-    <script type= "text/javascript" src="../Js/CodesJs/codeaddjs.js"></script>
-    <script type= "text/javascript" src="../Js/CodesJs/coderemove.js"></script>
-    <script type= "text/javascript" src="../Js/CodesJs/codeview.js"></script>
-    <script type= "text/javascript" src="../Js/CodesJs/codeedit.js"></script>
-
     <!-- PLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
     <link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
 
 
     <!-- JS -->
-    <script src="../Js/activitylogsjs/activitylogs.js"></script>
+    <script src="../Js/activitylogsjs/activitylogs.user.js"></script>
   </head>
 
   <body class="fixed-nav" id="page-top">

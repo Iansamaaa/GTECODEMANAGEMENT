@@ -18,6 +18,7 @@
 	Set dr_add = cmd_add.Execute()
 	if NOT dr_add.EOF then
      		deactmember()
+     		activity_logs()
      		Response.Cookies("USERNAME").Expires = DateAdd("d",-1,now())
 			Response.Cookies("USERTYPE").Expires = DateAdd("d",-1,now())
 			Response.Cookies("FIRSTNAME").Expires = DateAdd("d",-1,now())
@@ -49,4 +50,24 @@ function deactmember()
 	Set dr_deact= cmd_deact.Execute()
 end function
 
+function activity_logs()
+Dim cmd_act, dr_act, strSQL_act
+	
+	'Create Objects
+	Set cmd= Server.CreateObject("ADODB.Command")
+	cmd.ActiveConnection =  codemngt
+	
+	'QUERY COMMAND
+
+	strSQL_act = "INSERT into actlogs (ACTuser, ACTdate, ACTdescription) values ('"&Request.Cookies("USERNAME")&"', NOW(), 'Has deactivated')"
+
+	cmd.CommandText = strSQL_act
+	
+	cmd.Prepared = True
+	
+	
+	Set dr_add = cmd.Execute()
+end function 
 %>
+%>
+
