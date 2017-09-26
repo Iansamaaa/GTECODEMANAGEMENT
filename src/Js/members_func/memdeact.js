@@ -69,7 +69,9 @@ function deact_status(changep){
 
 	switch (changep){
 
-		case 'x': toastr.success("Deactivation Success","Thank you");
+		case 'x':
+				$('#deactivateModal').modal('toggle'); 
+				toastr.success("Deactivation Success","Thank you");
 				 NProgress.start();
    				 setTimeout(function() { NProgress.done(); window.location="Index/index.asp"; }, 2000);
 				break;

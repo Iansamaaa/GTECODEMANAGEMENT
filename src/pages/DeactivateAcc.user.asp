@@ -52,7 +52,7 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-      <a class="navbar-brand" href="#"><i class="fa fa-television" aria-hidden="true"></i> Code Management System</a>
+      <a class="navbar-brand" href="homepage.user.asp"><i class="fa fa-television" aria-hidden="true"></i> Code Management System</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -119,14 +119,13 @@
         </ul> <!--End of UL-->
       </div>
     </nav>
-    <div class="content-wrapper py-3  "><!--Start of the Content-->
+     <div class="content-wrapper py-3  "><!--Start of the Content-->
       <div class="category-body contentColor">
           <input  type="password" id="currentPass" class="form-control style_prevu_kit_input itextHeight  inputPos currentPass"    name="ChangePass"   placeholder="Input Current Password"></input><br>
-              <Button id="confirmdeact" type="submit" class="btn animationButton buttontip confirmchangepass"  aria-hidden="true">Confirm</Button>
+              <Button id="confirmdeact" type="submit" class="btn animationButton buttontip confirmchangepass"  aria-hidden="true" data-toggle="modal" data-target="#deactivateModal">Confirm</Button>
       </div>
       <!-- /.container-fluid -->
     </div>
-    <!-- /.content-wrapper -->
 
     <!-- Scroll to Top Button -->
     <a class="scroll-to-top rounded" href="#page-top">
@@ -157,28 +156,31 @@
           </div>
         </div>
 
+    
     <!-- Deactivate Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" class="deactivateModal" id="deactivateModal" tabindex="-1" role="dialog"  aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Account Deactivated</h5>
+                <h5 class="modal-title" >Account Deactivation</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                Select "Logout" below if you are ready to end your current session.
+                Are you sure to deactivate your account?You can request admin to reactivate
+                your account.
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <form action="Logout.asp">
-                <button type="submit" class="btn btn-primary">Logout</button>
+                <button type="submit" class="btn btn-primary confirmingDeactivate">Confirm</button>
                 </form>
               </div>
             </div>
           </div>
         </div>
+
+
     <!-- Bootstrap core JavaScript -->
     <script src="pagedesigns/vendor/jquery/jquery.min.js"></script>
     <script src="pagedesigns/vendor/popper/popper.min.js"></script>

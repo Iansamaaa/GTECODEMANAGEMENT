@@ -6,7 +6,6 @@ $(function(){
 		 var Remm = $("#usntor").val();
 		 memREM(Remm);
 		 aidentifier = "Member Reactivated";
-		 MembersLOGS();
 	 }
  });
 
