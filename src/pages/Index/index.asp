@@ -182,7 +182,7 @@ body{
 		</div>
 
 		<div class="login">
-				<input type="text" maxlength="15"   onkeyup="this.value = this.value.replace(/[^A-Za-z0-9]  /, '')"  onkeypress="this.value = this.value.replace(/[^A-Za-z0-9]/, '')" placeholder="username" name="user" id="username"><br>
+				<input type="text" maxlength="15" class="userinput"  placeholder="username" name="user" id="userinput"><br>
 				<input type="password" placeholder="password" name="password" id="password"><br>
 				<input type="button" value="Login" id="subINDEX">
 		</div>
