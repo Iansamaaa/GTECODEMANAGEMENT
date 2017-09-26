@@ -349,7 +349,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary confirmReset" id="confirmReset">Done</button>
+            <button type="submit" class="btn btn-primary confirmReset" id="confirmReset">Confirm</button>
           </div>
         </div>
       </div>
