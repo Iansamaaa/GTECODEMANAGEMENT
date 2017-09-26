@@ -61,7 +61,7 @@
   	cmd.ActiveConnection =  codemngt
 
   	'QUERY COMMAND
-  	strSQL_add = "INSERT INTO notifications_queue(UserID,Details,Action)values('"&Request.Cookies("USERID")&"','"&Request("firstnamexml")&"','"&Request("act")&"')"
+  	strSQL_add = "INSERT INTO notifications_queue(UserID,Details,Action,Status)values('"&Request.Cookies("USERID")&"','"&Request("firstnamexml")&"','"&Request("act")&"','"&Request("status1")&"')"
   	cmd.CommandText = strSQL_add
   	cmd.Prepared = True
   	Set dr_add = cmd.Execute()

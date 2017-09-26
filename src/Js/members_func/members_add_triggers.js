@@ -1,3 +1,4 @@
+var stat="Pending";
 $(function(){
 	$(document).ready(function(){
 		$(".modalSubmitMem").bind({
@@ -52,6 +53,7 @@ function AddMembers(){
 	var u = $("#usn").val();
 	var e = $("#email").val();
 	var s= "1";
+
 	var datastring;
 
 	datastring= {firstn: $("#frstn").val(),
@@ -60,6 +62,7 @@ function AddMembers(){
 				email:$("#email").val(),
 				usn: $("#usn").val(),
 				status:s,
+				status1:stat,
 				act:a,
 				pwds: passgen,
 				atype: radio,

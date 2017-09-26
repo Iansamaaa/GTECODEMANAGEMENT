@@ -1,4 +1,5 @@
   var a = "Reset Password"
+
 $(function(){
 	$(document).ready(function(){
 		$("#confirmReset").bind({
@@ -24,6 +25,7 @@ function resetPassword(){
         firstR: f,
 				firstnamexml:"<firstname>"+f+"</firstname>"+"<email>"+e+"</email>"+"<username>"+u+"</username>"+"<password>"+passgen+"</password>",
 				status:s,
+        status1:stat,
         emels:e,
         act:a,
 				passnew: passgen,
