@@ -7,12 +7,12 @@ $(function(){
 		 memREM(Remm);
 		 aidentifier = "Member Removed";
 		 MembersLOGS();
+		 $('#RemoveMemberModal').modal('hide');
 	 }
  });
 
 	}); // End of document ready]
 });
-
 /**********
 FUNCTIONS
 **********/
@@ -34,7 +34,7 @@ function memREM(yow){
 		async: false,
 		success: function(data){;
 			toastr.success("Member Removed!", "Success");
-			$('#RemoveMemberModal').modal('toggle');
+
 			 window.setTimeout(function(){window.location="../../pages/loginpage.asp"
 },2000);
 			},

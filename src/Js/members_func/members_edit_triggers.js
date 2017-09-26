@@ -13,6 +13,7 @@ $(function(){
 			aidentifier = "Member Edited";
 			EditMember();
 			MembersLOGS();
+			$('#editModal').modal('hide');
 
 		}
 		}

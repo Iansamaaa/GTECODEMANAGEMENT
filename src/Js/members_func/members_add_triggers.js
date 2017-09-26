@@ -28,6 +28,8 @@ $(function(){
 		else
 		{
 				AddMembers();
+				$('#AddMemberModal').modal('hide');
+				window.setTimeout(function(){location.reload()},2000);
 
 		}
 		}
@@ -70,8 +72,6 @@ function AddMembers(){
 		async: false,
 		success: function(data){
 			SuccessfulAdd(data)
-			$('#AddMemberModal').modal('toggle');
-			window.setTimeout(function(){location.reload()},2000);
 			},
 		error:  function(){
 			}

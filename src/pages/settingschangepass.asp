@@ -129,10 +129,10 @@
     </nav>
     <div class="content-wrapper py-3  "><!--Start of the Content-->
       <div class="category-body contentColor" style="display:none">
-          <input  type="password" id="currentPass" class="form-control style_prevu_kit_input itextHeight  inputPos currentPass"    name="ChangePass"   placeholder="Current Password"></input>
-              <input  type="password" id="newPass" class="form-control style_prevu_kit_input itextHeight inputtip inputPos newPass"   name="ChangePass" id="changepass"   placeholder="Change Password"></input>
-              <input  type="password" id="confirmPass" class="form-control style_prevu_kit_input itextHeight inputtip inputPos confirmPass"    name="ChangePass" id="changepass"   placeholder="Confirm Change Password"></input><br>
-              <Button id="confirmchangepass" type="submit" class="btn animationButton buttontip confirmchangepass"  aria-hidden="true">Confirm</Button>
+          <input  type="password" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="currentPass" class="form-control style_prevu_kit_input itextHeight  inputPos currentPass"    name="ChangePass"   placeholder="Current Password"></input>
+              <input  type="password"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="newPass" class="form-control style_prevu_kit_input itextHeight inputtip inputPos newPass"   name="ChangePass" id="changepass"   placeholder="Change Password"></input>
+              <input  type="password" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="confirmPass" class="form-control style_prevu_kit_input itextHeight inputtip inputPos confirmPass"    name="ChangePass" id="changepass"   placeholder="Confirm Change Password"></input><br>
+              <Button id="confirmchangepass" data-toggle="modal"  data-target="#modalChangePass" type="submit" class="btn animationButton buttontip confirmchangepass"  aria-hidden="true">Confirm</Button>
       </div>
       <!-- /.container-fluid -->
     </div>
@@ -142,6 +142,37 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
+
+
+    <!-- Logout Modal -->
+        <div class="modal fade" id="modalChangePass" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" >Confirm Changing Pass</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Confirm Changing of Pass?Are you Sure?.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary confirmingChangePass">Confirm</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
 
 
     <!-- Logout Modal -->

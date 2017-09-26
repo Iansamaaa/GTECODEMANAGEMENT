@@ -7,7 +7,7 @@ $(function(){
 		}
 
 		setTimeout(function() { NProgress.done(); $('.contentColor').show();}, 1000);
-		$(".confirmchangepass").bind({
+		$(".confirmingChangePass").bind({
 		click:function(){
     	var regx = /^[0-9 ]/;
 		if($('.currentpass').val()==''  || $('#newPass').val()=='' || $('#confirmPass').val()=='')
@@ -21,8 +21,8 @@ $(function(){
 		}
 		else
 		{
-
 				changepass();
+
 		}
 		}
 
@@ -34,7 +34,9 @@ $(function(){
 			$(".currentpass, .newPass,.confirmPass").bind({
 				keypress: function(e){
 					if (e.which == 13){
-						changepass();
+						$('#modalChangePass').modal('toggle');
+
+
 					}
 				}
 			});

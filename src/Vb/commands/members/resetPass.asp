@@ -9,7 +9,7 @@
 	Set cmd_add = Server.CreateObject("ADODB.Command")
 	cmd_add.ActiveConnection =  codemngt
 	'QUERY COMMAND
-	strSQL_add = "Select * from users where Email = '"&Request("emels")&"'"
+	strSQL_add = "Select * from users where Username = '"&Request("userR")&"'"
 
 	cmd_add.CommandText = strSQL_add
 	cmd_add.Prepared = True

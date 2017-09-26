@@ -9,7 +9,7 @@
 	cmd_add.ActiveConnection =  codemngt
 
 	'QUERY COMMAND
-	strSQL_add = "Select * from users where Username = '"&Request("usn")&"' OR Email = '"&Request("email")&"'"
+	strSQL_add = "Select * from users where Username = '"&Request("usn")&"'"
 
 	cmd_add.CommandText = strSQL_add
 	cmd_add.Prepared = True

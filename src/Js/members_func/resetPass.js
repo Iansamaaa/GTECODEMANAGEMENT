@@ -4,6 +4,7 @@ $(function(){
 		$("#confirmReset").bind({
 		click:function(){
       resetPassword();
+      $('#resetMod').modal('hide');
 		}
 	});
 	}); // End of document ready]

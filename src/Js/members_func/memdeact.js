@@ -7,7 +7,7 @@ $(function(){
 		}
 
 		setTimeout(function() { NProgress.done(); $('.contentColor').show();}, 1000);
-		$("#confirmdeact").bind({
+		$(".confirmingDeactivate").bind({
 		click:function(){
     	var regx = /^[0-9 ]/;
 		if($('#currentPass').val()=='')
@@ -17,7 +17,7 @@ $(function(){
 		}
 		else
 		{
-				deactacct();
+				 deactacct();
 		}
 		}
 
@@ -30,7 +30,7 @@ $(function(){
 	$(".currentpass").bind({
 				keypress: function(e){
 					if (e.which == 13){
-						deactacct();
+						$('#deactivateModal').modal('toggle');
 					}
 				}
 	});
