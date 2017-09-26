@@ -7,7 +7,7 @@ $(function(){
 		 memREM(Remm);
 		 aidentifier = "Member Removed";
 		 MembersLOGS();
-		 $('#RemoveMemberModal').modal('hide');
+		 
 	 }
  });
 
@@ -33,8 +33,8 @@ function memREM(yow){
 		data: datastring,
 		async: false,
 		success: function(data){;
-			toastr.success("Member Removed!", "Success");
-
+			toastr.success("Member Deactivated", "Success");
+			$('#RemoveMemberModal').modal('hide');
 			 window.setTimeout(function(){window.location="../../pages/loginpage.asp"
 },2000);
 			},

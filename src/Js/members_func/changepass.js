@@ -82,6 +82,7 @@ function change_status(changep){
 	switch (changep){
 
 		case 'x': toastr.success("Change Success");
+				  $('#modalChangePass').modal('toggle');
 				break;
 		case 'y': toastr.warning("Password not updated: Check Current Password")
 				break;
