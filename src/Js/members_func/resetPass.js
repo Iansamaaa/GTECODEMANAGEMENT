@@ -50,7 +50,7 @@ function resetPassword(){
     				break;
     		case "x": (toastr.success("Successfully Change!", "Success"));
     				break;
-    		default:  toastr.warning("Not Succesful. (Please check CAPS LOCK)", "Authentication Failed");
+
 
     	}
     }

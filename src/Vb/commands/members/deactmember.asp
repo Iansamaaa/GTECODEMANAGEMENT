@@ -52,22 +52,20 @@ end function
 
 function activity_logs()
 Dim cmd_act, dr_act, strSQL_act
-	
+
 	'Create Objects
 	Set cmd= Server.CreateObject("ADODB.Command")
 	cmd.ActiveConnection =  codemngt
-	
+
 	'QUERY COMMAND
 
 	strSQL_act = "INSERT into actlogs (ACTuser, ACTdate, ACTdescription) values ('"&Request.Cookies("USERNAME")&"', NOW(), 'Has deactivated')"
 
 	cmd.CommandText = strSQL_act
-	
-	cmd.Prepared = True
-	
-	
-	Set dr_add = cmd.Execute()
-end function 
-%>
-%>
 
+	cmd.Prepared = True
+
+
+	Set dr_add = cmd.Execute()
+end function
+%>

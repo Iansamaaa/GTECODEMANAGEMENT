@@ -87,4 +87,3 @@ Dim cmd_act, dr_act, strSQL_act
 	Set dr_add = cmd.Execute()
 end function
 %>
-%>
