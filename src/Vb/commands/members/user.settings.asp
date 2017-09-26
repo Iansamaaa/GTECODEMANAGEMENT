@@ -19,6 +19,7 @@
 	Set dr_add = cmd_add.Execute()
 	if NOT dr_add.EOF then
       changepass()
+      activity_logs()
 			response.write "x"
 			Else
 			response.write "y"
@@ -46,4 +47,23 @@ function changepass()
 	Set dr_change= cmd_change.Execute()
 end function
 
+function activity_logs()
+Dim cmd_act, dr_act, strSQL_act
+	
+	'Create Objects
+	Set cmd= Server.CreateObject("ADODB.Command")
+	cmd.ActiveConnection =  codemngt
+	
+	'QUERY COMMAND
+
+	strSQL_act = "INSERT into actlogs (ACTuser, ACTdate, ACTdescription) values ('"&Request.Cookies("USERNAME")&"', NOW(), 'Has changed password')"
+
+	cmd.CommandText = strSQL_act
+	
+	cmd.Prepared = True
+	
+	
+	Set dr_add = cmd.Execute()
+end function 
+%>
 %>
