@@ -48,7 +48,11 @@
     <!-- PLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
     <link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
-    <script src="../Js/plugins/cookies.js"></script>
+  
+      <script src="../Js/plugins/moment.js"></script>
+
+
+
 
     <!-- JS -->
     <script src="../Js/UserCodesJs/codesview.user.js"></script>

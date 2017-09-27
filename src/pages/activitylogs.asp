@@ -51,6 +51,8 @@
     <!-- PLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
     <link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
+    <script src="../Js/plugins/moment.js"></script>
+
 
 
     <!-- JS -->
@@ -151,7 +153,7 @@
                   <tr>
                     <th></th>
                     <th width="20%">User</th>
-                    <th width="20%">Activity date</th>
+                    <th width="20%" class="sorting_desc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Activity date: activate to sort column ascending" style="width: 0px;" aria-sort="descending">Activity date</th>
                     <th>Description</th>
                   </tr>
                 </thead>

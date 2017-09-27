@@ -196,42 +196,13 @@
 
       </div>
       <div class="modal-footer modal-backgroundHeader modal-footer-height ">
-        <Button id="modalBan" type="submit" class="btn fa fa-ban animationButton style_prevu_kit" aria-hidden="true"></Button>
+        <Button id="modalBan" type="submit" class="btn fa fa-ban animationButton style_prevu_kit" aria-hidden="true" data-dismiss="modal"></Button>
           <Button id="modalSubmit" type="submit" class="btn fa fa-check animationButton style_prevu_kit submitMargin modalSubmit" aria-hidden="true"></Button>
       </div>
     </div>
 
   </div>
 </div>
-
-
-<!-- View Modal-->
-<div id="ViewModal" class="modal fade editsModal ViewModal " role="dialog" >
-
-  <div class="modal-dialog modalSIZE">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header modal-backgroundHeader modal-header-height" >
-        <button type="button" class="btn btn-default close" data-dismiss="modal"></button>
-        <h5 class="modal-title">View</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-      </div>
-      <div class="modal-body modal-dialog-background">
-          <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usernview"    placeholder="UserName"></input>
-
-          <input disabled type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" align-self="middle" name="FirstName" id="firstnview"  placeholder="Firstname"></input>
-
-          <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="LastName" id="lastnview"  placeholder="LastName"></input>
-
-
-      </div>
-    </div>
-
-  </div>
-</div>
-
 
 <!-- Logout Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -257,52 +228,6 @@
     </div>
 <!-- END OF LOGOUT MODAL -->
 
-<!--"ADD MODAL"-->
-<div id="AddMemberModal" class="modal fade AddMemberModal" role="dialog" >
-<div class="modal-dialog modalSIZE">
-
-<!-- Modal content-->
-<div class="modal-content">
-
-  <div class="modal-header modal-backgroundHeader modal-header-height" >
-      <h5 class="modal-title ">Input Member Data</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-  </div>
-  <div class="modal-body modal-dialog-background">
-
-  <div class="container">
-
-  <form class="form-horizontal">
-      <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usn"  placeholder="UserName"></input>
-      <input  type="email" name="email" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="email"  placeholder="Email"></input>
-      <div   class="input-group">
-      <span  class="input-group-addon spanAdjustLeft spanAdjustRight style_prevu_kit_input style_prevu_kit_input:hover">
-      <label><input id="atype" type="radio" name="optradio" value="ADMIN">Admin</label>
-        <label class="radioPaddingLeft"><input  id="stype" type="radio" name="optradio" value="USER" >User</label>
-        </span>
-        </div>
-      <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="FirstName" id="frstn" placeholder="Firstname"></input>
-      <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="LastName" id="lstn"  placeholder="LastName"></input>
-
-  </form>
-
-  </div>
-
-  </div>
-
-  <div class="modal-footer modal-backgroundHeader modal-footer-height  ">
-    <Button id="modalClearMem" type="button" class="btn fa fa-ban animationButton style_prevu_kit modalClearMem"></Button>
-      <Button id="modalSubmitMem" type="submit" class="modalSubmitMem btn fa fa-check animationButton style_prevu_kit submitMargin"></Button>
-  </div>
-
-</div>
-
-</div>
-</div>
-<!-- END OF ADD MODAL -->
-
 <!--"REMOVEMODAL"-->
 <div id="ReactivateModal" class="modal fade ReactivateModal editsModal " role="dialog" >
 <div class="modal-dialog modalSIZE">
@@ -320,6 +245,7 @@
   </div>
   <div class="modal-footer modal-backgroundHeader modal-footer-height ">
       <Button id="modalYESreactivate" type="submit" class="btn fa fa-check animationButton modalYESreactivate style_prevu_kit submitMargin" aria-hidden="true"></Button>
+      <Button id="modalBan" type="submit" class="btn fa fa-ban animationButton style_prevu_kit" aria-hidden="true" data-dismiss="modal"></Button>
   </div>
 </div>
 

@@ -45,6 +45,10 @@
     <!-- PLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
     <link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
+      <script src="../Js/plugins/moment.js"></script>
+
+
+
 
 
     <!-- JS -->
@@ -137,8 +141,8 @@
                 <thead>
                   <tr>
                     <th></th>
-                    <th width="20%">User</th>
-                    <th width="20%">Activity date</th>
+                    <th width="80%">User</th>
+                    <th width="60%">Activity date</th>
                     <th>Description</th>
                   </tr>
                 </thead>

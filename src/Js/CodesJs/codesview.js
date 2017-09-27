@@ -19,7 +19,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       //"contentType": 'application/json; charset=utf-8',
       //'data': function (data) { return data = JSON.stringify(data); }
       },
-    order: [[ 2, 'asc' ]],
+    order: [[ 7, 'desc' ]],
     "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
     "iDisplayLength" : 5,
     columns: [
@@ -54,12 +54,24 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
                  width:"15px"
             },
             { data: "IDCode", "orderable": false},
-            { data: "Language"},
-            { data: "FunctionName"},
+            { data: "Language", "orderable": false},
+            { data: "FunctionName", "orderable": false},
             { data: "Version", "orderable": false},
-            { data: "DateTimeAdded", "orderable": false},
+            { data: "DateTimeAdded",
+               render: function(data, type, row){
+            //You need to have moment.js to parse the date into a local date
+              return moment(data).format('MMMM Do YYYY, h:mm A');
+              },
+              "type": "moment-js-date"
+            },
             { data: "AddedBy", "orderable": false},
-            { data: "DateTimeUpdated", "orderable": false},
+            { data: "DateTimeUpdated", 
+              render: function(data, type, row){
+            //You need to have moment.js to parse the date into a local date
+              return moment(data).format('MMMM Do YYYY, h:mm A');
+              },
+              "type": "moment-js-date"
+            },
             { data: "UpdatedBy","orderable": false},
         ], 
 
