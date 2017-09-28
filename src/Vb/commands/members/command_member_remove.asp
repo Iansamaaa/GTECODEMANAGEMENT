@@ -25,6 +25,15 @@
 	Set dr_rem= cmd_rem.Execute()
 
 	activity_logs()
+	If Request("usns")=Request.cookies("USERNAME") then 
+		Response.Cookies("USERNAME").Expires = DateAdd("d",-1,now())
+		Response.Cookies("USERTYPE").Expires = DateAdd("d",-1,now())
+		Response.Cookies("FIRSTNAME").Expires = DateAdd("d",-1,now())
+		Response.Cookies("USERID").Expires = DateAdd("d",-1,now())
+		response.write "x"
+	Else
+		response.write "z"
+	End if 
 
 	function activity_logs()
 	Dim cmd_act, dr_act, strSQL_act

@@ -32,7 +32,7 @@ function memREM(yow){
 		data: datastring,
 		async: false,
 		success: function(data){;
-			toastr.success("Member Deactivated", "Success");
+			deact_state(data);
 			$('#RemoveMemberModal').modal('hide');
 			 window.setTimeout(function(){window.location="../../pages/loginpage.asp"
 },2000);
@@ -43,3 +43,18 @@ function memREM(yow){
 }
 
 //redirect login
+  function deact_state(state){
+
+    	switch (state){
+    		case "y": toastr.warning("Deactivate Error", "Failed");
+    				break;
+    		case "z": toastr.success("Deactivate Sucess", "Success");
+    				break;
+    		case "x":toastr.success("You Deactivated your account", "Goodbye");
+    				 NProgress.start();
+   				 	 setTimeout(function() {NProgress.done();  window.location="Index/index.asp"; }, 2000);
+    				break;
+
+
+    	}
+ }
