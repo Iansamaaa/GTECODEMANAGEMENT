@@ -187,9 +187,6 @@
       <div class="modal-header modal-backgroundHeader modal-header-height" >
           <h5 class="modal-title ">Edit Member</h5>
 
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
       </div>
       <div class="modal-body modal-dialog-background">
           <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usern"    placeholder="UserName"></input>
@@ -200,8 +197,8 @@
 
       </div>
       <div class="modal-footer modal-backgroundHeader modal-footer-height ">
-        <Button id="modalBan" type="submit" class="btn fa fa-ban animationButton style_prevu_kit" aria-hidden="true"></Button>
-          <Button id="modalSubmit" type="submit" class="btn fa fa-check animationButton style_prevu_kit submitMargin modalSubmit" aria-hidden="true"></Button>
+        <Button id="modalBan" type="submit" data-dismiss="modal" class="btn fa fa-ban  animationButton style_prevu_kit" aria-hidden="true">Cancel</Button>
+          <Button id="modalSubmit" type="submit" class="btn fa fa-check animationButton style_prevu_kit submitMargin modalSubmit" aria-hidden="true">Confirm</Button>
       </div>
     </div>
 
@@ -218,9 +215,7 @@
       <div class="modal-header modal-backgroundHeader modal-header-height" >
         <button type="button" class="btn btn-default close" data-dismiss="modal"></button>
         <h5 class="modal-title">View</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+
       </div>
       <div class="modal-body modal-dialog-background">
           <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usernview"    placeholder="UserName"></input>
@@ -263,32 +258,29 @@
 
 <!--"ADD MODAL"-->
 <div id="AddMemberModal" class="modal fade AddMemberModal" role="dialog" >
-<div class="modal-dialog modalSIZE">
+<div class="modal-dialog">
 
 <!-- Modal content-->
 <div class="modal-content">
 
   <div class="modal-header modal-backgroundHeader modal-header-height" >
       <h5 class="modal-title ">Input Member Data</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+
   </div>
   <div class="modal-body modal-dialog-background">
 
   <div class="container">
 
   <form class="form-horizontal">
-      <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usn"  placeholder="UserName"></input>
-      <input  type="email" name="email" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="email"  placeholder="Email"></input>
-      <div   class="input-group">
-      <span  class="input-group-addon spanAdjustLeft spanAdjustRight style_prevu_kit_input style_prevu_kit_input:hover">
+      <input  type="text" class="form-control inputModalMarginTop  style_prevu_kit_input"  name="UserName" id="usn"  placeholder="UserName"></input>
+      <input  type="email" name="email" class="form-control inputModalMarginTop  style_prevu_kit_input"  name="UserName" id="email"  placeholder="Email"></input>
+      <input  type="text" class="form-control inputModalMarginTop  style_prevu_kit_input" name="FirstName" id="frstn" placeholder="Firstname"></input>
+      <input  type="text" class="form-control inputModalMarginTop  style_prevu_kit_input" name="LastName" id="lstn"  placeholder="LastName"></input>
+
+      <span  class="input-group-addon  style_prevu_kit_radio style_prevu_kit_radio ">
       <label><input id="atype" type="radio" name="optradio" value="ADMIN">Admin</label>
         <label class="radioPaddingLeft"><input  id="stype" type="radio" name="optradio" value="USER" >User</label>
         </span>
-        </div>
-      <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="FirstName" id="frstn" placeholder="Firstname"></input>
-      <input  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input" name="LastName" id="lstn"  placeholder="LastName"></input>
 
   </form>
 
@@ -297,8 +289,8 @@
   </div>
 
   <div class="modal-footer modal-backgroundHeader modal-footer-height  ">
-    <Button id="modalClearMem" type="button" class="btn fa fa-ban animationButton style_prevu_kit modalClearMem"></Button>
-      <Button id="modalSubmitMem" type="submit" class="modalSubmitMem btn fa fa-check animationButton style_prevu_kit submitMargin"></Button>
+    <Button id="modalClearMem" data-dismiss="modal" type="button" class="btn fa fa-ban animationButton style_prevu_kit modalClearMem">Cancel</Button>
+      <Button id="modalSubmitMem" type="submit" class="modalSubmitMem btn fa fa-check animationButton style_prevu_kit submitMargin">Confirm</Button>
   </div>
 
 </div>
@@ -323,8 +315,9 @@
     <h3> Do you wish to Deactivate this member? </h3>
   </div>
   <div class="modal-footer modal-backgroundHeader modal-footer-height ">
-      <Button id="modalYESremove" type="submit" class="btn fa fa-check animationButton modalYESremove style_prevu_kit submitMargin" aria-hidden="true"></Button>
-       <Button id="modalClearMem" type="button" class="btn fa fa-ban animationButton style_prevu_kit modalClearMem" data-dismiss="modal"></Button>
+           <Button id="modalClearMem" data-dismiss="modal" type="button" class="btn fa fa-ban animationButton style_prevu_kit modalClearMem" data-dismiss="modal">Cancel</Button>
+      <Button id="modalYESremove" type="submit" class="btn fa fa-check animationButton modalYESremove style_prevu_kit submitMargin" aria-hidden="true">Confirm</Button>
+
   </div>
 </div>
 

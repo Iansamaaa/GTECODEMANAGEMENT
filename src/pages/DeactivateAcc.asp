@@ -152,9 +152,6 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" >Account Deactivation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
               </div>
               <div class="modal-body">
                 Are you sure to deactivate your account?You can request admin to reactivate
@@ -177,9 +174,6 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
               </div>
               <div class="modal-body">
                 Select "Logout" below if you are ready to end your current session.
@@ -194,7 +188,7 @@
           </div>
         </div>
 
-   
+
     <!-- Bootstrap core JavaScript -->
     <script src="pagedesigns/vendor/jquery/jquery.min.js"></script>
     <script src="pagedesigns/vendor/popper/popper.min.js"></script>

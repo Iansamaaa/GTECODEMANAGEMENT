@@ -182,10 +182,6 @@
     <div class="modal-content">
       <div class="modal-header modal-backgroundHeader modal-header-height" >
           <h5 class="modal-title ">Edit Member</h5>
-
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
       </div>
       <div class="modal-body modal-dialog-background">
           <input disabled  type="text" class="form-control inputModalMarginTop inputModalWidth style_prevu_kit_input"  name="UserName" id="usern"    placeholder="UserName"></input>
@@ -210,9 +206,6 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
           </div>
           <div class="modal-body">
             Select "Logout" below if you are ready to end your current session.
@@ -235,9 +228,6 @@
 <div class="modal-content">
   <div class="modal-header modal-backgroundHeader modal-header-height" >
       <h5 class="modal-title">Reactivating Member</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
   </div>
   <div class="modal-body">
     <input type="text" class="form-control" id="usntor" style="display:none">
