@@ -238,9 +238,6 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
           </div>
           <div class="modal-body">
             Select "Logout" below if you are ready to end your current session.
@@ -306,9 +303,6 @@
 <div class="modal-content">
   <div class="modal-header modal-backgroundHeader modal-header-height" >
       <h5 class="modal-title">Deactivating Member</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
   </div>
   <div class="modal-body">
     <input type="text" class="form-control" id="usntor" style="display:none">
@@ -330,9 +324,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Reset Password</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+
           </div>
           <div class="modal-body">
             <input type="text" class="form-control userR" id="userR" style="display:none">
