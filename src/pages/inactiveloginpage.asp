@@ -192,8 +192,8 @@
 
       </div>
       <div class="modal-footer modal-backgroundHeader modal-footer-height ">
-        <Button id="modalBan" type="submit" class="btn fa fa-ban animationButton style_prevu_kit" aria-hidden="true" data-dismiss="modal"></Button>
-          <Button id="modalSubmit" type="submit" class="btn fa fa-check animationButton style_prevu_kit submitMargin modalSubmit" aria-hidden="true"></Button>
+        <Button id="modalBan" type="submit" class="btn fa fa-ban animationButton style_prevu_kit" aria-hidden="true" data-dismiss="modal">Cancel</Button>
+          <Button id="modalSubmit" type="submit" class="btn fa fa-check animationButton style_prevu_kit submitMargin modalSubmit" aria-hidden="true">Confirm</Button>
       </div>
     </div>
 
@@ -234,8 +234,9 @@
     <h3> Do you wish to Reactivate this member? </h3>
   </div>
   <div class="modal-footer modal-backgroundHeader modal-footer-height ">
-      <Button id="modalYESreactivate" type="submit" class="btn fa fa-check animationButton modalYESreactivate style_prevu_kit submitMargin" aria-hidden="true"></Button>
-      <Button id="modalBan" type="submit" class="btn fa fa-ban animationButton style_prevu_kit" aria-hidden="true" data-dismiss="modal"></Button>
+    <Button id="modalBan" type="submit" class="btn fa fa-ban animationButton style_prevu_kit" aria-hidden="true" data-dismiss="modal">Cancel</Button>
+      <Button id="modalYESreactivate" type="submit" class="btn fa fa-check animationButton modalYESreactivate style_prevu_kit submitMargin" aria-hidden="true">Confirm</Button>
+
   </div>
 </div>
 
