@@ -142,7 +142,6 @@
         <!-- Example Tables Card -->
         <div class="card mb-3" id="tablecardsmembers" style="display:none">
         <div class="card-header gray"><h3><i class="fa fa-users" aria-hidden="true"></i>Active Members</h3><br><button id="AddMemberFunc" type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#AddMemberModal" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Members</button>
-
           </div>
           <div class="card-body">
             <div class="table-responsive">
