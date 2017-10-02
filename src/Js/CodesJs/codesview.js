@@ -77,8 +77,9 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
         ],
 
     "columnDefs": [ {
-      width: "10%",
-      targets: 3,
+        className: "hide_column",
+        width: "10%",
+        targets: 3, 
       render: function ( data, type, row ) {
         return type === 'display' && data.length > 35 ?
           data.substr( 0, 35 ) +'…' :
@@ -87,7 +88,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
        } ],
     select: 'single',
      });
-     tblpending.column( 3 ).visible( false );
+
 // VIEWW FUNCTION
     $('#dataTable tbody').on('click', 'td.details-control', function () {
       var HAHA = $(this).closest('tr').find('td:eq(3)').text();
