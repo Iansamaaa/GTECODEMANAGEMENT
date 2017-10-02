@@ -291,7 +291,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">CODE VIEW</h5>
+            <h5 class="modal-title" id="CodeTypeView"></h5>
           </div>
           <div class="modal-body">
           <textarea class="form-control desc" id="codeTA" Placeholder="Code Description" disabled><p></p></textarea>
@@ -301,6 +301,7 @@
           </form>
           </div>
           <div class="modal-footer">
+            <h5 class="modal-title" id="FunctionNameView" style="position:fixed;left:2%;display:inline-block;"></h5>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
           </div>
         </div>

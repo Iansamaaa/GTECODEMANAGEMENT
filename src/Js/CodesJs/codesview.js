@@ -79,7 +79,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
     "columnDefs": [ {
         className: "hide_column",
         width: "10%",
-        targets: 3, 
+        targets: 3,
       render: function ( data, type, row ) {
         return type === 'display' && data.length > 35 ?
           data.substr( 0, 35 ) +'…' :
@@ -92,9 +92,13 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
 // VIEWW FUNCTION
     $('#dataTable tbody').on('click', 'td.details-control', function () {
       var HAHA = $(this).closest('tr').find('td:eq(3)').text();
+      var CTV = $(this).closest('tr').find('td:eq(4)').text();
+      var FNV = $(this).closest('tr').find('td:eq(5)').text();
       $('#viewC').text(HAHA);
       Modalview(HAHA);
       $('#viewModal').modal('toggle');
+      $('#CodeTypeView').text(CTV);
+      $('#FunctionNameView').text(FNV);
   });
 // REMOVE CODE FUNCTION
 
