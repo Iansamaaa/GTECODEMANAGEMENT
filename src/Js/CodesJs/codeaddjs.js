@@ -71,7 +71,6 @@ function code_status(codestat){
 	switch (codestat){
 
 		case 'x': toastr.success("Add Success");
-
 				break;
 		case 'y': toastr.warning("Function Name Already Exists")
 				break;

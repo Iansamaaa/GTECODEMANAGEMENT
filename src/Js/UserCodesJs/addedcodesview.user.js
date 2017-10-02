@@ -6,10 +6,8 @@ $(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
 
- for(var i=0;i<2;i++){
-        document.getElementById("cde").click();
-    }
 
+// DATA IN THE DATA TABLES
   tblpending = $("#dataTable").DataTable( {
       dom: "Bfrtip",
         //"processing": true,
@@ -21,7 +19,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       //"contentType": 'application/json; charset=utf-8',
       //'data': function (data) { return data = JSON.stringify(data); }
       },
-    order: [[ 7, 'desc' ], [9, 'desc']],
+    order: [[ 9, 'desc' ]],
     "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
     "iDisplayLength" : 5,
     columns: [
@@ -56,30 +54,31 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
                  width:"15px"
             },
             { data: "IDCode", "orderable": false},
-            { data: "Language","orderable": false},
-            { data: "FunctionName", "orderable":false},
+            { data: "Language", "orderable": false},
+            { data: "FunctionName", "orderable": false},
             { data: "Version", "orderable": false},
-            { 
-              data: "DateTimeAdded",
+            { data: "DateTimeAdded",
                render: function(data, type, row){
-                  return moment(data).format('MMMM Do YYYY, h:mm A');
-                },
+            //You need to have moment.js to parse the date into a local date
+              return moment(data).format('MMMM Do YYYY, h:mm A');
+              },
               "type": "moment-js-date"
             },
             { data: "AddedBy", "orderable": false},
-            { 
-              data: "DateTimeUpdated",
+            { data: "DateTimeUpdated",
               render: function(data, type, row){
-                  return moment(data).format('MMMM Do YYYY, h:mm A');
-                },
+            //You need to have moment.js to parse the date into a local date
+              return moment(data).format('MMMM Do YYYY, h:mm A');
+              },
               "type": "moment-js-date"
             },
             { data: "UpdatedBy","orderable": false},
-        ], 
+        ],
 
     "columnDefs": [ {
-      width: "10%",
-      targets: 3,
+        className: "hide_column",
+        width: "10%",
+        targets: 3,
       render: function ( data, type, row ) {
         return type === 'display' && data.length > 35 ?
           data.substr( 0, 35 ) +'…' :
@@ -89,19 +88,25 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
     select: 'single',
      });
 
+// VIEWW FUNCTION
     $('#dataTable tbody').on('click', 'td.details-control', function () {
       var HAHA = $(this).closest('tr').find('td:eq(3)').text();
+      var CTV = $(this).closest('tr').find('td:eq(4)').text();
+      var FNV = $(this).closest('tr').find('td:eq(5)').text();
       $('#viewC').text(HAHA);
       Modalview(HAHA);
       $('#viewModal').modal('toggle');
+      $('#CodeTypeView').text(CTV);
+      $('#FunctionNameView').text(FNV);
   });
+// REMOVE CODE FUNCTION
 
       $('#dataTable tbody').on('click', 'td.details-control2', function () {
       var KAFOY = $(this).closest('tr').find('td:eq(3)').text();
       $('#IDrecord').val(KAFOY);
       $('#removeModal').modal('toggle');
   });
-
+// EDIT CODE FUNCTION
      $('#dataTable tbody').on('click', 'td.details-control3', function () {
       var KAFOY = $(this).closest('tr').find('td:eq(3)').text();
       var A = $(this).closest('tr').find('td:eq(4)').text();
@@ -154,10 +159,10 @@ function Modalview1(value){
 
       $('#edit_codedesc').val(atob(data));
 
+
       },
     error:  function(){
       toastr.success("Delete Failed", "Failed");}
     })
 
 }
- 

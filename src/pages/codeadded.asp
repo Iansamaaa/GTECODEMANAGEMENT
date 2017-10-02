@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
+ <!--#include file='../connections/dsn.asp'-->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,11 +32,10 @@
     <!-- TableSizeandContentsIzes -->
     <link href="pagedesigns/css/tablesizes.css" rel="stylesheet">
 
-
-
-
     <!-- SESSIONS -->
     <script src="../Js/sessions/usersession.js"></script>
+
+
 
     <!-- TOAST FILES -->
     <link href="../Js/plugins/toastr/build/toastr.min.css" rel="stylesheet"/>
@@ -44,16 +43,15 @@
     <script src="../Js/members_func/toast_members.js"></script>
 
     <!-- TRIGGERS -->
-    <script type= "text/javascript" src="../Js/CodesJs/codeaddjs.js"></script>
-    <script type= "text/javascript" src="../Js/CodesJs/coderemove.js"></script>
-    <script type= "text/javascript" src="../Js/CodesJs/codeview.js"></script>
-    <script type= "text/javascript" src="../Js/CodesJs/codeedit.js"></script>
+    <script type= "text/javascript" src="../Js/UserCodesJs/codeaddjs.user.js"></script>
+    <script type= "text/javascript" src="../Js/UserCodesJs/coderemove.user.js"></script>
+    <script type= "text/javascript" src="../Js/UserCodesJs/codeview.user.js"></script>
+    <script type= "text/javascript" src="../Js/UserCodesJs/codeedit.user.js"></script>
 
     <!-- PLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
     <link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
       <script src="../Js/plugins/moment.js"></script>
-
 
 
 
@@ -66,27 +64,27 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-      <a class="navbar-brand" href="homepage.user.asp"><i class="fa fa-television" aria-hidden="true"></i> Code Management System</a>
+      <a class="navbar-brand" href="homepage.asp"><i class="fa fa-television" aria-hidden="true"></i> Code Management System</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
-          <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Settings">
-          <a id="cde" class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseComponents">
-            <i class="fa fa-code " aria-hidden="true"></i>
-            <span class="nav-link-text">Codes
-              </span>
-          </a>
-          <ul class="sidenav-second-level" id="collapseComponents">
-            <li>
-              <a href="homepage.user.asp">View Codes</a>
-            </li>
-            <li class = "active">
-              <a href="codeadded.asp">Added Codes</a>
-            </li>
-          </ul>
-        </li>
+       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Codes">
+            <a id=" cde" class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseComponents" aria-expanded="true">
+              <i class="fa fa-code" aria-hidden="true"></i>
+              <span class="nav-link-text">
+                Codes</span>
+            </a>
+            <ul class="sidenav-second-level collapse show" id="collapseComponents">
+              <li>
+                <a href="homepage.user.asp" class="nav-item active">&nbsp;View Codes</a>
+              </li>
+              <li  class="active">
+                <a href="codeadded.asp" class="nav-item active">&nbsp;Added Codes</a>
+              </li>
+            </ul>
+          </li>
            <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Activity Logs">
             <a class="nav-link" href="activitylogs.user.asp">
               <i class="fa fa-file-text-o" aria-hidden="true"></i>
@@ -94,8 +92,8 @@
                 Activity Logs</span>
             </a>
           </li>
-           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
+            <a id="settingst" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
               <i class="fa fa-cog" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Settings</span>
@@ -104,7 +102,7 @@
               <li>
                 <a href="settingschangepassuser.asp">Change Password</a>
               </li>
-              <li>
+                <li>
                 <a href="DeactivateAcc.user.asp">Deactivate Account</a>
               </li>
             </ul>
@@ -140,7 +138,7 @@
       <div class="container-fluid" id="CONTAINER">
         <!-- Example Tables Card -->
         <div class="card mb-4" style="display:none" id="tablecard">
-          <div class="card-header white" ><h4><i class="fa fa-plus-square-o" aria-hidden="true"></i>&nbsp;Codes you Added</h4>
+          <div class="card-header blue" ><button type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Codes</button>
           </div>
           <div class="card-body" id="TableBODY" >
             <div class="table-responsive">
@@ -217,7 +215,29 @@
           <form class="form-inline">
 
           <div class="form-group">
-          <input type="text" class="form-control smallInput" id="ctype" Placeholder="Code Type">&nbsp;
+
+          <select type="text" class="form-control smallInput" id="ctype" Placeholder="Code Type">
+            <%
+
+            Dim cmd_list, dr_list, strSQL_list
+              'Create Objects
+              Set cmd_list= Server.CreateObject("ADODB.Command")
+              cmd_list.ActiveConnection =  codemngt
+
+              'QUERY COMMAND
+              strSQL_list = "SELECT LANGUAGE FROM code_language_reference"
+              cmd_list.CommandText = strSQL_list
+              cmd_list.Prepared = True
+
+              'EXECUTE COMMAND
+              Set dr_list= cmd_list.Execute()
+
+            do while not dr_list.eof%>
+            <option value="<%= dr_list.Fields(0)%>"><%= dr_list.Fields(0)%></option>
+            <% dr_list.MoveNext
+            Loop
+            set cmd_list = nothing %>
+          </select>&nbsp;
           </div>
           <div class="form-group">
           <input type="text" class="form-control smallInput" id="fname" placeholder="Function Name">&nbsp;
@@ -241,8 +261,6 @@
 
           </form>
 
-
-
           </div>
           </div>
           <!-- HAYS -->
@@ -261,6 +279,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Delete Code?</h5>
+
           </div>
           <div class="modal-body">
             Are you sure you want to delete Record?
@@ -283,16 +302,17 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">CODE VIEW</h5>
+            <h5 class="modal-title" id="CodeTypeView"></h5>
           </div>
           <div class="modal-body">
-          <textarea class="form-control" id="codeTA" Placeholder="Code Description" disabled></textarea>
+          <textarea class="form-control desc" id="codeTA" Placeholder="Code Description" disabled><p></p></textarea>
 
           <form class="form-inline">
           <input type="text" class="form-control" id="viewC" style="display:none">
           </form>
           </div>
           <div class="modal-footer">
+            <h5 class="modal-title" id="FunctionNameView" style="position:fixed;left:2%;display:inline-block;"></h5>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
           </div>
         </div>
@@ -342,7 +362,7 @@
           <!-- HAYS -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary" id="btnEDIT">Edit</button>
+            <button type="submit" class="btn btn-primary" id="btnEDIT">Save</button>
           </div>
         </div>
       </div>
