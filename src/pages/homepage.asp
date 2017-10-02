@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
+<!--#include file='../Vb/commands/codes/command_codes_viewm.asp'-->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -224,7 +224,29 @@
           <form class="form-inline">
 
           <div class="form-group">
-          <input type="text" class="form-control smallInput" id="ctype" Placeholder="Code Type">&nbsp;
+
+          <select type="text" class="form-control smallInput" id="ctype" Placeholder="Code Type">
+            <%
+
+            Dim cmd_list, dr_list, strSQL_list
+              'Create Objects
+              Set cmd_list= Server.CreateObject("ADODB.Command")
+              cmd_list.ActiveConnection =  codemngt
+
+              'QUERY COMMAND
+              strSQL_list = "SELECT LANGUAGE FROM code_language_reference"
+              cmd_list.CommandText = strSQL_list
+              cmd_list.Prepared = True
+
+              'EXECUTE COMMAND
+              Set dr_list= cmd_list.Execute()
+
+            do while not dr_list.eof%>
+            <option value="<%= dr_list.Fields(0)%>"><%= dr_list.Fields(0)%></option>
+            <% dr_list.MoveNext
+            Loop
+            set cmd_list = nothing %>
+          </select>&nbsp;
           </div>
           <div class="form-group">
           <input type="text" class="form-control smallInput" id="fname" placeholder="Function Name">&nbsp;
@@ -247,8 +269,6 @@
           </div>
 
           </form>
-
-
 
           </div>
           </div>

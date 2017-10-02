@@ -6,9 +6,9 @@
 <%
 
 	Response.AddHeader "Content-Type", "application/json"
-	
+
 	Dim cmd, strsql
-	
+
 	strsql ="SELECT * FROM codes_masterlist"
 
 
@@ -18,8 +18,9 @@
 
 	cmd.CommandText=strsql
 	cmd.Prepared = true
-	
-	QueryToJSON(cmd).Flush	
-	
+
+	QueryToJSON(cmd).Flush
+
 	Set cmd = Nothing
+
 %>
