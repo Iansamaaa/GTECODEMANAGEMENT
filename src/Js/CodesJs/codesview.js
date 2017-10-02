@@ -19,10 +19,9 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       //"contentType": 'application/json; charset=utf-8',
       //'data': function (data) { return data = JSON.stringify(data); }
       },
-    order: [[ 7, 'desc' ]],
+    order: [[ 9, 'desc' ]],
     "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
     "iDisplayLength" : 5,
-    "order": [[ 9, "desc" ]],
     columns: [
              {
                 "className":      'details-control3',
@@ -58,7 +57,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
             { data: "Language", "orderable": false},
             { data: "FunctionName", "orderable": false},
             { data: "Version", "orderable": false},
-            { data: "DateTimeAdded",
+            { data: "DateTimeAdded", "orderable":false,
                render: function(data, type, row){
             //You need to have moment.js to parse the date into a local date
               return moment(data).format('MMMM Do YYYY, h:mm A');

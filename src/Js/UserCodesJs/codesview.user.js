@@ -1,15 +1,17 @@
 var editor;
-var tblcodes,tblgg; 
+var tblcodes,tblgg;
 var modal;
-  
-$(document).ready(function(){ 
+
+$(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
-  
+
+
+// DATA IN THE DATA TABLES
   tblpending = $("#dataTable").DataTable( {
       dom: "Bfrtip",
         //"processing": true,
-        //"serverSide": true, 
+        //"serverSide": true,
        ajax: {
       url: '../Vb/commands/codes/codes.view.asp',
       dataSrc: ""
@@ -17,7 +19,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       //"contentType": 'application/json; charset=utf-8',
       //'data': function (data) { return data = JSON.stringify(data); }
       },
-    order: [[ 6, 'desc' ]],
+    order: [[ 8,'desc' ]],
     "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
     "iDisplayLength" : 5,
     columns: [
@@ -41,44 +43,53 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
                      },
                  width:"15px"
             },
-
             { data: "IDCode", "orderable": false},
-            { data: "Language","orderable": false},
-            { data: "FunctionName","orderable": false},
+            { data: "Language", "orderable": false},
+            { data: "FunctionName", "orderable": false},
             { data: "Version", "orderable": false},
             { data: "DateTimeAdded",
-              render: function(data, type, row){
-                  return moment(data).format('MMMM Do YYYY, h:mm A');
-                },
+               render: function(data, type, row){
+            //You need to have moment.js to parse the date into a local date
+              return moment(data).format('MMMM Do YYYY, h:mm A');
+              },
               "type": "moment-js-date"
             },
             { data: "AddedBy", "orderable": false},
             { data: "DateTimeUpdated",
-             render: function(data, type, row){
-                  return moment(data).format('MMMM Do YYYY, h:mm A');
-                },
-              "type": "moment-js-date"},
+              render: function(data, type, row){
+            //You need to have moment.js to parse the date into a local date
+              return moment(data).format('MMMM Do YYYY, h:mm A');
+              },
+              "type": "moment-js-date"
+            },
             { data: "UpdatedBy","orderable": false},
-        ], 
+        ],
+
     "columnDefs": [ {
-      width: "10%",
-      targets: 3,
+        className: "hide_column",
+        width: "10%",
+        targets: 2,
       render: function ( data, type, row ) {
         return type === 'display' && data.length > 35 ?
           data.substr( 0, 35 ) +'…' :
           data;
       }
        } ],
-    select: 'single', 
+    select: 'single',
      });
 
+// VIEWW FUNCTION
     $('#dataTable tbody').on('click', 'td.details-control', function () {
       var HAHA = $(this).closest('tr').find('td:eq(2)').text();
+      var CTV = $(this).closest('tr').find('td:eq(3)').text();
+      var FNV = $(this).closest('tr').find('td:eq(4)').text();
       $('#viewC').text(HAHA);
       Modalview(HAHA);
       $('#viewModal').modal('toggle');
+      $('#CodeTypeView').text(CTV);
+      $('#FunctionNameView').text(FNV);
   });
-
+// EDIT CODE FUNCTION
      $('#dataTable tbody').on('click', 'td.details-control3', function () {
       var KAFOY = $(this).closest('tr').find('td:eq(2)').text();
       var A = $(this).closest('tr').find('td:eq(3)').text();
@@ -95,13 +106,13 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
   });
 
 
-// VIEW OF CODES FUNCTION
+
 function Modalview(labad){
   //Set Ajax Status
   var datastring;
-  datastring= {VIEWM: labad, 
+  datastring= {VIEWM: labad,
         };
-  
+
   $.ajax({
     type: "POST",
     url: "../Vb/commands/codes/command_codes_viewm.asp",
@@ -110,18 +121,17 @@ function Modalview(labad){
     success: function(data){
       $('#codeTA').text(atob(data));
 
-      }, 
+      },
     error:  function(){
       toastr.success("Delete Failed", "Failed");}
-    })        
+    })
 
 }
 
-// EDIT FUNCTION
 function Modalview1(value){
   //Set Ajax Status
   var datastring;
-  datastring= {VIEWN: $('#viewED').val(), 
+  datastring= {VIEWN: $('#viewED').val(),
         };
   $.ajax({
     type: "POST",
@@ -132,10 +142,10 @@ function Modalview1(value){
 
       $('#edit_codedesc').val(atob(data));
 
-      }, 
+
+      },
     error:  function(){
       toastr.success("Delete Failed", "Failed");}
-    })        
+    })
 
 }
- 

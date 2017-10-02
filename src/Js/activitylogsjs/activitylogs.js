@@ -18,11 +18,11 @@ setTimeout(function() { NProgress.done(); $('#tablecardact').show();}, 1000);
       //"contentType": 'application/json; charset=utf-8',
       //'data': function (data) { return data = JSON.stringify(data); }
       },
-    order: [[ 2, 'desc' ]],
+    order: [[ 0, 'desc' ]],
     "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
     "iDisplayLength" : 10,
     columns: [
-            {data:"ACTnum", "visible": false, "orderable": false},
+            {data:"ACTnum", "orderable": false},
             { data: "ACTuser", "orderable": false},
             { 
               data: "ACTdate",
@@ -34,6 +34,17 @@ setTimeout(function() { NProgress.done(); $('#tablecardact').show();}, 1000);
             },
             { data: "ACTdescription", "orderable": false},
         ], 
+    "columnDefs": [ {
+        className: "hide_column",
+        width: "10%",
+        targets: 0,
+      render: function ( data, type, row ) {
+        return type === 'display' && data.length > 35 ?
+          data.substr( 0, 35 ) +'…' :
+          data;
+      }
+       } ],
+    
     select: 'single',
     ordering: 'true',
      });
