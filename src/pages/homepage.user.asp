@@ -143,7 +143,6 @@
                   <tr>
                     <th></th>
                     <th></th>
-                    <th>Code # </th>
                     <th>Code Type</th>
                     <th>Function Name</th>
                     <th>Version #</th>
@@ -276,7 +275,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Edit Codes</h5>
-        
+
           </div>
           <div class="modal-body">
 
@@ -313,7 +312,7 @@
           <!-- HAYS -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary" id="btnEDIT">Edit</button>
+            <button type="submit" class="btn btn-primary" id="btnEDIT">Save</button>
           </div>
         </div>
       </div>

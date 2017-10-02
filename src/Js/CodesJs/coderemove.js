@@ -1,8 +1,8 @@
 $(function(){
 
   $(document).ready(function(){
-  
-  
+
+
    $("#btnREMOVE").bind({
     click:function(){
       var Rem = $("#IDrecord").val();
@@ -23,9 +23,9 @@ FUNCTIONS
 function RemoveMember(labad){
   //Set Ajax Status
   var datastring;
-  datastring= {IDREC: labad, 
+  datastring= {IDREC: labad,
         };
-  
+
   $.ajax({
     type: "POST",
     url: "../Vb/commands/codes/command_codes_remove.asp",
@@ -36,13 +36,11 @@ function RemoveMember(labad){
       toastr.success("Code Deleted", "Sucess");
       $('#removeModal').modal('toggle');
       window.setTimeout(function(){location.reload()},2000);
-   
 
-      }, 
+
+      },
     error:  function(){
       toastr.success("Delete Failed", "Failed");}
-    })        
+    })
 
 }
-
-

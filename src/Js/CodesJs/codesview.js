@@ -22,6 +22,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
     order: [[ 7, 'desc' ]],
     "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
     "iDisplayLength" : 5,
+    "order": [[ 9, "desc" ]],
     columns: [
              {
                 "className":      'details-control3',
@@ -65,7 +66,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
               "type": "moment-js-date"
             },
             { data: "AddedBy", "orderable": false},
-            { data: "DateTimeUpdated", 
+            { data: "DateTimeUpdated",
               render: function(data, type, row){
             //You need to have moment.js to parse the date into a local date
               return moment(data).format('MMMM Do YYYY, h:mm A');
@@ -73,7 +74,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
               "type": "moment-js-date"
             },
             { data: "UpdatedBy","orderable": false},
-        ], 
+        ],
 
     "columnDefs": [ {
       width: "10%",
@@ -86,6 +87,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
        } ],
     select: 'single',
      });
+     tblpending.column( 3 ).visible( false );
 // VIEWW FUNCTION
     $('#dataTable tbody').on('click', 'td.details-control', function () {
       var HAHA = $(this).closest('tr').find('td:eq(3)').text();

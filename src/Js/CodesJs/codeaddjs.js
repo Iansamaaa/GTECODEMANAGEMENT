@@ -9,17 +9,17 @@ $(function(){
 				toastr.warning("Fill out Required Fields", "Check Fields");
 				return false;
 			}
-			else if(!($('#version').val()).match(/^[0-9.]{1,6}$/))
+			else if(!($('#version').val()).match(/^[0-9.]{1,10}$/))
 			{
 			toastr.warning("Type in version Number", "Check Fields");
 			return false;
 			}
-			else if(!($('#ctype').val()).match(/^[a-zA-Z. ]{1,10}$/))
+			else if(!($('#ctype').val()).match(/^[a-zA-Z. ]{1,15}$/))
 			{
 			toastr.warning("Type valid Code type", "Check Fields");
 			return false;
 			}
-			else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{3,20}$/))
+			else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{2,25}$/))
 			{
 			toastr.warning("Type valid Function Name", "Check Fields");
 			return false;

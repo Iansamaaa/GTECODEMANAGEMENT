@@ -13,7 +13,7 @@ setTimeout(function() { NProgress.done(); $('#tablecardsmembers').show();}, 1000
       //"contentType": 'application/json; charset=utf-8',
       //'data': function (data) { return data = JSON.stringify(data); }
       },
-    order: [[ 2, 'asc' ]],
+    order: [[ 3, 'desc' ]],
     "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
     "iDisplayLength" : 5,
     columns: [

@@ -1,13 +1,13 @@
 $(function(){
 
   $(document).ready(function(){
-  
+
   $(".btnED").bind({
     click:function(){
-      var KAFOY = $(this).closest('tr').find('td:eq(1)').text();
-      var A = $(this).closest('tr').find('td:eq(2)').text();
-      var B = $(this).closest('tr').find('td:eq(3)').text();
-      var C = $(this).closest('tr').find('td:eq(4)').text();
+      var KAFOY = $(this).closest('tr').find('td:eq(0)').text();
+      var A = $(this).closest('tr').find('td:eq(1)').text();
+      var B = $(this).closest('tr').find('td:eq(2)').text();
+      var C = $(this).closest('tr').find('td:eq(3)').text();
       $('#viewED').val(KAFOY);
       $('#edit_ctype').val(A);
       $('#edit_fname').val(B);
@@ -21,22 +21,22 @@ $(function(){
     click:function(){
        if($('#edit_ctype').val()=='' || $('#edit_fname').val()=='' || $('#edit_codedesc').val()=='' || $('#edit_version').val()==''|| $('#edited').val()=='')
       {
-        toastr.warning("Fill out Required Fields", "Check Fields"); 
+        toastr.warning("Fill out Required Fields", "Check Fields");
         return false;
       }
       else if(!($('#edit_version').val()).match(/^[0-9.]{1,6}$/))
       {
-      toastr.warning("Type in version Number", "Check Fields"); 
+      toastr.warning("Type in version Number", "Check Fields");
       return false;
       }
       else if(!($('#edit_ctype').val()).match(/^[a-zA-Z. ]{1,10}$/))
       {
-      toastr.warning("Type valid Code type", "Check Fields"); 
+      toastr.warning("Type valid Code type", "Check Fields");
       return false;
       }
       else if(!($('#edit_fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{3,20}$/))
       {
-      toastr.warning("Type valid Function Name", "Check Fields"); 
+      toastr.warning("Type valid Function Name", "Check Fields");
       return false;
       }
       else
@@ -59,7 +59,7 @@ FUNCTIONS
 function Modalview1(value){
   //Set Ajax Status
   var datastring;
-  datastring= {VIEWN: $('#viewED').val(), 
+  datastring= {VIEWN: $('#viewED').val(),
         };
   $.ajax({
     type: "POST",
@@ -70,10 +70,10 @@ function Modalview1(value){
 
       $('#edit_codedesc').val(atob(data));
 
-      }, 
+      },
     error:  function(){
       toastr.success("Delete Failed", "Failed");}
-    })        
+    })
 
 }
 
@@ -96,9 +96,8 @@ function code_edit(){
       $('#editModal').modal('toggle');
       window.setTimeout(function(){location.reload()},2000);
 
-    }, 
+    },
     error:  function(){
       toastr.warning("Submission Failed");}
-  })          
+  })
 }
-

@@ -350,7 +350,7 @@
           <!-- HAYS -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary" id="btnEDIT">Edit</button>
+            <button type="submit" class="btn btn-primary" id="btnEDIT">Save</button>
           </div>
         </div>
       </div>

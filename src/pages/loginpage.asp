@@ -151,7 +151,7 @@
                   <tr>
                     <th></th>
                     <th></th>
-                    <th></th>
+                    <th class="sorting_disabled"></th>
                     <th width="20%">UserName</th>
                     <th width="20%">First Name</th>
                     <th width="25%">Last Name</th>
