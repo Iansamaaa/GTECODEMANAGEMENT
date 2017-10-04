@@ -83,6 +83,9 @@
               <li  class="active">
                 <a href="codeadded.asp" class="nav-item active">&nbsp;Added Codes</a>
               </li>
+              <li>
+                <a href="language.asp" class="nav-item active">&nbsp;Add Language</a>
+              </li>
             </ul>
           </li>
            <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Activity Logs">

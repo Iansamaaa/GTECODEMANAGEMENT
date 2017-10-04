@@ -59,12 +59,20 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Codes">
-            <a class="nav-link" href="homepage.asp">
+             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Codes">
+            <a id=" cde" class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseComponents" aria-expanded="true">
               <i class="fa fa-code" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Codes</span>
             </a>
+            <ul class="sidenav-second-level collapse show" id="collapseComponents">
+              <li>
+                <a href="homepage.asp" class="nav-item active">&nbsp;View Codes</a>
+              </li>
+                 <li>
+                <a href="language.a.asp" class="nav-item active">&nbsp;Add Language</a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Members">
             <a id="mems" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMultimember">

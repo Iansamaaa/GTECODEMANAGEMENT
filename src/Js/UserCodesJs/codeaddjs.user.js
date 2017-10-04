@@ -14,11 +14,6 @@ $(function(){
 			toastr.warning("Type in version Number", "Check Fields");
 			return false;
 			}
-			else if(!($('#ctype').val()).match(/^[a-zA-Z. ]{1,15}$/))
-			{
-			toastr.warning("Type valid Code type", "Check Fields");
-			return false;
-			}
 			else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{2,25}$/))
 			{
 			toastr.warning("Type valid Function Name", "Check Fields");

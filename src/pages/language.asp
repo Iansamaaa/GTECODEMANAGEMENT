@@ -43,10 +43,8 @@
     <script src="../Js/members_func/toast_members.js"></script>
 
     <!-- TRIGGERS -->
-    <script type= "text/javascript" src="../Js/UserCodesJs/codeaddjs.user.js"></script>
-    <script type= "text/javascript" src="../Js/UserCodesJs/coderemove.user.js"></script>
-    <script type= "text/javascript" src="../Js/UserCodesJs/codeview.user.js"></script>
-    <script type= "text/javascript" src="../Js/UserCodesJs/codeedit.user.js"></script>
+    <script type= "text/javascript" src="../Js/UserCodesJs/addlanguage.js"></script>
+  
 
     <!-- PLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
@@ -57,7 +55,7 @@
 
 
     <!-- JS -->
-    <script src="../Js/UserCodesJs/codesview.user.js"></script>
+    <script src="../Js/UserCodesJs/language.js"></script>
   </head>
 
   <body class="fixed-nav" id="page-top">
@@ -77,13 +75,13 @@
                 Codes</span>
             </a>
             <ul class="sidenav-second-level collapse show" id="collapseComponents">
-              <li class="active">
+              <li >
                 <a href="homepage.user.asp" class="nav-item active">&nbsp;View Codes</a>
               </li>
               <li>
                 <a href="codeadded.asp" class="nav-item active">&nbsp;Added Codes</a>
               </li>
-                 <li>
+               <li class="active">
                 <a href="language.asp" class="nav-item active">&nbsp;Add Language</a>
               </li>
             </ul>
@@ -137,28 +135,19 @@
 
     <!-- END OF NAVIGATION -->
 
-    <div class="content-wrapper py-3" id="WRAPPER"><!--Start of the Content-->
-      <div class="container-fluid" id="CONTAINER">
+    <div class="content-wrapper py-3 smallsizecontainer"><!--Start of the Content-->
+      <div class="container-fluid">
         <!-- Example Tables Card -->
-        <div class="card mb-4" style="display:none" id="tablecard">
-          <div class="card-header blue" ><button type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Codes</button>
+       <center><div class="card mb-4 smalltable" style="display:none" id="tablecard">
+          <div class="card-header blue" align="left"><button type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Language</button>
           </div>
           <div class="card-body" id="TableBODY" >
             <div class="table-responsive">
               <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
                 <thead>
                   <tr>
-                    <th></th>
-                    <th></th>
-                    <th>Code # </th>
-                    <th>Code Type</th>
-                    <th>Function Name</th>
-                    <th>Version #</th>
-                    <th>Date Added</th>
-                    <th>Added By</th>
-                    <th>Date Updated</th>
-                    <th>Update By</th>
-
+                    <th>ID</th>
+                    <th>Language</th>
                   </tr>
                 </thead>
               </table>
@@ -167,7 +156,7 @@
           <div class="card-footer small text-muted">
             Made by #GTE OJT
           </div>
-        </div>
+        </div></center>
 
       </div>
       <!-- /.container-fluid -->
@@ -203,179 +192,25 @@
     <!-- END OF LOGOUT MODAL -->
 
      <!-- ADD MODAL -->
-    <div class="modal fade" id="addModal1" tabindex="-1" role="dialog" aria-labelledby="addModalLabel1" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
+       <div class="modal fade" id="addModal1" tabindex="-1" role="dialog" aria-labelledby="addModallabel1" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add Codes</h5>
-
+            <h5>Add Language</h5>
           </div>
           <div class="modal-body">
-
-          <div class="container">
-
-          <form class="form-inline">
-
-          <div class="form-group">
-
-          <select type="text" class="form-control smallInput" id="ctype" Placeholder="Code Type">
-            <%
-
-            Dim cmd_list, dr_list, strSQL_list
-              'Create Objects
-              Set cmd_list= Server.CreateObject("ADODB.Command")
-              cmd_list.ActiveConnection =  codemngt
-
-              'QUERY COMMAND
-              strSQL_list = "SELECT LANGUAGE FROM code_language_reference"
-              cmd_list.CommandText = strSQL_list
-              cmd_list.Prepared = True
-
-              'EXECUTE COMMAND
-              Set dr_list= cmd_list.Execute()
-
-            do while not dr_list.eof%>
-            <option value="<%= dr_list.Fields(0)%>"><%= dr_list.Fields(0)%></option>
-            <% dr_list.MoveNext
-            Loop
-            set cmd_list = nothing %>
-          </select>&nbsp;
+          <input type="text" class="form-control" id="langlang" placeholder="Enter Language" width="80px" maxlength="10">
           </div>
-          <div class="form-group">
-          <input type="text" class="form-control smallInput" id="fname" placeholder="Function Name">&nbsp;
-          </div>
-          <div class="form-group">
-          <input type="text" class="form-control smallInput" id="version" placeholder="Version">
-          </div>
-          </form>
-          <br>
-          <form class="form-horizontal">
-          <div class="form-group">
-          <textarea class="form-control codeTS" id="codedesc" Placeholder="Code Description"></textarea>
-          </div>
-
-          <div class="form-group col-xs-2">
-          <input class="form-control smallInput" id="added" Placeholder="Added By" style="display:none" value="<% fname=Request.Cookies("USERNAME")
-                response.write(fname) %>">
-
-          </input>
-          </div>
-
-          </form>
-
-          </div>
-          </div>
-          <!-- HAYS -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary" id="btnAdd">Add</button>
+            <button type="button" class="btn btn-primary" id="addLANG">Add</button>
           </div>
         </div>
       </div>
     </div>
     <!-- END OF ADD MODAL -->
 
-    <!-- Delete Modal -->
-    <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="removeModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Delete Code?</h5>
-
-          </div>
-          <div class="modal-body">
-            Are you sure you want to delete Record?
-
-          <form class="form-inline">
-          <input type="text" class="form-control" id="IDrecord" style="display:none">
-          </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary" id="btnREMOVE">Remove</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- END OF Delete MODAL -->
-
-      <!-- View Modal -->
-    <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="CodeTypeView"></h5>
-          </div>
-          <div class="modal-body">
-          <textarea class="form-control desc" id="codeTA" Placeholder="Code Description" disabled><p></p></textarea>
-
-          <form class="form-inline">
-          <input type="text" class="form-control" id="viewC" style="display:none">
-          </form>
-          </div>
-          <div class="modal-footer">
-            <h5 class="modal-title" id="FunctionNameView" style="position:fixed;left:2%;display:inline-block;"></h5>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- END OF View MODAL -->
-
-    <!-- Edit Modal MODAL -->
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Edit Codes</h5>
-          </div>
-          <div class="modal-body">
-
-          <div class="container">
-
-          <form class="form-inline">
-          <input type="text" class="form-control" id="viewED" style="display:none">
-          <div class="form-group">
-          <input type="text" class="form-control" id="edit_ctype" Placeholder="Code Type" disabled>&nbsp;
-          </div>
-          <div class="form-group">
-          <input type="text" class="form-control" id="edit_fname" placeholder="Function Name">&nbsp;
-          </div>
-          <div class="form-group">
-          <input type="text" class="form-control" id="edit_version" placeholder="Version">
-          </div>
-          </form>
-          <br>
-          <form class="form-horizontal">
-          <div class="form-group">
-          <textarea class="form-control codeTS" id="edit_codedesc" Placeholder="Code Description"></textarea>
-          </div>
-          <div class="form-group col-xs-2">
-          <input class="form-control smallInput" id="edited" Placeholder="Edited By" style="display:none" value="<%fname=Request.Cookies("USERNAME")
-                response.write(fname)%>">
-          </input>
-          </div>
-          </form>
-
-
-
-          </div>
-          </div>
-          <!-- HAYS -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary" id="btnEDIT">Save</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- END OF EDIT MODAL -->
-
-
-
-
-
-
+   
 <!--                                                END OF MODALS                                              -->
 
     <!-- Bootstrap core JavaScript -->
