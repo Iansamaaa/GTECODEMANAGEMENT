@@ -2,7 +2,10 @@ var editor;
 var tblcodes,tblgg;
 var modal;
 
+
 $(document).ready(function(){
+  var cd = "CodeType: "
+
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
 // DATA IN THE DATA TABLES
@@ -95,7 +98,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       $('#viewC').text(HAHA);
       Modalview(HAHA);
       $('#viewModal').modal('toggle');
-      $('#CodeTypeView').text(CTV);
+      $('#CodeTypeView').text("'"+CTV+"'");
       $('#FunctionNameView').text(FNV);
   });
 // REMOVE CODE FUNCTION
