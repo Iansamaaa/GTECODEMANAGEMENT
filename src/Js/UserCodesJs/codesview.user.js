@@ -9,7 +9,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
 
 // DATA IN THE DATA TABLES
   tblpending = $("#dataTable").DataTable( {
-      dom: "Bfrtip",
+      dom: '<"toolbar">frtip',
         //"processing": true,
         //"serverSide": true,
        ajax: {
@@ -102,6 +102,14 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       Modalview1();
       $('#editModal').modal('toggle');
   });
+   $("div.toolbar").html('<select id="hays"><option value="3">Code Type</option><option value="4">Function Name</option><option value="7">Added By</option><option value="9">Updated by</option></select>&nbsp;<input type="text" placeholder="Advance Search..." id="asearch"></input>');
+ var table = $('#dataTable').DataTable();
+$('#asearch').on( 'keyup', function () {
+    table
+        .columns($('#hays').val())
+        .search( this.value )
+        .draw();
+} );
 
   });
 

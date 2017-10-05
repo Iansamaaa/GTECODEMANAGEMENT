@@ -170,7 +170,7 @@
                     <th>Date Added</th>
                     <th>Added By</th>
                     <th>Date Updated</th>
-                    <th>Update By</th>
+                    <th>Updated By</th>
 
                   </tr>
                 </thead>
