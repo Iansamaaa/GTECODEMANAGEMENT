@@ -76,10 +76,10 @@
             </a>
             <ul class="sidenav-second-level collapse show" id="collapseComponents">
               <li >
-                <a href="homepage.user.asp" class="nav-item active">&nbsp;View Codes</a>
+                <a href="homepage.user.asp" class="nav-item active">&nbsp;View all Codes</a>
               </li>
               <li>
-                <a href="codeadded.asp" class="nav-item active">&nbsp;Added Codes</a>
+                <a href="codeadded.asp" class="nav-item active">&nbsp;My Codes</a>
               </li>
                <li class="active">
                 <a href="language.asp" class="nav-item active">&nbsp;Add Language</a>

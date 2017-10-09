@@ -17,7 +17,6 @@
     <!-- Bootstrap core CSS -->
     <link href="pagedesigns/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-
     <!-- Custom fonts for this template -->
     <link href="pagedesigns/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -78,7 +77,7 @@
             </a>
             <ul class="sidenav-second-level collapse show" id="collapseComponents">
               <li class="active">
-                <a href="homepage.asp" class="nav-item active">&nbsp;View Codes</a>
+                <a href="homepage.asp" class="nav-item active">&nbsp;View all Codes</a>
               </li>
                  <li>
                 <a href="language.a.asp" class="nav-item active">&nbsp;Add Language</a>
@@ -153,7 +152,8 @@
       <div class="container-fluid" id="CONTAINER">
         <!-- Example Tables Card -->
         <div class="card mb-4" style="display:none" id="tablecard">
-          <div class="card-header blue" ><button type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Codes</button>
+         <div class="card-header blue" ><button type="submit" class="btn btn-primary btn-md" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Codes</button>&nbsp;
+            <button type="submit" class="btn btn-primary btn-md" id="refreshtab"><i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;Refresh</button>
           </div>
           <div class="card-body" id="TableBODY" >
             <div class="table-responsive">
@@ -384,6 +384,30 @@
     </div>
     <!-- END OF EDIT MODAL -->
 
+<!-- ADVANCE SEARCH MODALS -->
+   <!-- ADD MODAL -->
+       <div class="modal fade" id="sModal" tabindex="-1" role="dialog" aria-labelledby="sModallabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Advance Search</h5>
+          </div>
+          <div class="modal-body">
+          <input type="text" class="form-control" id="sctype" placeholder="Code Type..." width="80px" maxlength="10">
+          <input type="text" class="form-control" id="sfuncn" placeholder="Function Name..." width="80px" maxlength="10">
+          <input type="text" class="form-control" id="sdadd" placeholder="Date Added..." width="80px">
+          <input type="text" class="form-control" id="saddb" placeholder="Added by..." width="80px" maxlength="10">
+           <input type="text" class="form-control" id="supb" placeholder="Updated by..." width="80px" maxlength="10">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="aSEARCH">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF ADD MODAL -->
+<!-- END A SEARCH MODALS -->
 
 
 

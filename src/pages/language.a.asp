@@ -76,7 +76,7 @@
             </a>
             <ul class="sidenav-second-level collapse show" id="collapseComponents">
               <li>
-                <a href="homepage.asp" class="nav-item active">&nbsp;View Codes</a>
+                <a href="homepage.asp" class="nav-item active">&nbsp;View all Codes</a>
               </li>
                  <li class="active">
                 <a href="language.a.asp" class="nav-item active">&nbsp;Add Language</a>

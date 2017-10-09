@@ -87,7 +87,9 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
        } ],
     select: 'single',
      });
-
+$('#refreshtab').on( 'click', function () {
+    window.setTimeout(function(){location.reload()},100);
+} );
 // VIEWW FUNCTION
     $('#dataTable tbody').on('click', 'td.details-control', function () {
       var HAHA = $(this).closest('tr').find('td:eq(3)').text();
@@ -119,13 +121,41 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       Modalview1();
       $('#editModal').modal('toggle');
   });
-      $("div.toolbar").html('<select id="hays"><option value="4">Code Type</option><option value="5">Function Name</option><option value="10">Updated by</option></select>&nbsp;<input type="text" placeholder="Advance Search..." id="asearch"></input>');
+       $("div.toolbar").html('<button type="submit" class="btn btn-default btn-md" id="asearchbtn"><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Advance search</button>');
  var table = $('#dataTable').DataTable();
-$('#asearch').on( 'keyup', function () {
+ $('#asearchbtn').on( 'click', function () {
+    $('#sModal').modal('toggle');
+} );
+
+$('#aSEARCH').on( 'click', function () {
     table
-        .columns($('#hays').val())
-        .search( this.value )
+        .columns(4)
+        .search($('#sctype').val())
         .draw();
+    table
+        .columns(5)
+        .search($('#sfuncn').val())
+        .draw();
+    table
+        .columns(8)
+        .search($('#saddb').val())
+        .draw();
+    table
+        .columns(10)
+        .search($('#supb').val())
+        .draw();
+    table
+        .columns(7)
+        .search($('#sdadd').val())
+        .draw();
+ $('#sModal').modal('hide');
+ $('#sctype').val("");
+ $('#sfuncn').val("");
+ $('#saddb').val("");
+ $('#supb').val("");
+ $('#tablecard').hide()
+ NProgress.start();
+setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 2000);
 } );
 
   });
