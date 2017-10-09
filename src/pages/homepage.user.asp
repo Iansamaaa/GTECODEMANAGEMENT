@@ -141,7 +141,7 @@
       <div class="container-fluid" id="CONTAINER">
         <!-- Example Tables Card -->
         <div class="card mb-4" style="display:none" id="tablecard">
-          <div class="card-header blue" ><button type="submit" class="btn btn-primary btn-md" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Codes</button>&nbsp;
+          <div class="card-header blue" ><button type="submit" class="btn btn-primary btn-md" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Codes</button>&nbsp;
             <button type="submit" class="btn btn-primary btn-md" id="refreshtab"><i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;Refresh</button>
           </div>
           <div class="card-body" id="TableBODY" >

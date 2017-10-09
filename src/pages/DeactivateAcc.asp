@@ -138,8 +138,8 @@
 
 
 
-    <div class="content-wrapper py-3  "><!--Start of the Content-->
-      <div class="category-body contentColor">
+    <div class="content-wrapper py-3" ><!--Start of the Content-->
+      <div class="category-body contentColor" style="display:none">
           <input  type="password" id="currentPass" class="form-control style_prevu_kit_input itextHeight  inputPos currentPass"    name="ChangePass"   placeholder="Input Current Password"></input><br>
               <Button id="confirmdeact" type="submit" class="btn animationButton buttontip confirmchangepass"  aria-hidden="true" data-toggle="modal" data-target="#deactivateModal">Confirm</Button>
       </div>
