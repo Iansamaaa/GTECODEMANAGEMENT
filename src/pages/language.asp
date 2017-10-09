@@ -82,7 +82,7 @@
                 <a href="codeadded.asp" class="nav-item active">&nbsp;My Codes</a>
               </li>
                <li class="active">
-                <a href="language.asp" class="nav-item active">&nbsp;Add Language</a>
+                <a href="language.asp" class="nav-item active">&nbsp;Languages</a>
               </li>
             </ul>
           </li>
@@ -139,7 +139,7 @@
       <div class="container-fluid">
         <!-- Example Tables Card -->
        <center><div class="card mb-4 smalltable" style="display:none" id="tablecard">
-          <div class="card-header blue" align="left"><button type="submit" class="btn btn-default btn-xs" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Language</button>
+          <div class="card-header blue" align="left"><button type="submit" class="btn btn-primary btn-md" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i> Language</button>
           </div>
           <div class="card-body" id="TableBODY" >
             <div class="table-responsive">
