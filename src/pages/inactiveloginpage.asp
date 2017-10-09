@@ -148,7 +148,7 @@
       <div class="container-fluid" id="CONTAINER3">
         <!-- Example Tables Card -->
         <div class="card mb-3" id="tablecardsmembersinactive" style="display:none">
-        <div class="card-header gray"><h3><i class="fa fa-users" aria-hidden="true"></i>Inactive Members</h3><br>
+        <div class="card-header gray"><h3><i class="fa fa-users" aria-hidden="true"></i>Inactive Members</h3>
           </div>
           <div class="card-body">
             <div class="table-responsive">
