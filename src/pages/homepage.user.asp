@@ -305,7 +305,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="CodeTypeView"></h5>
+            <h5 class="modal-title" id="FunctionNameView"></h5>
           </div>
           <div class="modal-body">
           <textarea class="form-control desc" id="codeTA" Placeholder="Code Description" disabled><p></p></textarea>
@@ -315,7 +315,7 @@
           </form>
           </div>
           <div class="modal-footer">
-            <h5 class="modal-title" id="FunctionNameView" style="position:fixed;left:2%;display:inline-block;"></h5>
+            <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeView"></p></p>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
           </div>
         </div>

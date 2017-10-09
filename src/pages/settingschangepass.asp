@@ -61,12 +61,12 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav">
                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Codes">
-            <a id=" cde" class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseComponents" aria-expanded="true">
+            <a id=" cde" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" aria-expanded="false">
               <i class="fa fa-code" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Codes</span>
             </a>
-            <ul class="sidenav-second-level collapse show" id="collapseComponents">
+            <ul class="sidenav-second-level collapse" id="collapseComponents">
               <li>
                 <a href="homepage.asp" class="nav-item active">&nbsp;View all Codes</a>
               </li>
