@@ -70,7 +70,7 @@
                 <a href="homepage.asp" class="nav-item active">&nbsp;View all Codes</a>
               </li>
                  <li>
-                <a href="language.a.asp" class="nav-item active">&nbsp;Add Language</a>
+                <a href="language.a.asp" class="nav-item active">&nbsp;Languages</a>
               </li>
             </ul>
           </li>
