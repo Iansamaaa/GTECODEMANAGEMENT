@@ -10,10 +10,12 @@ $(function(){
 		}
 		else
 		{
+
 			aidentifier = "Member Edited";
+			$('#editModal').modal('hide');
 			EditMember();
 			MembersLOGS();
-			$('#editModal').modal('hide');
+
 
 		}
 		}
