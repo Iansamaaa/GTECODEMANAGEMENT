@@ -2,7 +2,7 @@ $(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecardsmembers').show();}, 1000);
   tblpending = $("#memberTable").DataTable( {
-      dom: "Bfrtip",
+      
         //"processing": true,
         //"serverSide": true,
        ajax: {
@@ -13,7 +13,7 @@ setTimeout(function() { NProgress.done(); $('#tablecardsmembers').show();}, 1000
       //"contentType": 'application/json; charset=utf-8',
       //'data': function (data) { return data = JSON.stringify(data); }
       },
-    order: [[ 3, 'desc' ]],
+    "order": [[ 3, 'desc' ]],
     "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
     "iDisplayLength" : 5,
     columns: [
