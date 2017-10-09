@@ -149,7 +149,7 @@
       <div class="container-fluid" id="CONTAINER3">
         <!-- Example Tables Card -->
         <div class="card mb-3" id="tablecardsmembers" style="display:none">
-        <div class="card-header gray"><button id="AddMemberFunc" type="submit" class="btn btn-primary btn-md" data-toggle="modal" data-target="#AddMemberModal" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i>Add Members</button>
+        <div class="card-header gray"><button id="AddMemberFunc" type="submit" class="btn btn-primary btn-md" data-toggle="modal" data-target="#AddMemberModal" title="Add Member"><i class="fa fa-plus" aria-hidden="true"></i>Members</button>
           </div>
           <div class="card-body">
             <div class="table-responsive">
