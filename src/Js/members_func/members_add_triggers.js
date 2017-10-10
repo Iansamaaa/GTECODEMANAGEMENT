@@ -30,7 +30,7 @@ $(function(){
 		{
 				AddMembers();
 				$('#AddMemberModal').modal('hide');
-				window.setTimeout(function(){location.reload()},2000);
+
 
 		}
 		}
@@ -110,6 +110,7 @@ function SuccessfulAdd(loginstats){
 								;
 				break;
 		case "x": (toastr.success("Member added!", "Success"));
+		window.setTimeout(function(){location.reload()},2000);
 				break;
 		default:  toastr.warning("Username/Password/SPIN did not match. (Please check CAPS LOCK)", "Authentication Failed");
 

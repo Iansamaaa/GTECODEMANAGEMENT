@@ -18,11 +18,15 @@
 	cmd_edit.Prepared = True
 
 	'EXECUTE COMMAND
-	Set dr_edit= cmd_edit.Execute()
+	cmd_edit.Execute()
 	activity_logs()
 
+
+	Set cmd_edit = Nothing
+	Set strSQL_edit = Nothing
+
 function activity_logs()
-Dim cmd_act, dr_act, strSQL_act
+Dim cmd, dr_act, strSQL_act
 
 	'Create Objects
 	Set cmd= Server.CreateObject("ADODB.Command")
@@ -37,6 +41,8 @@ Dim cmd_act, dr_act, strSQL_act
 	cmd.Prepared = True
 
 
-	Set dr_add = cmd.Execute()
+	cmd.Execute()
+	Set cmd = Nothing
+	Set strSql_act = Nothing
 end function
 %>

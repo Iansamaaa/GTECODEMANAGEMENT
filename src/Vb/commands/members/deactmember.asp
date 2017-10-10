@@ -28,6 +28,10 @@
 			response.write "y"
 			end if
 
+
+      dr_add.Close
+    Set cmd_add = Nothing
+    Set strSql_add = Nothing
 	'****************************
 	'This code will be used
         'for changepass validation
@@ -47,11 +51,14 @@ function deactmember()
 	cmd_deact.Prepared = True
 
 	'EXECUTE COMMAND
-	Set dr_deact= cmd_deact.Execute()
+	cmd_deact.Execute()
+
+  Set cmd_deact = Nothing
+  Set strSql_deact = Nothing
 end function
 
 function activity_logs()
-Dim cmd_act, dr_act, strSQL_act
+Dim cmd, dr_act, strSQL_act
 
 	'Create Objects
 	Set cmd= Server.CreateObject("ADODB.Command")
@@ -66,6 +73,8 @@ Dim cmd_act, dr_act, strSQL_act
 	cmd.Prepared = True
 
 
-	Set dr_add = cmd.Execute()
+	cmd.Execute()
+  Set cmd = Nothing
+  Set strSQL_act = Nothing
 end function
 %>

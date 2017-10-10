@@ -33,5 +33,8 @@
 	'EXECUTE COMMAND
 	Set dr= cmd.Execute()
 	QueryToJSON(cmd).Flush
+
+	dr.Close
+	Set strsql = Nothing
 	Set cmd = Nothing
 %>
