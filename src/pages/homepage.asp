@@ -251,7 +251,9 @@
             <option value="<%= dr_list.Fields(0)%>"><%= dr_list.Fields(0)%></option>
             <% dr_list.MoveNext
             Loop
-            set cmd_list = nothing %>
+            dr_list.Close
+            set cmd_list = nothing
+            set strSQL_list = nothing %>
           </select>&nbsp;
           </div>
           <div class="form-group">
