@@ -26,6 +26,8 @@
 
 
 	'EXECUTE COMMAND
-	Set dr_log= cmd_log.Execute()
+	cmd_log.Execute()
+	Set cmd_log = Nothing
+	Set strSQL_log = Nothing
 
 %>

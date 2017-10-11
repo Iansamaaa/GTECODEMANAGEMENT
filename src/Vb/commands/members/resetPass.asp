@@ -28,10 +28,14 @@
 			end if
 
 
+    dr_add.Close
+    Set cmd_add = Nothing
+    Set strsql_add = Nothing
+
 	'****************************
   function resetPass()
 	'Initialize Variables
-	Dim cmd_rem, dr_rem, strSQL_rem
+	Dim cmd_rem, strSQL_rem
 
 	'Create Objects
 	Set cmd_rem= Server.CreateObject("ADODB.Command")
@@ -43,7 +47,9 @@
 	cmd_rem.Prepared = True
 
 	'EXECUTE COMMAND
-	Set dr_rem= cmd_rem.Execute()
+	cmd_rem.Execute()
+  Set cmd_rem = Nothing
+  Set strSql_rem = Nothing
 
   end function
 
@@ -55,7 +61,7 @@
   	'for addixng members
   	'****************************
   	'Initialize Variables
-  	Dim cmd, dr_add, strSQL_add
+  	Dim cmd, strSQL_add
   	'Create Objects
   	Set cmd= Server.CreateObject("ADODB.Command")
   	cmd.ActiveConnection =  codemngt
@@ -64,9 +70,10 @@
   	strSQL_add = "INSERT INTO notifications_queue(UserID,Details,Action,Status)values('"&Request.Cookies("USERID")&"','"&Request("firstnamexml")&"','"&Request("act")&"','"&Request("status1")&"')"
   	cmd.CommandText = strSQL_add
   	cmd.Prepared = True
-  	Set dr_add = cmd.Execute()
+  	cmd.Execute()
 
-
+    Set strSQL_add = Nothing
+    Set cmd = Nothing
   end function
 
 
@@ -86,6 +93,9 @@ Dim cmd_act, dr_act, strSQL_act
 	cmd.Prepared = True
 
 
-	Set dr_add = cmd.Execute()
+ cmd.Execute()
+
+  Set cmd = Nothing
+  Set strSQL_act = Nothing
 end function
 %>
