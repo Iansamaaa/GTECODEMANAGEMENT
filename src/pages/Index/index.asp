@@ -151,7 +151,6 @@ body{
 }
     </style>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
    <!-- JQUERY -->
     <script src="../../Js/plugins/jquery-3.2.1.min.js"></script>
 
@@ -186,7 +185,7 @@ body{
 				<input type="password" placeholder="password" name="password" id="password"><br>
 				<input type="button" value="Login" id="subINDEX">
 		</div>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script type="text/javascript" src="../../Js/plugins/jquery-3.2.1.min.js"></script>
 
 
 </body>

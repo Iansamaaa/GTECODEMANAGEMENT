@@ -222,7 +222,6 @@
 
           <select type="text" class="form-control smallInput" id="ctype" Placeholder="Code Type">
             <%
-
             Dim cmd_list, dr_list, strSQL_list
               'Create Objects
               Set cmd_list= Server.CreateObject("ADODB.Command")
@@ -236,7 +235,7 @@
               'EXECUTE COMMAND
               Set dr_list= cmd_list.Execute()
 
-            do while not dr_list.eof%>
+            do while not dr_list.eof %>
             <option value="<%= dr_list.Fields(0)%>"><%= dr_list.Fields(0)%></option>
             <% dr_list.MoveNext
             Loop
@@ -384,11 +383,11 @@
             <h5>Advance Search</h5>
           </div>
           <div class="modal-body">
-          <input type="text" class="form-control" id="sctype" placeholder="Code Type..." width="80px" maxlength="10">
-          <input type="text" class="form-control" id="sfuncn" placeholder="Function Name..." width="80px" maxlength="10">
-          <input type="text" class="form-control" id="sdadd" placeholder="Date Added..." width="80px">
-          <input type="text" class="form-control" id="saddb" placeholder="Added by..." width="80px" maxlength="10">
-           <input type="text" class="form-control" id="supb" placeholder="Updated by..." width="80px" maxlength="10">
+          <input type="text" class="form-control topff" id="sctype" placeholder="Code Type..." width="80px" maxlength="10">
+          <input type="text" class="form-control topff" id="sfuncn" placeholder="Function Name..." width="80px" maxlength="10">
+          <input type="text" class="form-control topff" id="sdadd" placeholder="Date Added..." width="80px">
+          <input type="text" class="form-control topff" id="saddb" placeholder="Added by..." width="80px" maxlength="10">
+           <input type="text" class="form-control topff" id="supb" placeholder="Updated by..." width="80px" maxlength="10">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
