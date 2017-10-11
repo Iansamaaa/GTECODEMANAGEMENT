@@ -19,7 +19,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       //"contentType": 'application/json; charset=utf-8',
       //'data': function (data) { return data = JSON.stringify(data); }
       },
-    order: [[ 9, 'desc' ]],
+    order: [[11, 'desc' ]],
     "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
     "iDisplayLength" : 5,
     columns: [
@@ -73,12 +73,13 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
               "type": "moment-js-date"
             },
             { data: "UpdatedBy","orderable": false},
+            { data: "DateTimeUpdated"},
         ],
 
     "columnDefs": [ {
         className: "hide_column",
         width: "10%",
-        targets: 3,
+        targets: [3,11],
       render: function ( data, type, row ) {
         return type === 'display' && data.length > 35 ?
           data.substr( 0, 35 ) +'…' :
