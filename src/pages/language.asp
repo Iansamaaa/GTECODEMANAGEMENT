@@ -135,15 +135,15 @@
 
     <!-- END OF NAVIGATION -->
 
-    <div class="content-wrapper py-3 smallsizecontainer"><!--Start of the Content-->
+    <div class="content-wrapper py-3  "><!--Start of the Content-->
       <div class="container-fluid">
         <!-- Example Tables Card -->
-       <center><div class="card mb-4 smalltable" style="display:none" id="tablecard">
+       <center><div class="card mb-4" style="display:none;" id="tablecard">
           <div class="card-header blue" align="left"><button type="submit" class="btn btn-primary btn-md" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i> Language</button>
           </div>
-          <div class="card-body" id="TableBODY" >
+          <div class="card-body"   id="TableBODY" >
             <div class="table-responsive">
-              <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
+              <table class="table table-bordered" width="600px" id="dataTable" cellspacing="0">
                 <thead>
                   <tr>
                     <th>ID</th>
