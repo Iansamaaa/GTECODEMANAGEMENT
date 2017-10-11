@@ -33,7 +33,7 @@
 
     <!-- SESSIONS -->
     <script src="../Js/sessions/sessions.pages.js"></script>
-
+	
 
 
     <!-- TOAST FILES -->
@@ -272,6 +272,7 @@
           <div class="form-group col-xs-2">
           <input class="form-control smallInput" id="added" Placeholder="Added By" style="display:none" value="<% fname=Request.Cookies("USERNAME")
                 response.write(fname) %>">
+			
 
           </input>
           </div>
@@ -395,11 +396,11 @@
             <h5>Advance Search</h5>
           </div>
           <div class="modal-body">
-          <input type="text" class="form-control" id="sctype" placeholder="Code Type..." width="80px" maxlength="10">
-          <input type="text" class="form-control" id="sfuncn" placeholder="Function Name..." width="80px" maxlength="10">
-          <input type="text" class="form-control" id="sdadd" placeholder="Date Added..." width="80px">
-          <input type="text" class="form-control" id="saddb" placeholder="Added by..." width="80px" maxlength="10">
-           <input type="text" class="form-control" id="supb" placeholder="Updated by..." width="80px" maxlength="10">
+          <input type="text" class="form-control topff" id="sctype" placeholder="Code Type..." width="80px" maxlength="10">
+          <input type="text" class="form-control topff" id="sfuncn" placeholder="Function Name..." width="80px" maxlength="10">
+          <input type="text" class="form-control topff" id="sdadd" placeholder="Date Added..." width="80px">
+          <input type="text" class="form-control topff" id="saddb" placeholder="Added by..." width="80px" maxlength="10">
+           <input type="text" class="form-control topff" id="supb" placeholder="Updated by..." width="80px" maxlength="10">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

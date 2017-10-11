@@ -2,7 +2,7 @@ $(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecardsmembers').show();}, 1000);
   tblpending = $("#memberTable").DataTable( {
-      dom: "Bfrtip",
+      dom: 'Bfrtip',
         //"processing": true,
         //"serverSide": true,
        ajax: {

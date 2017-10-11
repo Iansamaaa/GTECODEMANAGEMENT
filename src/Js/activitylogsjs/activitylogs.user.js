@@ -1,5 +1,4 @@
-var editor;
-var tblcodes,tblgg;
+var tblcodes, tblgg;
 var modal;
 
 $(document).ready(function(){

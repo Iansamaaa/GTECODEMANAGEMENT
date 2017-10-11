@@ -121,7 +121,8 @@ $('#refreshtab').on( 'click', function () {
       Modalview1();
       $('#editModal').modal('toggle');
   });
-       $("div.toolbar").html('<button type="submit" class="btn btn-default btn-md" id="asearchbtn"><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Advance search</button>');
+       $("#dataTable_filter").addClass('pull-left');
+     $("div.toolbar").html('<button type="submit" class="btn btn-default btn-md " id="asearchbtn"><i class=" fa fa-search-plus" aria-hidden="true"></i>&nbsp;Advance search</button><br>');
  var table = $('#dataTable').DataTable();
  $('#asearchbtn').on( 'click', function () {
     $('#sModal').modal('toggle');
