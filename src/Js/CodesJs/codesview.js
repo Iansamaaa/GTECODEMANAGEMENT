@@ -23,7 +23,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
     order: [[ 7, 'desc' ]],
     "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
     "iDisplayLength" : 5,
-    "order": [[ 9, "desc" ]],
+    "order": [[ 11, "desc" ]],
     columns: [
              {
                 "className":      'details-control3',
@@ -75,12 +75,13 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
               "type": "moment-js-date"
             },
             { data: "UpdatedBy","orderable": false},
+            { data: "DateTimeUpdated"},
         ],
 
     "columnDefs": [ {
         className: "hide_column",
         width: "10%",
-        targets: 3,
+        targets: [3,11],
       render: function ( data, type, row ) {
         return type === 'display' && data.length > 35 ?
           data.substr( 0, 35 ) +'…' :

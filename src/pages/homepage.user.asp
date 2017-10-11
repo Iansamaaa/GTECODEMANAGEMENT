@@ -51,9 +51,6 @@
     <!-- PLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
     <link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
-      <script src="../Js/plugins/moment.js"></script>
-
-
 
 
     <!-- JS -->
@@ -159,6 +156,7 @@
                     <th>Added By</th>
                     <th>Date Updated</th>
                     <th>Updated By</th>
+                    <th></th>
 
                   </tr>
                 </thead>
@@ -415,7 +413,8 @@
     <!-- Custom scripts for this template -->
     <script src="pagedesigns/js/sb-admin.min.js"></script>
 
-
+    <!-- DATE SORTING -->
+      <script src="../Js/plugins/moment.js"></script>
   </body>
 
 </html>

@@ -48,12 +48,15 @@
         Response.Expires = 0
         Response.CacheControl = "no-cache"
 		Response.Write "x"
-	
-
 	End if
 
+	dr_login.close()
+
+	Set dr_login = Nothing
+	Set cmd_login = Nothing
+
 function activity_logs()
-Dim cmd_act, dr_act, strSQL_act
+Dim cmd, strSQL_act
 	
 	'Create Objects
 	Set cmd= Server.CreateObject("ADODB.Command")
@@ -68,7 +71,9 @@ Dim cmd_act, dr_act, strSQL_act
 	cmd.Prepared = True
 	
 	
-	Set dr_add = cmd.Execute()
+	cmd.Execute()
+
+	Set cmd = Nothing
 end function 
 
 %>

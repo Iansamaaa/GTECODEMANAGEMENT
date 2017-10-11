@@ -22,11 +22,15 @@
 	cmd_rem.Prepared = True
 
 	'EXECUTE COMMAND
-	Set dr_rem= cmd_rem.Execute()
+	cmd_rem.Execute()
 	activity_logs()
 
+	set cmd_rem = Nothing
+
+
+
 function activity_logs()
-Dim cmd_act, dr_act, strSQL_act
+Dim cmd, strSQL_act
 
 	'Create Objects
 	Set cmd= Server.CreateObject("ADODB.Command")
@@ -41,6 +45,6 @@ Dim cmd_act, dr_act, strSQL_act
 	cmd.Prepared = True
 
 
-	Set dr_add = cmd.Execute()
+	cmd.Execute()
 end function
 %>

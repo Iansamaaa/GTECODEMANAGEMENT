@@ -1,6 +1,4 @@
 <!--#include file="../../../connections/dsn.asp"-->
-
-
 <%
 
 	
@@ -29,6 +27,11 @@
 			response.write "x"
 
 	end if
+
+	dr_add.close()
+
+	set dr_add = Nothing 
+	set cmd_add = Nothing
 	
 	
 
@@ -41,7 +44,7 @@ function add_lang()
 	'****************************
 	
 	'Initialize Variables
-	Dim cmd, dr_add, strSQL_add, strSQL_activity
+	Dim cmd, strSQL_add
 	
 	'Create Objects
 	Set cmd= Server.CreateObject("ADODB.Command")
@@ -56,12 +59,14 @@ function add_lang()
 	cmd.Prepared = True
 	
 	
-	Set dr_add = cmd.Execute()
+	cmd.Execute()
+
+	Set cmd = Nothing
 
 end function	
 
 function activity_logs()
-Dim cmd_act, dr_act, strSQL_act
+Dim cmd, strSQL_act
 	
 	'Create Objects
 	Set cmd= Server.CreateObject("ADODB.Command")
@@ -69,13 +74,15 @@ Dim cmd_act, dr_act, strSQL_act
 	
 	'QUERY COMMAND
 
-	strSQL_act = "INSERT into actlogs (ACTuser, ACTdate, ACTdescription) values ('"&Request.Cookies("USERNAME")&"', NOW(), 'Added a code')"
+	strSQL_act = "INSERT into actlogs (ACTuser, ACTdate, ACTdescription) values ('"&Request.Cookies("USERNAME")&"', NOW(), 'Added a Language')"
 
 	cmd.CommandText = strSQL_act
 	
 	cmd.Prepared = True
 	
 	
-	Set dr_add = cmd.Execute()
+    cmd.Execute()
+
+    Set cmd = Nothing
 end function 
 %>

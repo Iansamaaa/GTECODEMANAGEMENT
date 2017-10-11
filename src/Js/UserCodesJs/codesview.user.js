@@ -5,10 +5,9 @@ var modal;
 $(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
-
-
 // DATA IN THE DATA TABLES
-  tblpending = $("#dataTable").DataTable( {
+
+  $("#dataTable").DataTable( {
       dom: '<"toolbar">frtip',
         //"processing": true,
         //"serverSide": true,
@@ -19,7 +18,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       //"contentType": 'application/json; charset=utf-8',
       //'data': function (data) { return data = JSON.stringify(data); }
       },
-    order: [[ 8,'desc' ]],
+      order : [[10, 'desc']],
     "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
     "iDisplayLength" : 5,
     columns: [
@@ -48,34 +47,40 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
             { data: "FunctionName", "orderable": false},
             { data: "Version", "orderable": false},
             { data: "DateTimeAdded",
-               render: function(data, type, row){
+              type: "date",
+               render: function(data){
             //You need to have moment.js to parse the date into a local date
-              return moment(data).format('MMMM Do YYYY, h:mm A');
+              return moment(data).format('lll');
               },
               "type": "moment-js-date"
             },
             { data: "AddedBy", "orderable": false},
             { data: "DateTimeUpdated",
-              render: function(data, type, row){
+              orderable: false,
+              type: "date",
+            render: function(data){
+
             //You need to have moment.js to parse the date into a local date
-              return moment(data).format('MMMM Do YYYY, h:mm A');
+              return moment(data).format('lll');
               },
               "type": "moment-js-date"
-            },
+          },
             { data: "UpdatedBy","orderable": false},
+            { data: "DateTimeUpdated"},
         ],
 
     "columnDefs": [ {
         className: "hide_column",
         width: "10%",
-        targets: 2,
+        targets: [2,10],
       render: function ( data, type, row ) {
         return type === 'display' && data.length > 35 ?
           data.substr( 0, 35 ) +'…' :
           data;
       }
        } ],
-    select: 'single',
+
+    select: 'single'
      });
 $('#refreshtab').on( 'click', function () {
     window.setTimeout(function(){location.reload()},100);
@@ -142,8 +147,6 @@ $('#aSEARCH').on( 'click', function () {
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 2000);
 } );
   });
-
-
 
 function Modalview(labad){
   //Set Ajax Status
