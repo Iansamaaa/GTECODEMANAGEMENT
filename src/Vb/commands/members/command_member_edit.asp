@@ -6,7 +6,7 @@
 	'for login validation
 	'****************************
 	'Initialize Variables
-	Dim cmd_edit, dr_edit, strSQL_edit
+	Dim cmd_edit, strSQL_edit
 	'Create Objects
 	Set cmd_edit= Server.CreateObject("ADODB.Command")
 	cmd_edit.ActiveConnection =  codemngt
@@ -37,7 +37,6 @@ Dim cmd, dr_act, strSQL_act
 	strSQL_act = "INSERT into actlogs (ACTuser, ACTdate, ACTdescription) values ('"&Request.Cookies("USERNAME")&"', NOW(), 'Has edited a Member')"
 
 	cmd.CommandText = strSQL_act
-
 	cmd.Prepared = True
 
 
