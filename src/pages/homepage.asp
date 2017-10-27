@@ -411,7 +411,62 @@
     </div>
 <!-- END A SEARCH MODALS -->
 
+<!-- View Release notes -->
+       <div class="modal fade" id="vrnModal" tabindex="-1" role="dialog" aria-labelledby="vrnModallabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Release Notes</h5>
+          </div>
+          <div class="modal-body">
+          <textarea class="form-control codeTS" id="viewrnc" Placeholder="Release notes" disabled></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- End releasenotes modal -->
 
+<!-- Append Release notes -->
+       <div class="modal fade" id="rnaModal" tabindex="-1" role="dialog" aria-labelledby="rnModallabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Release Notes</h5>
+          </div>
+          <div class="modal-body">
+          <textarea class="form-control codeTS" id="rna" Placeholder="Release notes"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="rnacancel" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="wp">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- End releasenotes modal -->
+
+
+<!-- Add Release notes -->
+       <div class="modal fade" id="rnModal" tabindex="-1" role="dialog" aria-labelledby="rnModallabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Release Notes</h5>
+          </div>
+          <div class="modal-body">
+          <textarea class="form-control codeTS" id="rnc" Placeholder="Release notes"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="rncancel" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="gg">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- End releasenotes modal -->
 
 
 
