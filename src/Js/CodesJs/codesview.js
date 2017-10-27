@@ -102,6 +102,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       var FNV = $(this).closest('tr').find('td:eq(5)').text();
       $('#viewC').text(HAHA);
       Modalview(HAHA);
+      commentView(HAHA);
       $('#viewModal').modal('toggle');
       $('#CodeTypeView').text("'"+CTV+"'");
       $('#FunctionNameView').text(FNV);
@@ -128,8 +129,8 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
   });
 	$("#dataTable_filter").addClass('pull-left');
      $("div.toolbar").html('<button type="submit" class="btn btn-default btn-md " id="asearchbtn"><i class=" fa fa-search-plus" aria-hidden="true"></i>&nbsp;Advance search</button><br>');
-        
-    		
+
+
  var table = $('#dataTable').DataTable();
  $('#asearchbtn').on( 'click', function () {
     $('#sModal').modal('toggle');
@@ -207,6 +208,27 @@ function Modalview1(value){
       },
     error:  function(){
       toastr.success("Delete Failed", "Failed");}
+    })
+
+}
+
+function commentView(labad){
+  //Set Ajax Status
+  var datastring;
+  datastring= {VIEWM: labad,
+        };
+
+  $.ajax({
+    type: "POST",
+    url: "../Vb/commands/codes/commentsView.asp",
+    data: datastring,
+    async: false,
+    success: function(data){
+      $('#codedescript').text(atob(data));
+
+      },
+    error:  function(){
+      toastr.success("View Failed", "Failed");}
     })
 
 }
