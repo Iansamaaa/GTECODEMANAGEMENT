@@ -267,7 +267,8 @@
           <br>
           <form class="form-horizontal">
           <div class="form-group">
-          <textarea class="form-control codeTS" id="codedesc" Placeholder="Code Description"></textarea>
+          <textarea class="form-control codeTSA" id="codedescc" Placeholder="Code Description"></textarea><br>
+          <textarea class="form-control codeTS" id="codedesc" Placeholder="Code Content"></textarea>
           </div>
 
           <div class="form-group col-xs-2">
@@ -332,6 +333,7 @@
           </div>
           <div class="modal-footer">
            <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeView"></p></p>
+           <button type="button" class="btn btn-secondary" id="viewreleasenotes">Release Notes</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
           </div>
         </div>
@@ -365,6 +367,7 @@
           <br>
           <form class="form-horizontal">
           <div class="form-group">
+          <textarea class="form-control codeTSA" id="edit_desc" Placeholder="Code Description"></textarea><br>
           <textarea class="form-control codeTS" id="edit_codedesc" Placeholder="Code Description"></textarea>
           </div>
           <div class="form-group col-xs-2">

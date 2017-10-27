@@ -4,7 +4,7 @@ $(function(){
 	$(document).ready(function(){
 		$("#btnAdd").bind({
 			click:function(){
-			 if($('#ctype').val()=='' || $('#fname').val()=='' || $('#codedesc').val()=='' || $('#version').val()==''|| $('#added').val()=='')
+			 if($('#ctype').val()=='' || $('#fname').val()=='' || $('#codedesc').val()=='' || $('#version').val()==''|| $('#added').val()=='' || $('#codedescc').val()=='')
 			{
 				toastr.warning("Fill out Required Fields", "Check Fields");
 				return false;
@@ -14,9 +14,41 @@ $(function(){
 			toastr.warning("Type in version Number", "Check Fields");
 			return false;
 			}
-			else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{2,25}$/))
+			else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\ "]{2,25}$/))
 			{
 			toastr.warning("Type valid Function Name", "Check Fields");
+			return false;
+			}
+			else
+			{	
+				$('#rnModal').modal('toggle');
+				$('#addModal1').modal('toggle');
+			}
+			}
+
+		});
+		//Keypress Enter
+		// ADDING RELEASENOTES ON CODE ADDING 
+			$("#gg").bind({
+			click:function(){
+			 if($('#ctype').val()=='' || $('#fname').val()=='' || $('#codedesc').val()=='' || $('#version').val()==''|| $('#added').val()=='' || $('#rnc').val()=='')
+			{
+				toastr.warning("Fill out Required Fields", "Check Fields");
+				return false;
+			}
+			else if(!($('#version').val()).match(/^[0-9.]{1,10}$/))
+			{
+			toastr.warning("Type in version Number", "Check Fields");
+			return false;
+			}
+			else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\ "]{2,25}$/))
+			{
+			toastr.warning("Type valid Function Name", "Check Fields");
+			return false;
+			}
+			else if($('#rnc').val()=='')
+			{
+			toastr.warning("Type valid Release Notes", "Check Fields");
 			return false;
 			}
 			else
@@ -26,7 +58,6 @@ $(function(){
 			}
 
 		});
-		//Keypress Enter
 
 	}); // End of document ready
 
@@ -40,9 +71,11 @@ FUNCTIONS
 function code_adding(){
 	//Set Ajax Status
 	var datastring;
-	datastring= {ctypes: $("#ctype").val(),
+	datastring= {rnotes: ($("#rnc").val()),
+				ctypes: $("#ctype").val(),
 				fnames: $("#fname").val(),
 				descs: btoa($("#codedesc").val()),
+				descsc: btoa($("#codedescc").val()),
 				versions: $('#version').val(),
 				addedby:  $('#added').val(),
 				};
@@ -52,7 +85,7 @@ function code_adding(){
 		data: datastring,
 		async: false,
 		success: function(data){code_status(data)
-			$('#addModal1').modal('toggle');
+			$('#rnModal').modal('hide');
 			 window.setTimeout(function(){location.reload()},2000);
 
 		},

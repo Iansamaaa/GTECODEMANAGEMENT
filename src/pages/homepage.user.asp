@@ -355,7 +355,7 @@
           <br>
           <form class="form-horizontal">
           <div class="form-group">
-          <textarea class="form-control codeTSA" id="edit_desc" Placeholder="Code Description"></textarea>,<br>
+          <textarea class="form-control codeTSA" id="edit_desc" Placeholder="Code Description"></textarea><br>
           <textarea class="form-control codeTS" id="edit_codedesc" Placeholder="Code Content"></textarea>
           </div>
           <div class="form-group col-xs-2">

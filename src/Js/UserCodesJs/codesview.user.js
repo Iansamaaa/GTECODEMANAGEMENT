@@ -83,7 +83,7 @@ $('#refreshtab').on( 'click', function () {
 } );
 
 // VIEW FUNCTION
-    $('#dataTable tbody').on('click', 'td.details-control', function () {
+    $('#dataTable tbody').on('click', 'td.details-control', function () { 
       var HAHA = $(this).closest('tr').find('td:eq(2)').text();
       var CTV = $(this).closest('tr').find('td:eq(3)').text();
       var FNV = $(this).closest('tr').find('td:eq(4)').text();
@@ -96,6 +96,7 @@ $('#refreshtab').on( 'click', function () {
       $('#FunctionNameView').text(FNV);
       $('#descview').text(DV);
 
+
   });
 //View EDIT CODE FUNCTION
      $('#dataTable tbody').on('click', 'td.details-control3', function () {
@@ -104,6 +105,7 @@ $('#refreshtab').on( 'click', function () {
       var B = $(this).closest('tr').find('td:eq(4)').text();
       var C = $(this).closest('tr').find('td:eq(6)').text();
       var D = $(this).closest('tr').find('td:eq(5)').text();
+      alert(D);
       $('#viewED').val(KAFOY);
       $('#edit_ctype').val(A);
       $('#edit_fname').val(B);
@@ -122,6 +124,7 @@ $('#refreshtab').on( 'click', function () {
  var table = $('#dataTable').DataTable()
 
 $('#aSEARCH').on( 'click', function () {
+
     table
         .columns(3)
         .search($('#sctype').val())
@@ -131,17 +134,18 @@ $('#aSEARCH').on( 'click', function () {
         .search($('#sfuncn').val())
         .draw();
     table
-        .columns(7)
+        .columns(8)
         .search($('#saddb').val())
         .draw();
     table
-        .columns(9)
+        .columns(10)
         .search($('#supb').val())
         .draw();
     table
-        .columns(6)
+        .columns(7)
         .search($('#sdadd').val())
         .draw();
+ $('#tablecard').hide()
  $('#sModal').modal('hide');
  $('#sctype').val("");
  $('#sfuncn').val("");
