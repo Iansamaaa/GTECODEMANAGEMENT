@@ -163,7 +163,7 @@
                     <th>Date Updated</th>
                     <th>Updated By</th>
                     <th>KAFOY</th>
-
+                    <th></th>
                   </tr>
                 </thead>
               </table>
@@ -303,30 +303,33 @@
     </div>
     <!-- END OF Delete MODAL -->
 
-      <!-- View Modal -->
+       <!-- View Modal -->
     <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="FunctionNameView"></h5>
+            <h3 class="modal-title" id="FunctionNameView"></h3>
+          
           </div>
           <div class="modal-body">
-          <textarea class="form-control desc" id="codeTA" Placeholder="Code Description" disabled><p></p></textarea>
+          <textarea class="form-control desc" id="codeTA" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
 
           <form class="form-inline">
           <input type="text" class="form-control" id="viewC" style="display:none">
           </form>
           </div>
           <div class="modal-footer">
-             <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeView"></p></p>
-
+            <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeView"></p></p>
+            <button type="button" class="btn btn-secondary" id="viewreleasenotes">Release Notes</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
           </div>
         </div>
       </div>
     </div>
     <!-- END OF View MODAL -->
 
+  
     <!-- Edit Modal MODAL -->
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
@@ -353,7 +356,8 @@
           <br>
           <form class="form-horizontal">
           <div class="form-group">
-          <textarea class="form-control codeTS" id="edit_codedesc" Placeholder="Code Description"></textarea>
+          <textarea class="form-control codeTSA" id="edit_desc" Placeholder="Code Description"></textarea><br>
+          <textarea class="form-control codeTS" id="edit_codedesc" Placeholder="Code Content"></textarea>
           </div>
           <div class="form-group col-xs-2">
           <input class="form-control smallInput" id="edited" Placeholder="Edited By" style="display:none" value="<%fname=Request.Cookies("USERNAME")
@@ -375,7 +379,6 @@
       </div>
     </div>
     <!-- END OF EDIT MODAL -->
-
 
 <!-- ADVANCE SEARCH MODALS -->
    <!-- ADD MODAL -->
@@ -402,7 +405,42 @@
     <!-- END OF ADD MODAL -->
 <!-- END A SEARCH MODALS -->
 
+<!-- View Release notes -->
+       <div class="modal fade" id="vrnModal" tabindex="-1" role="dialog" aria-labelledby="vrnModallabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Release Notes</h5>
+          </div>
+          <div class="modal-body">
+          <textarea class="form-control codeTS" id="viewrnc" Placeholder="Release notes" disabled></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- End releasenotes modal -->
 
+<!-- Append Release notes -->
+       <div class="modal fade" id="rnaModal" tabindex="-1" role="dialog" aria-labelledby="rnModallabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Release Notes</h5>
+          </div>
+          <div class="modal-body">
+          <textarea class="form-control codeTS" id="rna" Placeholder="Release notes"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="rnacancel" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="wp">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- End releasenotes modal -->
 
 
 <!--                                                END OF MODALS                                              -->

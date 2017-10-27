@@ -14,7 +14,7 @@ $(function(){
 			toastr.warning("Type in version Number", "Check Fields");
 			return false;
 			}
-			else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{2,25}$/))
+			else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\ "]{2,25}$/))
 			{
 			toastr.warning("Type valid Function Name", "Check Fields");
 			return false;
@@ -27,9 +27,10 @@ $(function(){
 			}
 
 		});
+		// ADDING RELEASENOTES ON CODE ADDING 
 			$("#gg").bind({
 			click:function(){
-			 if($('#ctype').val()=='' || $('#fname').val()=='' || $('#codedesc').val()=='' || $('#version').val()==''|| $('#added').val()=='')
+			 if($('#ctype').val()=='' || $('#fname').val()=='' || $('#codedesc').val()=='' || $('#version').val()==''|| $('#added').val()=='' || $('#rnc').val()=='')
 			{
 				toastr.warning("Fill out Required Fields", "Check Fields");
 				return false;
@@ -39,7 +40,7 @@ $(function(){
 			toastr.warning("Type in version Number", "Check Fields");
 			return false;
 			}
-			else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{2,25}$/))
+			else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\ "]{2,25}$/))
 			{
 			toastr.warning("Type valid Function Name", "Check Fields");
 			return false;
@@ -62,9 +63,9 @@ $(function(){
 				$('#addModal1').modal('show');
 			}
 
-		});
-		//Keypress Enter
 
+
+		});
 	}); // End of document ready
 
 }); // End of jQuery function
@@ -72,8 +73,6 @@ $(function(){
 /**********
 FUNCTIONS
 **********/
-//check_fields
-//validate to server
 
 function code_adding(){
 	//Set Ajax Status

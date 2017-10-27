@@ -74,12 +74,13 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
             },
             { data: "UpdatedBy","orderable": false},
             { data: "DateTimeUpdated"},
+            { data: "Description"},
         ],
 
     "columnDefs": [ {
         className: "hide_column",
         width: "10%",
-        targets: [3,11],
+        targets: [3,11,12],
       render: function ( data, type, row ) {
         return type === 'display' && data.length > 35 ?
           data.substr( 0, 35 ) +'…' :
@@ -98,6 +99,7 @@ $('#refreshtab').on( 'click', function () {
       var FNV = $(this).closest('tr').find('td:eq(5)').text();
       $('#viewC').text(HAHA);
       Modalview(HAHA);
+      RNview(HAHA);
       $('#viewModal').modal('toggle');
       $('#CodeTypeView').text(CTV);
       $('#FunctionNameView').text(FNV);
@@ -115,12 +117,15 @@ $('#refreshtab').on( 'click', function () {
       var A = $(this).closest('tr').find('td:eq(4)').text();
       var B = $(this).closest('tr').find('td:eq(5)').text();
       var C = $(this).closest('tr').find('td:eq(6)').text();
+      var D = $(this).closest('tr').find('td:eq(12)').text();
       $('#viewED').val(KAFOY);
       $('#edit_ctype').val(A);
       $('#edit_fname').val(B);
+      $('#edit_desc').val(atob(D));
       $('#edit_version').val(C);
       Modalview1();
       $('#editModal').modal('toggle');
+      
   });
        $("#dataTable_filter").addClass('pull-left');
      $("div.toolbar").html('<button type="submit" class="btn btn-default btn-md " id="asearchbtn"><i class=" fa fa-search-plus" aria-hidden="true"></i>&nbsp;Advance search</button><br>');
@@ -160,6 +165,9 @@ $('#aSEARCH').on( 'click', function () {
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 2000);
 } );
 
+$('#viewreleasenotes').on( 'click', function () {
+      $('#vrnModal').modal('toggle');
+});
   });
 
 
@@ -184,6 +192,28 @@ function Modalview(labad){
     })
 
 }
+
+function RNview(labad){
+  //Set Ajax Status
+  var datastring;
+  datastring= {VIEWM: labad,
+        };
+
+  $.ajax({
+    type: "POST",
+    url: "../Vb/commands/codes/releasenotesview.asp",
+    data: datastring,
+    async: false,
+    success: function(data){
+      $('#viewrnc').text(data);
+
+      },
+    error:  function(){
+      toastr.success("Delete Failed", "Failed");}
+    })
+
+}
+
 
 function Modalview1(value){
   //Set Ajax Status

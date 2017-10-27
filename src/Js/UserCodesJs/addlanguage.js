@@ -21,7 +21,9 @@ $(function(){
 		}
 		});
 		//Keypress Enter
-
+		$('#refreshtab').on( 'click', function () {
+    window.setTimeout(function(){location.reload()},100);
+} );
 	}); // End of document ready
 
 }); // End of jQuery function

@@ -82,7 +82,7 @@ $('#refreshtab').on( 'click', function () {
     window.setTimeout(function(){location.reload()},100);
 } );
 
-// VIEWW FUNCTION
+// VIEW FUNCTION
     $('#dataTable tbody').on('click', 'td.details-control', function () {
       var HAHA = $(this).closest('tr').find('td:eq(2)').text();
       var CTV = $(this).closest('tr').find('td:eq(3)').text();
@@ -97,17 +97,19 @@ $('#refreshtab').on( 'click', function () {
       $('#descview').text(DV);
 
   });
-// EDIT CODE FUNCTION
+//View EDIT CODE FUNCTION
      $('#dataTable tbody').on('click', 'td.details-control3', function () {
       var KAFOY = $(this).closest('tr').find('td:eq(2)').text();
       var A = $(this).closest('tr').find('td:eq(3)').text();
       var B = $(this).closest('tr').find('td:eq(4)').text();
       var C = $(this).closest('tr').find('td:eq(6)').text();
+      var D = $(this).closest('tr').find('td:eq(5)').text();
       $('#viewED').val(KAFOY);
       $('#edit_ctype').val(A);
       $('#edit_fname').val(B);
       $('#edit_version').val(C);
-      Modalview1();
+      $('#edit_desc').val(atob(D));
+      codeview_edit();
       $('#editModal').modal('toggle');
   });
 
@@ -198,7 +200,7 @@ function RNview(labad){
 }
 
 
-function Modalview1(value){
+function codeview_edit(value){
   //Set Ajax Status
   var datastring;
   datastring= {VIEWN: $('#viewED').val(),
