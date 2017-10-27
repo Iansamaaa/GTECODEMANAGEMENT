@@ -122,7 +122,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       $('#edit_ctype').val(A);
       $('#edit_fname').val(B);
       $('#edit_version').val(C);
-       $('#edit_desc').val(atob(D));
+      $('#edit_desc').val(atob(D));
       Modalview1();
       $('#editModal').modal('toggle');
   });

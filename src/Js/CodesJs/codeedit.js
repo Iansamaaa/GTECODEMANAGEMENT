@@ -69,7 +69,7 @@ function code_edit(){
         descs: btoa($("#edit_codedesc").val()),
         edit: ($("#edited").val()),
         versions: $('#edit_version').val(),
-        desc: ($("#edit_desc").val()),
+        desc: btoa($("#edit_desc").val()),
         };
     $.ajax({
     type: "POST",

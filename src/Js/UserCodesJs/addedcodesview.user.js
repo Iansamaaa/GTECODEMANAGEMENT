@@ -81,11 +81,6 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
         className: "hide_column",
         width: "10%",
         targets: [3,11,12],
-      render: function ( data, type, row ) {
-        return type === 'display' && data.length > 35 ?
-          data.substr( 0, 35 ) +'…' :
-          data;
-      }
        } ],
     select: 'single',
      });
