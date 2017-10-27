@@ -71,8 +71,11 @@
               <li>
                 <a href="codeadded.asp" class="nav-item active">&nbsp;My Codes</a>
               </li>
-             <li>
-                <a href="language.asp" class="nav-item active">&nbsp;Languages</a>
+              <li>
+                <a href="language.asp" class="nav-item active">&nbsp; View all Languages</a>
+              </li>
+               <li>
+                <a href="mylanguage.asp" class="nav-item active">&nbsp;My Languages</a>
               </li>
             </ul>
           </li>

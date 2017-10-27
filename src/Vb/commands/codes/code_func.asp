@@ -53,14 +53,14 @@ function add_code()
 	
 	'QUERY COMMAND
 
-	strSQL_add = "INSERT INTO codes_masterlist (Language,FunctionName,Version,ContentScript,DateTimeAdded,DateTimeUpdated,UpdatedBy,AddedBy) values('"&Request("ctypes")&"','"&Request("fnames")&"','"&Request("versions")&"','"&Request("descs")&"',NOW(),NOW(),'"&Request("addedby")&"','"&Request("addedby")&"')"
-
+	strSQL_add = "INSERT INTO codes_masterlist (Language,FunctionName,Version,ContentScript,DateTimeAdded,DateTimeUpdated,UpdatedBy,AddedBy,Description,ReleaseNotes) values('"&Request("ctypes")&"','"&Request("fnames")&"','"&Request("versions")&"','"&Request("descs")&"',NOW(),NOW(),'"&Request("addedby")&"','"&Request("addedby")&"','"&Request("descsc")&"',CONCAT(NOW(),'\n','"&Request("rnotes")&"','\n','----"&Request.Cookies("USERNAME")&"----'))"
 	cmd.CommandText = strSQL_add
 	
 	cmd.Prepared = True
 	
 	cmd.Execute()
 
+	Set cmd = Nothing
 end function	
 
 function activity_logs()
@@ -80,5 +80,6 @@ Dim cmd, strSQL_act
 	
 	
     cmd.Execute()
+    Set cmd = Nothing
 end function 
 %>

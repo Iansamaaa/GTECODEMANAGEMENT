@@ -55,7 +55,7 @@
 
 
     <!-- JS -->
-    <script src="../Js/UserCodesJs/language.js"></script>
+    <script src="../Js/langjs/languageview.user.js"></script>
   </head>
 
   <body class="fixed-nav" id="page-top">
@@ -82,7 +82,10 @@
                 <a href="codeadded.asp" class="nav-item active">&nbsp;My Codes</a>
               </li>
                <li class="active">
-                <a href="language.asp" class="nav-item active">&nbsp;Languages</a>
+                <a href="language.asp" class="nav-item active">&nbsp; View all Languages</a>
+              </li>
+               <li>
+                <a href="mylanguage.asp" class="nav-item active">&nbsp;My Languages</a>
               </li>
             </ul>
           </li>
@@ -148,6 +151,7 @@
                   <tr>
                     <th>ID</th>
                     <th>Language</th>
+                    <th width="10%">Added By</th>
                   </tr>
                 </thead>
               </table>

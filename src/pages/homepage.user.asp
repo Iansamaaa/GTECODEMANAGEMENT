@@ -81,7 +81,10 @@
                 <a href="codeadded.asp" class="nav-item active">&nbsp;My Codes</a>
               </li>
                  <li>
-                <a href="language.asp" class="nav-item active">&nbsp;Languages</a>
+                <a href="language.asp" class="nav-item active">&nbsp; View all Languages</a>
+              </li>
+               <li>
+                <a href="mylanguage.asp" class="nav-item active">&nbsp;My Languages</a>
               </li>
             </ul>
           </li>
@@ -151,6 +154,7 @@
                     <th>Code # </th>
                     <th>Code Type</th>
                     <th>Function Name</th>
+                    <th>Description</th>
                     <th>Version #</th>
                     <th>Date Added</th>
                     <th>Added By</th>
@@ -241,7 +245,7 @@
           </select>&nbsp;
           </div>
           <div class="form-group">
-          <input type="text" class="form-control smallInput" id="fname" placeholder="Function Name">&nbsp;
+          <input type="text" class="form-control smallInput" id="fname" placeholder="Function Name" maxlength="15" ;>&nbsp;
           </div>
           <div class="form-group">
           <input type="text" class="form-control smallInput" id="version" placeholder="Version">
@@ -250,7 +254,8 @@
           <br>
           <form class="form-horizontal">
           <div class="form-group">
-          <textarea class="form-control codeTS" id="codedesc" Placeholder="Code Description"></textarea>
+          <textarea class="form-control codeTSA" id="codedescc" Placeholder="Code Description"></textarea><br>
+          <textarea class="form-control codeTS" id="codedesc" Placeholder="Code Content"></textarea>
           </div>
 
           <div class="form-group col-xs-2">
@@ -303,10 +308,11 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="FunctionNameView"></h5>
+            <h3 class="modal-title" id="FunctionNameView"></h3>
+          
           </div>
           <div class="modal-body">
-          <textarea class="form-control desc" id="codeTA" Placeholder="Code Description" disabled><p></p></textarea>
+          <textarea class="form-control desc" id="codeTA" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
 
           <form class="form-inline">
           <input type="text" class="form-control" id="viewC" style="display:none">
@@ -314,7 +320,9 @@
           </div>
           <div class="modal-footer">
             <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeView"></p></p>
+            <button type="button" class="btn btn-secondary" id="viewreleasenotes">Release Notes</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
           </div>
         </div>
       </div>
@@ -338,7 +346,7 @@
           <input type="text" class="form-control" id="edit_ctype" Placeholder="Code Type" disabled>&nbsp;
           </div>
           <div class="form-group">
-          <input type="text" class="form-control" id="edit_fname" placeholder="Function Name">&nbsp;
+          <input type="text" class="form-control" id="edit_fname" placeholder="Function Name" maxlength="15">&nbsp;
           </div>
           <div class="form-group">
           <input type="text" class="form-control" id="edit_version" placeholder="Version">
@@ -371,6 +379,23 @@
     <!-- END OF EDIT MODAL -->
 
 
+<!-- View Release notes -->
+       <div class="modal fade" id="vrnModal" tabindex="-1" role="dialog" aria-labelledby="vrnModallabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Release Notes</h5>
+          </div>
+          <div class="modal-body">
+          <textarea class="form-control codeTS" id="viewrnc" Placeholder="Release notes" disabled></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- End releasenotes modal -->
 
 
 <!-- ADVANCE SEARCH MODALS -->
@@ -397,6 +422,27 @@
     </div>
     <!-- END OF ADD MODAL -->
 <!-- END A SEARCH MODALS -->
+
+
+<!-- Release notes -->
+       <div class="modal fade" id="rnModal" tabindex="-1" role="dialog" aria-labelledby="rnModallabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Release Notes</h5>
+          </div>
+          <div class="modal-body">
+          <textarea class="form-control codeTS" id="rnc" Placeholder="Release notes"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="rncancel" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="gg">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- End releasenotes modal -->
+
 
 <!--                                                END OF MODALS                                              -->
 

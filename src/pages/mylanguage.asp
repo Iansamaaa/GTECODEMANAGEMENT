@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!--#include file='../connections/dsn.asp'-->
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Code Management System</title>
@@ -37,11 +37,16 @@
 
 
 
-
     <!-- TOAST FILES -->
     <link href="../Js/plugins/toastr/build/toastr.min.css" rel="stylesheet"/>
     <script src="../Js/plugins/toastr/build/toastr.min.js"></script>
     <script src="../Js/members_func/toast_members.js"></script>
+
+    <!-- TRIGGERS -->
+    <script type= "text/javascript" src="../Js/UserCodesJs/addlanguage.js"></script>
+    <script type= "text/javascript" src="../Js/langjs/langremove.js"></script>
+  
+
     <!-- PLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
     <link rel="stylesheet" href="../Js/plugins/nprogress-master/nprogress.css">
@@ -50,43 +55,42 @@
 
 
 
-
     <!-- JS -->
-    <script src="../Js/activitylogsjs/activitylogs.user.js"></script>
+    <script src="../Js/langjs/mylanguage.js"></script>
   </head>
 
   <body class="fixed-nav" id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-      <a class="navbar-brand" href="homepage.user.asp"><i class="fa fa-television" aria-hidden="true"></i> Code Management System</a>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <a class="navbar-brand" href="homepage.asp"><i class="fa fa-television" aria-hidden="true"></i> Code Management System</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav navbar-sidenav">
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Codes">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents">
+       <ul class="navbar-nav navbar-sidenav">
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Codes">
+            <a id=" cde" class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseComponents" aria-expanded="true">
               <i class="fa fa-code" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Codes</span>
             </a>
-            <ul class="sidenav-second-level collapse" id="collapseComponents">
-              <li>
+            <ul class="sidenav-second-level collapse show" id="collapseComponents">
+              <li >
                 <a href="homepage.user.asp" class="nav-item active">&nbsp;View all Codes</a>
               </li>
               <li>
                 <a href="codeadded.asp" class="nav-item active">&nbsp;My Codes</a>
               </li>
-              <li>
+                 <li>
                 <a href="language.asp" class="nav-item active">&nbsp; View all Languages</a>
               </li>
-               <li>
+               <li class="active">
                 <a href="mylanguage.asp" class="nav-item active">&nbsp;My Languages</a>
               </li>
             </ul>
           </li>
-           <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Activity Logs">
+           <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Activity Logs">
             <a class="nav-link" href="activitylogs.user.asp">
               <i class="fa fa-file-text-o" aria-hidden="true"></i>
               <span class="nav-link-text">
@@ -94,7 +98,7 @@
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+            <a id="settingst" class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
               <i class="fa fa-cog" aria-hidden="true"></i>
               <span class="nav-link-text">
                 Settings</span>
@@ -103,8 +107,8 @@
               <li>
                 <a href="settingschangepassuser.asp">Change Password</a>
               </li>
-              <li>
-                <a href="DeactivateAcc.user.asp">Deactivate Account</a>
+                <li>
+                <a href="DeactivateAcc.userasp">Deactivate Account</a>
               </li>
             </ul>
           </li>
@@ -135,21 +139,22 @@
 
     <!-- END OF NAVIGATION -->
 
-    <div class="content-wrapper py-3" id="WRAPPER1"><!--Start of the Content-->
-      <div class="container-fluid" id="CONTAINER1">
+    <div class="content-wrapper py-3 smallsizecontainer"><!--Start of the Content-->
+      <div class="container-fluid">
         <!-- Example Tables Card -->
-        <div class="card mb-4" id="tablecardact" style="display:none">
-          <div class="card-header white" ><p><h3> <i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;ACTIVITY LOGS</h3></p>
+       <center><div class="card mb-4 smalltable" style="display:none" id="tablecard">
+          <div class="card-header blue" align="left"><button type="submit" class="btn btn-primary btn-md" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i> Language</button>
           </div>
           <div class="card-body" id="TableBODY" >
             <div class="table-responsive">
               <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
                 <thead>
                   <tr>
-                    <th></th>
-                    <th width="80%">User</th>
-                    <th width="60%">Activity date</th>
-                    <th>Description</th>
+
+                    <th width="5%"></th>
+                    <th width="5%">ID</th>
+                    <th width="80%">Language</th>
+                    <th width="10%">Added By</th>
                   </tr>
                 </thead>
               </table>
@@ -158,7 +163,7 @@
           <div class="card-footer small text-muted">
             Made by #GTE OJT
           </div>
-        </div>
+        </div></center>
 
       </div>
       <!-- /.container-fluid -->
@@ -178,7 +183,6 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-
           </div>
           <div class="modal-body">
             Select "Logout" below if you are ready to end your current session.
@@ -194,7 +198,48 @@
     </div>
     <!-- END OF LOGOUT MODAL -->
 
+     <!-- ADD MODAL -->
+       <div class="modal fade" id="addModal1" tabindex="-1" role="dialog" aria-labelledby="addModallabel1" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Add Language</h5>
+          </div>
+          <div class="modal-body">
+          <input type="text" class="form-control" id="langlang" placeholder="Enter Language" width="80px" maxlength="10">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="addLANG">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF ADD MODAL -->
 
+   <!-- Delete Modal -->
+    <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="removeModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Language</h5>
+
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete Record?
+
+          <form class="form-inline">
+          <input type="text" class="form-control" id="IDrecord" style="display:none">
+          </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="btnREMOVElang">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF Delete MODAL -->
 <!--                                                END OF MODALS                                              -->
 
     <!-- Bootstrap core JavaScript -->

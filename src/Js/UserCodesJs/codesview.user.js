@@ -18,7 +18,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       //"contentType": 'application/json; charset=utf-8',
       //'data': function (data) { return data = JSON.stringify(data); }
       },
-      order : [[10, 'desc']],
+      order : [[11, 'desc']],
     "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
     "iDisplayLength" : 5,
     columns: [
@@ -45,6 +45,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
             { data: "IDCode", "orderable": false},
             { data: "Language", "orderable": false},
             { data: "FunctionName", "orderable": false},
+            { data: "Description", "orderable": false},
             { data: "Version", "orderable": false},
             { data: "DateTimeAdded",
               type: "date",
@@ -72,12 +73,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
     "columnDefs": [ {
         className: "hide_column",
         width: "10%",
-        targets: [2,10],
-      render: function ( data, type, row ) {
-        return type === 'display' && data.length > 35 ?
-          data.substr( 0, 35 ) +'…' :
-          data;
-      }
+        targets: [2,11,5],
        } ],
 
     select: 'single'
@@ -91,18 +87,22 @@ $('#refreshtab').on( 'click', function () {
       var HAHA = $(this).closest('tr').find('td:eq(2)').text();
       var CTV = $(this).closest('tr').find('td:eq(3)').text();
       var FNV = $(this).closest('tr').find('td:eq(4)').text();
+      var DV = $(this).closest('tr').find('td:eq(5)').text();
       $('#viewC').text(HAHA);
       Modalview(HAHA);
+      RNview(HAHA);
       $('#viewModal').modal('toggle');
       $('#CodeTypeView').text(CTV);
       $('#FunctionNameView').text(FNV);
+      $('#descview').text(DV);
+
   });
 // EDIT CODE FUNCTION
      $('#dataTable tbody').on('click', 'td.details-control3', function () {
       var KAFOY = $(this).closest('tr').find('td:eq(2)').text();
       var A = $(this).closest('tr').find('td:eq(3)').text();
       var B = $(this).closest('tr').find('td:eq(4)').text();
-      var C = $(this).closest('tr').find('td:eq(5)').text();
+      var C = $(this).closest('tr').find('td:eq(6)').text();
       $('#viewED').val(KAFOY);
       $('#edit_ctype').val(A);
       $('#edit_fname').val(B);
@@ -148,8 +148,12 @@ $('#aSEARCH').on( 'click', function () {
  $('#tablecard').hide()
  NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 2000);
-} );
-  });
+});
+
+$('#viewreleasenotes').on( 'click', function () {
+      $('#vrnModal').modal('toggle');
+});
+});
 
 function Modalview(labad){
   //Set Ajax Status
@@ -171,6 +175,28 @@ function Modalview(labad){
     })
 
 }
+
+function RNview(labad){
+  //Set Ajax Status
+  var datastring;
+  datastring= {VIEWM: labad,
+        };
+
+  $.ajax({
+    type: "POST",
+    url: "../Vb/commands/codes/releasenotesview.asp",
+    data: datastring,
+    async: false,
+    success: function(data){
+      $('#viewrnc').text(data);
+
+      },
+    error:  function(){
+      toastr.success("Delete Failed", "Failed");}
+    })
+
+}
+
 
 function Modalview1(value){
   //Set Ajax Status

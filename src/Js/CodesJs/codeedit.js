@@ -34,7 +34,7 @@ $(function(){
       toastr.warning("Type valid Code type", "Check Fields");
       return false;
       }
-      else if(!($('#edit_fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{3,20}$/))
+      else if(!($('#edit_fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\ "]{3,20}$/))
       {
       toastr.warning("Type valid Function Name", "Check Fields");
       return false;

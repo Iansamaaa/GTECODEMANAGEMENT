@@ -258,7 +258,7 @@
           </select>&nbsp;
           </div>
           <div class="form-group">
-          <input type="text" class="form-control smallInput" id="fname" placeholder="Function Name">&nbsp;
+          <input type="text" class="form-control smallInput" id="fname" placeholder="Function Name" maxlength="15">&nbsp;
           </div>
           <div class="form-group">
           <input type="text" class="form-control smallInput" id="version" placeholder="Version">
@@ -356,7 +356,7 @@
           <input type="text" class="form-control" id="edit_ctype" Placeholder="Code Type" disabled>&nbsp;
           </div>
           <div class="form-group">
-          <input type="text" class="form-control" id="edit_fname" placeholder="Function Name">&nbsp;
+          <input type="text" class="form-control" id="edit_fname" placeholder="Function Name" maxlength="15">&nbsp;
           </div>
           <div class="form-group">
           <input type="text" class="form-control" id="edit_version" placeholder="Version">
@@ -389,7 +389,6 @@
     <!-- END OF EDIT MODAL -->
 
 <!-- ADVANCE SEARCH MODALS -->
-   <!-- ADD MODAL -->
        <div class="modal fade" id="sModal" tabindex="-1" role="dialog" aria-labelledby="sModallabel" aria-hidden="true">
       <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
@@ -410,7 +409,6 @@
         </div>
       </div>
     </div>
-    <!-- END OF ADD MODAL -->
 <!-- END A SEARCH MODALS -->
 
 

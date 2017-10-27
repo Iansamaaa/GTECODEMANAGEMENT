@@ -21,8 +21,45 @@ $(function(){
 			}
 			else
 			{
+				$('#rnModal').modal('toggle');
+				$('#addModal1').modal('toggle');
+			}
+			}
+
+		});
+			$("#gg").bind({
+			click:function(){
+			 if($('#ctype').val()=='' || $('#fname').val()=='' || $('#codedesc').val()=='' || $('#version').val()==''|| $('#added').val()=='')
+			{
+				toastr.warning("Fill out Required Fields", "Check Fields");
+				return false;
+			}
+			else if(!($('#version').val()).match(/^[0-9.]{1,10}$/))
+			{
+			toastr.warning("Type in version Number", "Check Fields");
+			return false;
+			}
+			else if(!($('#fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\"]{2,25}$/))
+			{
+			toastr.warning("Type valid Function Name", "Check Fields");
+			return false;
+			}
+			else if($('#rnc').val()=='')
+			{
+			toastr.warning("Type valid Release Notes", "Check Fields");
+			return false;
+			}
+			else
+			{
 				code_adding();
 			}
+			}
+
+		});
+			$("#rncancel").bind({
+			click:function(){
+				$('#rnModal').modal('hide');
+				$('#addModal1').modal('show');
 			}
 
 		});
@@ -37,12 +74,16 @@ FUNCTIONS
 **********/
 //check_fields
 //validate to server
+
 function code_adding(){
 	//Set Ajax Status
 	var datastring;
-	datastring= {ctypes: $("#ctype").val(),
+	datastring= {
+				rnotes: $("#rnc").val(),
+				ctypes: $("#ctype").val(),
 				fnames: $("#fname").val(),
 				descs: btoa($("#codedesc").val()),
+				descsc: btoa($("#codedescc").val()),
 				versions: $('#version').val(),
 				addedby:  $('#added').val(),
 				};
@@ -52,7 +93,7 @@ function code_adding(){
 		data: datastring,
 		async: false,
 		success: function(data){code_status(data)
-			$('#addModal1').modal('toggle');
+			$('#rnModal').modal('toggle');
 			 window.setTimeout(function(){location.reload()},2000);
 
 		},

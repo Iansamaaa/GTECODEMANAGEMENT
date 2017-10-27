@@ -52,7 +52,7 @@ function add_lang()
 	
 	'QUERY COMMAND
 
-	strSQL_add = "INSERT INTO code_language_reference(Language) values ('"&Request("lang")&"')"
+	strSQL_add = "INSERT INTO code_language_reference(Language, AddedBy) values ('"&Request("lang")&"','"&Request.Cookies("USERNAME")&"')"
 
 	cmd.CommandText = strSQL_add
 	

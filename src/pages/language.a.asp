@@ -44,6 +44,7 @@
 
     <!-- TRIGGERS -->
     <script type= "text/javascript" src="../Js/UserCodesJs/addlanguage.js"></script>
+    <script type= "text/javascript" src="../Js/langjs/langremove.js"></script>
   
 
     <!-- PLUGINS -->
@@ -159,8 +160,11 @@
               <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>Language</th>
+
+                    <th width="5%"></th>
+                    <th width="5%">ID</th>
+                    <th width="80%">Language</th>
+                    <th width="10%">Added By</th>
                   </tr>
                 </thead>
               </table>
@@ -223,7 +227,29 @@
     </div>
     <!-- END OF ADD MODAL -->
 
-   
+   <!-- Delete Modal -->
+    <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="removeModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Language</h5>
+
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete Record?
+
+          <form class="form-inline">
+          <input type="text" class="form-control" id="IDrecord" style="display:none">
+          </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="btnREMOVElang">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF Delete MODAL -->
 <!--                                                END OF MODALS                                              -->
 
     <!-- Bootstrap core JavaScript -->

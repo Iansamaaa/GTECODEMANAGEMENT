@@ -8,7 +8,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
         //"processing": true,
         //"serverSide": true,
        ajax: {
-      url: '../Vb/commands/codes/language.command.asp',
+      url: '../Vb/commands/codes/mylanguage.user.asp',
       dataSrc: ""
       //"dataType": "jsonp"
       //"contentType": 'application/json; charset=utf-8',
