@@ -33,7 +33,7 @@
 
     <!-- SESSIONS -->
     <script src="../Js/sessions/sessions.pages.js"></script>
-	
+
 
 
     <!-- TOAST FILES -->
@@ -273,7 +273,7 @@
           <div class="form-group col-xs-2">
           <input class="form-control smallInput" id="added" Placeholder="Added By" style="display:none" value="<% fname=Request.Cookies("USERNAME")
                 response.write(fname) %>">
-			
+
 
           </input>
           </div>
@@ -324,8 +324,8 @@
             <h4 class="modal-title" id="FunctionNameView"></h4>
           </div>
           <div class="modal-body">
-          <textarea class="form-control desc" id="codeTA" Placeholder="Code Description" disabled><p></p></textarea>
-
+            <textarea class="form-control desc" id="codeTA" style="height:300px;" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
+            <textarea class="form-control " id="codedescript" style="height:110px; margin-top:5px;" Placeholder="Code Description" disabled><p></textarea>
           <form class="form-inline">
           <input type="text" class="form-control" id="viewC" style="display:none">
           </form>

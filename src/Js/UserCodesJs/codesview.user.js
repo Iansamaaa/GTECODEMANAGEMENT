@@ -91,6 +91,7 @@ $('#refreshtab').on( 'click', function () {
       $('#viewC').text(HAHA);
       Modalview(HAHA);
       RNview(HAHA);
+      commentView(HAHA);
       $('#viewModal').modal('toggle');
       $('#CodeTypeView').text(CTV);
       $('#FunctionNameView').text(FNV);
@@ -198,6 +199,30 @@ function RNview(labad){
     })
 
 }
+
+function commentView(labad){
+  //Set Ajax Status
+  var datastring;
+  datastring= {VIEWM: labad,
+        };
+
+  $.ajax({
+    type: "POST",
+    url: "../Vb/commands/codes/commentsView.asp",
+    data: datastring,
+    async: false,
+    success: function(data){
+      $('#codedescript').text(atob(data));
+
+      },
+    error:  function(){
+      toastr.success("View Failed", "Failed");}
+    })
+
+}
+
+
+
 
 
 function codeview_edit(value){
