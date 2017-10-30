@@ -248,7 +248,7 @@
           <input type="text" class="form-control smallInput" id="fname" placeholder="Function Name" maxlength="15" ;>&nbsp;
           </div>
           <div class="form-group">
-          <input type="text" class="form-control smallInput" id="version" placeholder="Version">
+          <input type="text" class="form-control smallInput" id="version" placeholder="Version" value="1.0" disabled>
           </div>
           </form>
           <br>
@@ -309,7 +309,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h3 class="modal-title" id="FunctionNameView"></h3>
-
+             <h4 id="current_version"></h4>
           </div>
           <div class="modal-body">
           <textarea class="form-control desc" id="codeTA" style="height:300px;" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
@@ -349,7 +349,11 @@
           <input type="text" class="form-control" id="edit_fname" placeholder="Function Name" maxlength="15">&nbsp;
           </div>
           <div class="form-group">
-          <input type="text" class="form-control" id="edit_version" placeholder="Version">
+          <input type="text" class="form-control" style="width:70px;" id="edit_version" placeholder="Version" disabled>
+          </div>
+          <div class="form-group">
+             &nbsp&nbsp > &nbsp&nbsp
+          <input type="text" class="form-control" style="width:70px;" id="next_version" placeholder="Next Version" disabled>
           </div>
           </form>
           <br>

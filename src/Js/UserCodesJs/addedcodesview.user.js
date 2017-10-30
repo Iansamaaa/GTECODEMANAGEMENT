@@ -98,6 +98,7 @@ $('#refreshtab').on( 'click', function () {
       $('#viewModal').modal('toggle');
       $('#CodeTypeView').text(CTV);
       $('#FunctionNameView').text(FNV);
+      addedCodes(HAHA);
   });
 // REMOVE CODE FUNCTION
 
@@ -119,8 +120,9 @@ $('#refreshtab').on( 'click', function () {
       $('#edit_desc').val(atob(D));
       $('#edit_version').val(C);
       Modalview1();
+      addedCodes(KAFOY);
       $('#editModal').modal('toggle');
-      
+
   });
        $("#dataTable_filter").addClass('pull-left');
      $("div.toolbar").html('<button type="submit" class="btn btn-default btn-md " id="asearchbtn"><i class=" fa fa-search-plus" aria-hidden="true"></i>&nbsp;Advance search</button><br>');
@@ -202,6 +204,27 @@ function RNview(labad){
     success: function(data){
       $('#viewrnc').text(data);
 
+      },
+    error:  function(){
+      toastr.success("Delete Failed", "Failed");}
+    })
+
+}
+
+
+
+function addedCodes(labad){
+  //Set Ajax Status
+  var datastring;
+  datastring= {VIEWM: labad,
+        };
+  $.ajax({
+    type: "POST",
+    url: "../Vb/commands/codes/commentsView.asp",
+    data: datastring,
+    async: false,
+    success: function(data){
+      $('#codedescriptadded').text(atob(data));
       },
     error:  function(){
       toastr.success("Delete Failed", "Failed");}

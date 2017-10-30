@@ -20,7 +20,7 @@ $(function(){
 			return false;
 			}
 			else
-			{	
+			{
 				$('#rnModal').modal('toggle');
 				$('#addModal1').modal('toggle');
 			}
@@ -28,7 +28,7 @@ $(function(){
 
 		});
 		//Keypress Enter
-		// ADDING RELEASENOTES ON CODE ADDING 
+		// ADDING RELEASENOTES ON CODE ADDING
 			$("#gg").bind({
 			click:function(){
 			 if($('#ctype').val()=='' || $('#fname').val()=='' || $('#codedesc').val()=='' || $('#version').val()==''|| $('#added').val()=='' || $('#rnc').val()=='')
@@ -76,7 +76,6 @@ function code_adding(){
 				fnames: $("#fname").val(),
 				descs: btoa($("#codedesc").val()),
 				descsc: btoa($("#codedescc").val()),
-				versions: $('#version').val(),
 				addedby:  $('#added').val(),
 				};
 		$.ajax({

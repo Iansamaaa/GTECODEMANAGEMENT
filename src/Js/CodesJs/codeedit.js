@@ -68,7 +68,7 @@ function code_edit(){
     fnames: $("#edit_fname").val(),
         descs: btoa($("#edit_codedesc").val()),
         edit: ($("#edited").val()),
-        versions: $('#edit_version').val(),
+        versions: passversion,
         desc: btoa($("#edit_desc").val()),
         };
     $.ajax({

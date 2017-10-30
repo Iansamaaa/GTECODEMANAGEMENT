@@ -309,11 +309,11 @@
         <div class="modal-content">
           <div class="modal-header">
             <h3 class="modal-title" id="FunctionNameView"></h3>
-          
+
           </div>
           <div class="modal-body">
-          <textarea class="form-control desc" id="codeTA" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
-
+            <textarea class="form-control desc" id="codeTA" style="height:300px;" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
+            <textarea class="form-control " id="codedescriptadded" style="height:110px; margin-top:5px;" Placeholder="Code Description" disabled><p></textarea>
           <form class="form-inline">
           <input type="text" class="form-control" id="viewC" style="display:none">
           </form>
@@ -329,7 +329,7 @@
     </div>
     <!-- END OF View MODAL -->
 
-  
+
     <!-- Edit Modal MODAL -->
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">

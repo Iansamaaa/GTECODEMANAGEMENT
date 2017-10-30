@@ -215,14 +215,12 @@
       </div>
     </div>
     <!-- END OF LOGOUT MODAL -->
-
      <!-- ADD MODAL -->
     <div class="modal fade" id="addModal1" tabindex="-1" role="dialog" aria-labelledby="addModalLabel1" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Add Codes</h5>
-
           </div>
           <div class="modal-body">
 
@@ -261,7 +259,7 @@
           <input type="text" class="form-control smallInput" id="fname" placeholder="Function Name" maxlength="15">&nbsp;
           </div>
           <div class="form-group">
-          <input type="text" class="form-control smallInput" id="version" placeholder="Version">
+          <input type="text" class="form-control smallInput" style="width:80px;"  id="version" placeholder="Version" value="1.0" disabled>
           </div>
           </form>
           <br>
@@ -323,6 +321,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="FunctionNameView"></h4>
+            <h4 id="current_version"></h4>
           </div>
           <div class="modal-body">
             <textarea class="form-control desc" id="codeTA" style="height:300px;" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
@@ -361,7 +360,11 @@
           <input type="text" class="form-control" id="edit_fname" placeholder="Function Name" maxlength="15">&nbsp;
           </div>
           <div class="form-group">
-          <input type="text" class="form-control" id="edit_version" placeholder="Version">
+          <input type="text" class="form-control" style="width:70px;" id="edit_version" placeholder="Version" disabled>
+          </div>
+          <div class="form-group">
+             &nbsp&nbsp > &nbsp&nbsp
+          <input type="text" class="form-control" style="width:70px;" id="next_version" placeholder="Next Version" disabled>
           </div>
           </form>
           <br>

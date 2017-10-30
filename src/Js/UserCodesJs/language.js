@@ -3,7 +3,7 @@ NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
 
   tblpending = $("#dataTable").DataTable( {
-	  
+
       dom: "Bfrtip",
         //"processing": true,
         //"serverSide": true,
@@ -33,7 +33,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
             {data:"ID", "orderable": false},
             { data: "Language", "orderable": false},
             { data: "AddedBy", "orderable": false},
-        ], 
+        ],
   "columnDefs": [ {
         className: "hide_column",
         width: "10%",
@@ -56,7 +56,3 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
   });
 
   });
-
-
-
- 

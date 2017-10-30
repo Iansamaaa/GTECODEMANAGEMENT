@@ -45,7 +45,7 @@
     <!-- TRIGGERS -->
     <script type= "text/javascript" src="../Js/UserCodesJs/addlanguage.js"></script>
     <script type= "text/javascript" src="../Js/langjs/langremove.js"></script>
-  
+
 
     <!-- PLUGINS -->
     <script src="../Js/plugins/nprogress-master/nprogress.js"></script>
@@ -149,22 +149,21 @@
 
     <!-- END OF NAVIGATION -->
 
-    <div class="content-wrapper py-3 smallsizecontainer"><!--Start of the Content-->
+    <div class="content-wrapper py-3" style="width:inherit;"><!--Start of the Content-->
       <div class="container-fluid">
         <!-- Example Tables Card -->
-       <center><div class="card mb-4 smalltable" style="display:none" id="tablecard">
+       <center><div class="card mb-4" style="display:none;" id="tablecard">
           <div class="card-header blue" align="left"><button type="submit" class="btn btn-primary btn-md" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i> Language</button>
           </div>
           <div class="card-body" id="TableBODY" >
             <div class="table-responsive">
-              <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
+              <table class="table table-bordered" width="inherit" id="dataTable" cellspacing="0">
                 <thead>
                   <tr>
-
-                    <th width="5%"></th>
-                    <th width="5%">ID</th>
-                    <th width="80%">Language</th>
-                    <th width="10%">Added By</th>
+                    <th ></th>
+                    <th >ID</th>
+                    <th >Language</th>
+                    <th width="120px">Added By</th>
                   </tr>
                 </thead>
               </table>

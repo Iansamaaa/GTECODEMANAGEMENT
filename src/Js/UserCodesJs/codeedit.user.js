@@ -1,7 +1,7 @@
 $(function(){
 
   $(document).ready(function(){
-  
+
   $(".btnED").bind({
     click:function(){
       var KAFOY = $(this).closest('tr').find('td:eq(1)').text();
@@ -20,17 +20,17 @@ $(function(){
     click:function(){
       if($('#edit_ctype').val()=='' || $('#edit_fname').val()=='' || $('#edit_codedesc').val()=='' || $('#edit_version').val()==''|| $('#edited').val()=='' || $('#edit_desc').val()=='')
       {
-        toastr.warning("Fill out Required Fields", "Check Fields"); 
+        toastr.warning("Fill out Required Fields", "Check Fields");
         return false;
       }
       else if(!($('#edit_version').val()).match(/^[0-9.]{1,6}$/))
       {
-      toastr.warning("Type in version Number", "Check Fields"); 
+      toastr.warning("Type in version Number", "Check Fields");
       return false;
       }
       else if(!($('#edit_fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\ "]{3,20}$/))
       {
-      toastr.warning("Type valid Function Name", "Check Fields"); 
+      toastr.warning("Type valid Function Name", "Check Fields");
       return false;
       }
       else
@@ -45,17 +45,17 @@ $(function(){
       click:function(){
        if($('#edit_ctype').val()=='' || $('#edit_fname').val()=='' || $('#edit_codedesc').val()=='' || $('#edit_version').val()==''|| $('#edited').val()=='' || $('#edit_desc').val()=='' || $('#rna').val()=='')
       {
-        toastr.warning("Fill out Required Fields", "Check Fields"); 
+        toastr.warning("Fill out Required Fields", "Check Fields");
         return false;
       }
       else if(!($('#edit_version').val()).match(/^[0-9.]{1,6}$/))
       {
-      toastr.warning("Type in version Number", "Check Fields"); 
+      toastr.warning("Type in version Number", "Check Fields");
       return false;
       }
       else if(!($('#edit_fname').val()).match(/^[a-zA-Z!@#$&()-`.+,/\ "]{3,20}$/))
       {
-      toastr.warning("Type valid Function Name", "Check Fields"); 
+      toastr.warning("Type valid Function Name", "Check Fields");
       return false;
       }
       else
@@ -72,7 +72,7 @@ $(function(){
         $('#editModal').modal('show');
       }
 
-      
+
 
   });
 
@@ -95,7 +95,7 @@ function code_edit(){
         descs: btoa($("#edit_codedesc").val()),
         rna: $('#rna').val(),
         edit: ($("#edited").val()),
-        versions: $('#edit_version').val(),
+        versions: passversion,
         desc: btoa($("#edit_desc").val()),
         };
     $.ajax({
@@ -109,10 +109,8 @@ function code_edit(){
       window.setTimeout(function(){location.reload()},2000);
 
 
-    }, 
+    },
     error:  function(){
       toastr.warning("Submission Failed");}
-  })          
+  })
 }
-
-

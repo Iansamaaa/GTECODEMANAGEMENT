@@ -22,7 +22,7 @@
 	activity_logs()
 
 
-	set cmd_edit = nothing 
+	set cmd_edit = nothing
 
 
 function activity_logs()
@@ -38,7 +38,7 @@ Dim cmd, strSQL_act
 
     cmd.Execute()
 
-    set cmd = nothing 
+    set cmd = nothing
 end function
 
 
@@ -55,7 +55,7 @@ Dim cmd, strSQL_act
 
     cmd.Execute()
 
-    set cmd = nothing 
+    set cmd = nothing
 end function
 
 

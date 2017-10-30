@@ -1,7 +1,7 @@
 var editor;
 var tblcodes,tblgg;
 var modal;
-
+var passversion;
 $(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
@@ -83,10 +83,11 @@ $('#refreshtab').on( 'click', function () {
 } );
 
 // VIEW FUNCTION
-    $('#dataTable tbody').on('click', 'td.details-control', function () { 
+    $('#dataTable tbody').on('click', 'td.details-control', function () {
       var HAHA = $(this).closest('tr').find('td:eq(2)').text();
       var CTV = $(this).closest('tr').find('td:eq(3)').text();
       var FNV = $(this).closest('tr').find('td:eq(4)').text();
+      var C = parseFloat($(this).closest('tr').find('td:eq(6)').text());
       var DV = $(this).closest('tr').find('td:eq(5)').text();
       $('#viewC').text(HAHA);
       Modalview(HAHA);
@@ -96,7 +97,7 @@ $('#refreshtab').on( 'click', function () {
       $('#CodeTypeView').text(CTV);
       $('#FunctionNameView').text(FNV);
       $('#descview').text(DV);
-
+      $('#current_version').text(C+0.0);
 
   });
 //View EDIT CODE FUNCTION
@@ -104,14 +105,16 @@ $('#refreshtab').on( 'click', function () {
       var KAFOY = $(this).closest('tr').find('td:eq(2)').text();
       var A = $(this).closest('tr').find('td:eq(3)').text();
       var B = $(this).closest('tr').find('td:eq(4)').text();
-      var C = $(this).closest('tr').find('td:eq(6)').text();
+      var C = parseFloat($(this).closest('tr').find('td:eq(6)').text());
       var D = $(this).closest('tr').find('td:eq(5)').text();
-      alert(D);
+      var SS = parseFloat(C*1.0+1.0).toFixed(2);
       $('#viewED').val(KAFOY);
       $('#edit_ctype').val(A);
       $('#edit_fname').val(B);
       $('#edit_version').val(C);
+      $('#next_version').val(SS);
       $('#edit_desc').val(atob(D));
+      passversion=SS;
       codeview_edit();
       $('#editModal').modal('toggle');
   });
