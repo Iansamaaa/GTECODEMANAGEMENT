@@ -78,12 +78,14 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
             { data: "UpdatedBy","orderable": false},
             { data: "DateTimeUpdated"},
             { data: "Description"},
+            { data: "ReleaseNotes"},
+            { data: "DateTimeAdded"},
         ],
 
     "columnDefs": [ {
         className: "hide_column",
         width: "10%",
-        targets: [3,11,12]
+        targets: [3,11,12,13,14]
        } ],
     select: 'single',
      });
@@ -115,19 +117,38 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
   });
 // EDIT CODE FUNCTION
      $('#dataTable tbody').on('click', 'td.details-control3', function () {
-
+      // FOR UP VERSION
       var KAFOY = $(this).closest('tr').find('td:eq(3)').text();
       var A = $(this).closest('tr').find('td:eq(4)').text();
       var B = $(this).closest('tr').find('td:eq(5)').text();
       var C = $(this).closest('tr').find('td:eq(6)').text();
       var D = $(this).closest('tr').find('td:eq(12)').text();
+      // FOR ADD P VERSION
+      var E= $(this).closest('tr').find('td:eq(13)').text();
+      var F= $(this).closest('tr').find('td:eq(11)').text();
+      var G= $(this).closest('tr').find('td:eq(14)').text();
+      var H= $(this).closest('tr').find('td:eq(8)').text();
+      var I= $(this).closest('tr').find('td:eq(10)').text();
       var SS = parseFloat(C*1.0+1.0).toFixed(2);
+
+      // UPDATE TO NEXT VERSION
       $('#viewED').val(KAFOY);
       $('#edit_ctype').val(A);
       $('#edit_fname').val(B);
       $('#edit_version').val(C);
       $('#next_version').val(SS);
       $('#edit_desc').val(atob(D));
+
+
+      // ADD PREVIOUS VERSION
+      $('#rnrnrn').val(E);
+      $('#dtad').val(G);
+      $('#dtup').val(F);
+      $('#addbyy').val(H);
+      $('#uppbyy').val(I);
+      $('#pdesc').val(atob(D));
+      $('#pfunc').val(B);
+      
       passversion=SS;
       Modalview1();
       $('#editModal').modal('toggle');
@@ -233,8 +254,8 @@ function Modalview1(value){
     data: datastring,
     async: false,
     success: function(data){
-
       $('#edit_codedesc').val(atob(data));
+      $('#pcont').val(atob(data));
 
 
       },

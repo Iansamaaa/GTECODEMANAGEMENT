@@ -64,12 +64,22 @@ function code_edit(){
   //Set Ajax Status
   var datastring;
   datastring= { ayd: $('#viewED').val(),
-    rna: $('#rna').val(),
-    fnames: $("#edit_fname").val(),
+        ctype: $('#edit_ctype').val(),
+        rna: $('#rna').val(),
+        fnames: $("#edit_fname").val(),
         descs: btoa($("#edit_codedesc").val()),
         edit: ($("#edited").val()),
         versions: passversion,
         desc: btoa($("#edit_desc").val()),
+        addver: ($("#edit_version").val()),
+        addrn:  ($('#rnrnrn').val()),
+        addda:  ($('#dtad').val()),
+        adddu:  ($('#dtup').val()),
+        addab:  ($('#addbyy').val()),
+        addub:  ($('#uppbyy').val()),
+        addfn:   $('#pfunc').val(),
+        addcs:   btoa($('#pcont').val()),
+        addds:   btoa($('#pdesc').val()),
         };
     $.ajax({
     type: "POST",

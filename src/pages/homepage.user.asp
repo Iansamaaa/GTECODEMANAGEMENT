@@ -161,6 +161,8 @@
                     <th>Date Updated</th>
                     <th>Updated By</th>
                     <th></th>
+                    <th></th>
+                    <th></th>
 
                   </tr>
                 </thead>
@@ -342,6 +344,14 @@
 
           <form class="form-inline">
           <input type="text" class="form-control" id="viewED" style="display:none">
+          <textarea class="form-control" id="rnrnrn"  placeholder="RELEASENOTES" style="display:none"></textarea>
+          <input type="text" class="form-control" id="addbyy" placeholder="ADDBY" style="display:none">
+          <input type="text" class="form-control" id="uppbyy" placeholder="UPBY" style="display:none">
+          <input type="text" class="form-control" id="dtup" placeholder="DATEUP" style="display:none">
+          <input type="text" class="form-control" id="dtad"  placeholder="ADDDATE" style="display:none">
+          <input type="text" class="form-control" id="pdesc"  placeholder="PREVDESC" style="display:none">
+          <input type="text" class="form-control" id="pcont"  placeholder="PREVCONT" style="display:none">
+          <input type="text" class="form-control" id="pfunc"  placeholder="PREVFUNC" style="display:none">
           <div class="form-group">
           <input type="text" class="form-control" id="edit_ctype" Placeholder="Code Type" disabled>&nbsp;
           </div>
@@ -352,7 +362,7 @@
           <input type="text" class="form-control" style="width:70px;" id="edit_version" placeholder="Version" disabled>
           </div>
           <div class="form-group">
-             &nbsp&nbsp > &nbsp&nbsp
+             &nbsp;&nbsp; > &nbsp;&nbsp;
           <input type="text" class="form-control" style="width:70px;" id="next_version" placeholder="Next Version" disabled>
           </div>
           </form>

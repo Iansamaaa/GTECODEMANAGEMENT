@@ -9,7 +9,7 @@
 	
 	Dim cmd, strsql
 	
-	strsql ="SELECT * FROM codes_masterlist where AddedBy ='"&Request.Cookies("USERNAME")&"'"
+	strsql ="SELECT * FROM codes_masterlist where AddedBy ='"&Request.Cookies("USERNAME")&"' AND Status = 1"
 
 
 	'Create Objects

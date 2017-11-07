@@ -352,7 +352,15 @@
           <div class="container">
 
           <form class="form-inline">
-          <input type="text" class="form-control" id="viewED" style="display:none">
+          <input type="text" class="form-control" id="viewED" placeholder="ID" style="display:none">
+          <textarea class="form-control" id="rnrnrn"  placeholder="RELEASENOTES" style="display:none"></textarea>
+          <input type="text" class="form-control" id="addbyy" placeholder="ADDBY" style="display:none">
+          <input type="text" class="form-control" id="uppbyy" placeholder="UPBY" style="display:none">
+          <input type="text" class="form-control" id="dtup" placeholder="DATEUP" style="display:none">
+          <input type="text" class="form-control" id="dtad"  placeholder="ADDDATE" style="display:none">
+           <input type="text" class="form-control" id="pdesc"  placeholder="PREVDESC" style="display:none">
+            <input type="text" class="form-control" id="pcont"  placeholder="PREVCONT" style="display:none">
+             <input type="text" class="form-control" id="pfunc"  placeholder="PREVFUNC" style="display:none">
           <div class="form-group">
           <input type="text" class="form-control" id="edit_ctype" Placeholder="Code Type" disabled>&nbsp;
           </div>
@@ -362,8 +370,7 @@
           <div class="form-group">
           <input type="text" class="form-control" style="width:70px;" id="edit_version" placeholder="Version" disabled>
           </div>
-          <div class="form-group">
-             &nbsp&nbsp > &nbsp&nbsp
+          <div class="form-group"><br>
           <input type="text" class="form-control" style="width:70px;" id="next_version" placeholder="Next Version" disabled>
           </div>
           </form>
@@ -371,7 +378,7 @@
           <form class="form-horizontal">
           <div class="form-group">
           <textarea class="form-control codeTSA" id="edit_desc" Placeholder="Code Description"></textarea><br>
-          <textarea class="form-control codeTS" id="edit_codedesc" Placeholder="Code Description"></textarea>
+          <textarea class="form-control codeTS" id="edit_codedesc" Placeholder="Code Script"></textarea>
           </div>
           <div class="form-group col-xs-2">
           <input class="form-control smallInput" id="edited" Placeholder="Edited By" style="display:none" value="<%fname=Request.Cookies("USERNAME")

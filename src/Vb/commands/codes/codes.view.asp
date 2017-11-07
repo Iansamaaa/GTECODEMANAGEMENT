@@ -9,7 +9,7 @@
 
 	Dim cmd, strsql
 
-	strsql ="SELECT * FROM codes_masterlist"
+	strsql ="SELECT * FROM codes_masterlist WHERE Status = 1"
 
 
 	'Create Objects

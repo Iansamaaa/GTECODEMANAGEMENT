@@ -53,7 +53,7 @@ function add_code()
 
 	'QUERY COMMAND
 
-	strSQL_add = "INSERT INTO codes_masterlist (Language,FunctionName,Version,ContentScript,DateTimeAdded,DateTimeUpdated,UpdatedBy,AddedBy,Description,ReleaseNotes) values('"&Request("ctypes")&"','"&Request("fnames")&"','1.0','"&Request("descs")&"',NOW(),NOW(),'"&Request("addedby")&"','"&Request("addedby")&"','"&Request("descsc")&"',CONCAT(NOW(),'\n','"&Request("rnotes")&"','\n','----"&Request.Cookies("USERNAME")&"----'))"
+	strSQL_add = "INSERT INTO codes_masterlist (Language,FunctionName,Version,ContentScript,DateTimeAdded,DateTimeUpdated,UpdatedBy,AddedBy,Description,ReleaseNotes,Status) values('"&Request("ctypes")&"','"&Request("fnames")&"','1.0','"&Request("descs")&"',NOW(),NOW(),'"&Request("addedby")&"','"&Request("addedby")&"','"&Request("descsc")&"',CONCAT('Version 1.0','\n',NOW(),'\n','"&Request("rnotes")&"','\n','----"&Request.Cookies("USERNAME")&"----'), 1)"
 	cmd.CommandText = strSQL_add
 
 	cmd.Prepared = True

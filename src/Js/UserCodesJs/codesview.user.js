@@ -68,12 +68,14 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
           },
             { data: "UpdatedBy","orderable": false},
             { data: "DateTimeUpdated"},
+            { data: "ReleaseNotes"},
+            { data: "DateTimeAdded"},
         ],
 
     "columnDefs": [ {
         className: "hide_column",
         width: "10%",
-        targets: [2,11,5],
+        targets: [2,11,5,12,13],
        } ],
 
     select: 'single'
@@ -108,12 +110,32 @@ $('#refreshtab').on( 'click', function () {
       var C = parseFloat($(this).closest('tr').find('td:eq(6)').text());
       var D = $(this).closest('tr').find('td:eq(5)').text();
       var SS = parseFloat(C*1.0+1.0).toFixed(2);
+
+      // FOR ADD P VERSION
+      var E= $(this).closest('tr').find('td:eq(12)').text();
+      var F= $(this).closest('tr').find('td:eq(11)').text();
+      var G= $(this).closest('tr').find('td:eq(13)').text();
+      var H= $(this).closest('tr').find('td:eq(8)').text();
+      var I= $(this).closest('tr').find('td:eq(10)').text();
+
+      // FOR UPDATE
       $('#viewED').val(KAFOY);
       $('#edit_ctype').val(A);
       $('#edit_fname').val(B);
       $('#edit_version').val(C);
       $('#next_version').val(SS);
       $('#edit_desc').val(atob(D));
+
+      // ADD PREVIOUS VERSION
+      $('#rnrnrn').val(E);
+      $('#dtad').val(G);
+      $('#dtup').val(F);
+      $('#addbyy').val(H);
+      $('#uppbyy').val(I);
+      $('#pdesc').val(atob(D));
+      $('#pfunc').val(B);
+
+
       passversion=SS;
       codeview_edit();
       $('#editModal').modal('toggle');
@@ -245,6 +267,8 @@ function codeview_edit(value){
     success: function(data){
 
       $('#edit_codedesc').val(atob(data));
+      $('#pcont').val(atob(data));
+
 
 
       },
