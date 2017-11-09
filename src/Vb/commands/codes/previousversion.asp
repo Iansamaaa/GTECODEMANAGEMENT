@@ -9,7 +9,7 @@
 
 	Dim cmd, strsql
 
-	strsql ="SELECT * FROM codes_masterlist Where Status = 1"
+	strsql ="SELECT * FROM codes_masterlist WHERE Status = 0 AND FunctionName = '"&Request("char")&"'"
 
 
 	'Create Objects

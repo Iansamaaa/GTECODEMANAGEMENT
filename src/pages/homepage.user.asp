@@ -174,12 +174,12 @@
           </div>
         </div>
 
+  
       </div>
       <!-- /.container-fluid -->
 
     </div>
     <!-- /.content-wrapper -->
-
     <!-- Scroll to Top Button -->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
@@ -323,6 +323,7 @@
           <div class="modal-footer">
             <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeView"></p></p>
             <button type="button" class="btn btn-secondary" id="viewreleasenotes">Release Notes</button>
+            <button type="button" class="btn btn-secondary" id="prevvers">Previous Versions</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 
           </div>

@@ -103,7 +103,7 @@ $('#refreshtab').on( 'click', function () {
 // REMOVE CODE FUNCTION
 
       $('#dataTable tbody').on('click', 'td.details-control2', function () {
-      var KAFOY = $(this).closest('tr').find('td:eq(3)').text();
+      var KAFOY = $(this).closest('tr').find('td:eq(5)').text();
       $('#IDrecord').val(KAFOY);
       $('#removeModal').modal('toggle');
   });

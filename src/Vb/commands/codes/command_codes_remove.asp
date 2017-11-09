@@ -16,7 +16,7 @@
 	cmd_rem.ActiveConnection =  codemngt
 
 	'QUERY COMMAND
-	strSQL_rem = "DELETE from codes_masterlist WHERE IDcode='"&Request("IDREC")&"'"
+	strSQL_rem = "DELETE from codes_masterlist WHERE FunctionName='"&Request("IDREC")&"'"
 
 	cmd_rem.CommandText = strSQL_rem
 	cmd_rem.Prepared = True

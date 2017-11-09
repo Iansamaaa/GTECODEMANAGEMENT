@@ -6,7 +6,6 @@ $(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
 // DATA IN THE DATA TABLES
-
   $("#dataTable").DataTable( {
       dom: '<"toolbar">frtip',
         //"processing": true,
@@ -185,6 +184,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 2000);
 $('#viewreleasenotes').on( 'click', function () {
       $('#vrnModal').modal('toggle');
 });
+
 });
 
 function Modalview(labad){
