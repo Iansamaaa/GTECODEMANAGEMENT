@@ -27,7 +27,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
                  "render": function () {
                          return '<i class="fa fa-times" aria-hidden="true"></i>';
                      },
-                 width:"15px"
+                 width:"15px",
 
             },
             {data:"ID", "orderable": false},
@@ -37,13 +37,8 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
   "columnDefs": [ {
         className: "hide_column",
         width: "10%",
-        targets: 1,
-      render: function ( data, type, row ) {
-        return type === 'display' && data.length > 35 ?
-          data.substr( 0, 35 ) +'…' :
-          data;
-      }
-       } ],
+        targets: 1
+      } ],
     select: 'single',
      });
 

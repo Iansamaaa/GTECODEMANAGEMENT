@@ -323,7 +323,7 @@
           <div class="modal-footer">
             <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeView"></p></p>
             <button type="button" class="btn btn-secondary" id="viewreleasenotes">Release Notes</button>
-            <button type="button" class="btn btn-secondary" id="prevvers">Previous Versions</button>
+            <button type="button" class="btn btn-secondary" id="showprev">Previous Versions</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 
           </div>
@@ -477,6 +477,72 @@
     </div>
 <!-- End releasenotes modal -->
 
+<!-- PREVIOUS RELEASES MODAL -->
+    <div class="modal fade" id="prevrelModal" tabindex="-1" role="dialog" aria-labelledby="prevrelLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Previous Version</h5>
+          </div>
+          <div class="modal-body">
+             <input type="text" class="form-control" id="preeev" style="display:none">
+        <div class="card mb-4" id="tablecard">
+         <div class="card-header blue" >
+          </div>
+          <div class="card-body">
+            <div>
+              <table class="table table-bordered" id="prev_dt" cellspacing="0" width="20%">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Code # </th>
+                    <th>Code Type</th>
+                    <th>Function Name</th>
+                    <th>Version #</th>
+                    <th>Date Updated</th>
+                    <th>Updated By</th>
+                    <th></th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer small text-muted">
+            Made by #GTE OJT
+          </div>
+        </div>
+        </div>
+          <!-- HAYS -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="gg">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- END OF PREVIOUS MODAL -->
+
+<!-- Previous Code Modal-->
+    <div class="modal fade" id="prrviewModal" tabindex="-1" role="dialog" aria-labelledby="prrvModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="FunctionNameView"></h4>
+            <h4 id="current_version"></h4>
+          </div>
+          <div class="modal-body">
+            <textarea class="form-control desc" id="codeTA1" style="height:300px;" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
+          <form class="form-inline">
+          <input type="text" class="form-control" id="viewC" style="display:none">
+          </form>
+          </div>
+          <div class="modal-footer">
+           <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeView"></p></p>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="prev2">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- END OF View MODAL -->
 
 <!--                                                END OF MODALS                                              -->
 

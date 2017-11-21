@@ -34,15 +34,11 @@ setTimeout(function() { NProgress.done(); $('#tablecardact').show();}, 1000);
             },
             { data: "ACTdescription", "orderable": false},
         ], 
+    "bInfo": false,
     "columnDefs": [ {
         className: "hide_column",
         width: "10%",
         targets: 0,
-      render: function ( data, type, row ) {
-        return type === 'display' && data.length > 35 ?
-          data.substr( 0, 35 ) +'…' :
-          data;
-      }
        } ],
     
     select: 'single',

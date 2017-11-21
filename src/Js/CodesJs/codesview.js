@@ -9,8 +9,7 @@ $(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
 // DATA IN THE DATA TABLES
-  vartblpending = $("#dataTable").DataTable( {
-
+  $("#dataTable").DataTable( {
       dom: '<"toolbar">frtip',
         processing: "true",
        ajax: {
@@ -100,14 +99,74 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       var FNV = $(this).closest('tr').find('td:eq(5)').text();
       var C = $(this).closest('tr').find('td:eq(6)').text();
       $('#viewC').text(HAHA);
+      $('#preeev').val(FNV);
       Modalview(HAHA);
       RNview(HAHA);
       commentView(HAHA);
+      $('#viewModal').modal({backdrop: 'static', keyboard: false})  
       $('#viewModal').modal('toggle');
       $('#CodeTypeView').text("'"+CTV+"'");
       $('#current_version').text(""+C);
-      $('#FunctionNameView').text(FNV);
+     $('#FunctionNameView').text(FNV);
+var hala;
+hala= {previousd: $('#preeev').val(),
+};
+$("#prev_dt").DataTable( {
+      processing: "true",
+      ajax: {
+      url: '../Vb/commands/codes/previousversion.asp',
+      data: hala,
+      dataSrc: ""
+      //"dataType": "jsonp"
+      //"contentType": 'application/json; charset=utf-8',
+      //'data': function (data) { return data = JSON.stringify(data); }
+      },
+    order: [[ 6, 'desc' ]],
+    "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
+    "iDisplayLength" : 5,
+    columns: [
+            {
+                "className":      'details-control5',
+                "orderable":      false,
+                "data":           null,
+                "defaultContent": '',
+                 "render": function () {
+                         return '<i class="fa fa-eye" aria-hidden="true"></i>';
+                     },
+                 width:"15px"
+            },
+            { data: "IDCode", "orderable": false},
+            { data: "Language", "orderable": false},
+            { data: "FunctionName", "orderable": false},
+            { data: "Version", "orderable": false},
+            { data: "DateTimeUpdated",
+              render: function(data, type, row){
+            //You need to have moment.js to parse the date into a local date
+              return moment(data).format('MMMM Do YYYY, h:mm A');
+              },
+              "type": "moment-js-date"
+            },
+            { data: "UpdatedBy","orderable": false},
+            { data: "DateTimeUpdated","orderable": false},
+        ],
+     "columnDefs": [ {
+        className: "hide_column",
+        width: "10%",
+        targets: [1,7]
+       } ],
+    select: 'single',
+    searching: false,
+     paging: false,
+     destroy: true
+});
+$('#prev_dt tbody').on('click', 'td.details-control5', function () {
+      var HAHA = $(this).closest('tr').find('td:eq(1)').text();
+      ModalviewPC(HAHA);
+      $('#prrviewModal').modal({backdrop: 'static', keyboard: false})  
+      $('#prrviewModal').modal('toggle');
+      $('#prevrelModal').modal('toggle'); 
   });
+});
 // REMOVE CODE FUNCTION
 
       $('#dataTable tbody').on('click', 'td.details-control2', function () {
@@ -115,6 +174,9 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       $('#IDrecord').val(KAFOY);
       $('#removeModal').modal('toggle');
   });
+
+
+
 // EDIT CODE FUNCTION
      $('#dataTable tbody').on('click', 'td.details-control3', function () {
       // FOR UP VERSION
@@ -196,8 +258,14 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 2000);
 $('#viewreleasenotes').on( 'click', function () {
       $('#vrnModal').modal('toggle');
 });
-});
 
+$('#showprev').on( 'click', function () {
+    $('#prevrelModal').modal('toggle'); 
+});
+$('#prev2').on( 'click', function () {
+  $('#prevrelModal').modal('toggle'); 
+});
+});
 
 function Modalview(labad){
   //Set Ajax Status
@@ -220,6 +288,26 @@ function Modalview(labad){
 
 }
 
+function ModalviewPC(labad){
+  //Set Ajax Status
+  var datastring;
+  datastring= {VIEWM: labad,
+        };
+
+  $.ajax({
+    type: "POST",
+    url: "../Vb/commands/codes/command_codes_viewm.asp",
+    data: datastring,
+    async: false,
+    success: function(data){
+      $('#codeTA1').text(atob(data));
+
+      },
+    error:  function(){
+      toastr.success("Delete Failed", "Failed");}
+    })
+
+}
 
 function RNview(labad){
   //Set Ajax Status

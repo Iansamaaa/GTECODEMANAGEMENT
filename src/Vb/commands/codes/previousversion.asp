@@ -6,10 +6,9 @@
 <%
 
 	Response.AddHeader "Content-Type", "application/json"
-
 	Dim cmd, strsql
 
-	strsql ="SELECT * FROM codes_masterlist WHERE Status = 0 AND FunctionName = '"&Request("char")&"'"
+	strsql ="SELECT * FROM codes_masterlist WHERE Status = 0 AND FunctionName = '"&Request("previousd")&"'"
 
 
 	'Create Objects

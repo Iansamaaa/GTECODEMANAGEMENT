@@ -18,6 +18,11 @@ td.details-control4{
     color:orange;
     cursor: pointer;
 }
+td.details-control5{
+  text-align:center;
+    color:blue;
+    cursor: pointer;
+}
 .hide_column {
     display : none;
 }

@@ -46,5 +46,7 @@ Dim cmd, strSQL_act
 
 
 	cmd.Execute()
+
+	set cmd = Nothing 
 end function
 %>
