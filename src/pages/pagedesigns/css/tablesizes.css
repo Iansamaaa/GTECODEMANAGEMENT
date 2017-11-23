@@ -65,3 +65,8 @@
 {
 	font-size: 12pt;
 }
+.fontsizesmall
+{
+	font-size: 10pt;
+	font-family:"Courier New", Courier, monospace;
+}

@@ -84,10 +84,7 @@
                 <a href="codeadded.asp" class="nav-item active">&nbsp;My Codes</a>
               </li>
                <li>
-                <a href="language.asp" class="nav-item active">&nbsp; View all Languages</a>
-              </li>
-               <li>
-                <a href="mylanguage.asp" class="nav-item active">&nbsp;My Languages</a>
+                <a href="language.asp" class="nav-item active">&nbsp;Languages</a>
               </li>
             </ul>
           </li>
@@ -163,6 +160,8 @@
                     <th>Date Updated</th>
                     <th>Updated By</th>
                     <th>KAFOY</th>
+                    <th></th>
+                    <th></th>
                     <th></th>
                   </tr>
                 </thead>
@@ -303,26 +302,26 @@
     </div>
     <!-- END OF Delete MODAL -->
 
-       <!-- View Modal -->
+        <!-- View Modal -->
     <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title" id="FunctionNameView"></h3>
-
+            <h4 class="modal-title" id="FunctionNameView"></h4>
+            <h4 id="current_version"></h4>
           </div>
           <div class="modal-body">
             <textarea class="form-control desc" id="codeTA" style="height:300px;" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
-            <textarea class="form-control " id="codedescriptadded" style="height:110px; margin-top:5px;" Placeholder="Code Description" disabled><p></textarea>
+            <textarea class="form-control " id="codedescript" style="height:110px; margin-top:5px;" Placeholder="Code Description" disabled></textarea>
           <form class="form-inline">
           <input type="text" class="form-control" id="viewC" style="display:none">
           </form>
           </div>
           <div class="modal-footer">
-            <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeView"></p></p>
-            <button type="button" class="btn btn-secondary" id="viewreleasenotes">Release Notes</button>
+           <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeView"></p></p>
+           <button type="button" class="btn btn-secondary" id="showprev">Previous Releases</button>
+           <button type="button" class="btn btn-secondary" id="viewreleasenotes">Release Notes</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-
           </div>
         </div>
       </div>
@@ -342,6 +341,14 @@
           <div class="container">
 
           <form class="form-inline">
+              <textarea class="form-control" id="rnrnrn"  placeholder="RELEASENOTES" style="display:none"></textarea>
+          <input type="text" class="form-control" id="addbyy" placeholder="ADDBY" style="display:none">
+          <input type="text" class="form-control" id="uppbyy" placeholder="UPBY" style="display:none">
+          <input type="text" class="form-control" id="dtup" placeholder="DATEUP" style="display:none">
+          <input type="text" class="form-control" id="dtad"  placeholder="ADDDATE" style="display:none">
+           <input type="text" class="form-control" id="pdesc"  placeholder="PREVDESC" style="display:none">
+            <input type="text" class="form-control" id="pcont"  placeholder="PREVCONT" style="display:none">
+             <input type="text" class="form-control" id="pfunc"  placeholder="PREVFUNC" style="display:none">
           <input type="text" class="form-control" id="viewED" style="display:none">
           <div class="form-group">
           <input type="text" class="form-control" id="edit_ctype" Placeholder="Code Type" disabled>&nbsp;
@@ -350,13 +357,15 @@
           <input type="text" class="form-control" id="edit_fname" placeholder="Function Name" maxlength="15">&nbsp;
           </div>
           <div class="form-group">
-          <input type="text" class="form-control" id="edit_version" placeholder="Version">
+          <input type="text" class="form-control" id="edit_version" placeholder="Version" disabled>
           </div>
           </form>
           <br>
           <form class="form-horizontal">
           <div class="form-group">
+          <label class="fontsizesmall">Code Description:</label>
           <textarea class="form-control codeTSA" id="edit_desc" Placeholder="Code Description"></textarea><br>
+          <label class="fontsizesmall">Source code:</label>
           <textarea class="form-control codeTS" id="edit_codedesc" Placeholder="Code Content"></textarea>
           </div>
           <div class="form-group col-xs-2">
@@ -442,6 +451,72 @@
     </div>
 <!-- End releasenotes modal -->
 
+<!-- PREVIOUS RELEASES MODAL -->
+    <div class="modal fade" id="prevrelModal" tabindex="-1" role="dialog" aria-labelledby="prevrelLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Previous Version</h5>
+          </div>
+          <div class="modal-body">
+             <input type="text" class="form-control" id="preeev" style="display:none">
+        <div class="card mb-4" id="tablecard" style="width:80%; margin:0 auto;">
+         <div class="card-header blue" >
+          </div>
+          <div class="card-body">
+            <div>
+              <table class="table table-bordered" id="prev_dt" cellspacing="0" width="auto">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Code # </th>
+                    <th>Code Type</th>
+                    <th>Function Name</th>
+                    <th>Version #</th>
+                    <th>Date Updated</th>
+                    <th>Updated By</th>
+                    <th></th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer small text-muted">
+            Made by #GTE OJT
+          </div>
+        </div>
+        </div>
+          <!-- HAYS -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- END OF PREVIOUS MODAL -->
+
+   <!-- Previous Code Modal-->
+    <div class="modal fade" id="prrviewModal" tabindex="-1" role="dialog" aria-labelledby="prrvModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="FunctionNameView"></h4>
+            <h4 id="current_version"></h4>
+          </div>
+          <div class="modal-body">
+            <textarea class="form-control desc" id="codeTA1" style="height:300px;" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
+          <form class="form-inline">
+          <input type="text" class="form-control" id="viewC" style="display:none">
+          </form>
+          </div>
+          <div class="modal-footer">
+    
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="prev2">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF View MODAL -->
 
 <!--                                                END OF MODALS                                              -->
 

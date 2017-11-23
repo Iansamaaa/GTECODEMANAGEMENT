@@ -81,10 +81,7 @@
                 <a href="codeadded.asp" class="nav-item active">&nbsp;My Codes</a>
               </li>
                  <li>
-                <a href="language.asp" class="nav-item active">&nbsp; View all Languages</a>
-              </li>
-               <li>
-                <a href="mylanguage.asp" class="nav-item active">&nbsp;My Languages</a>
+                <a href="language.asp" class="nav-item active">&nbsp;Languages</a>
               </li>
             </ul>
           </li>
@@ -362,7 +359,7 @@
           <div class="form-group">
           <input type="text" class="form-control" style="width:70px;" id="edit_version" placeholder="Version" disabled>
           </div>
-          <div class="form-group">
+          <div class="form-group" style="display:none">
              &nbsp;&nbsp; > &nbsp;&nbsp;
           <input type="text" class="form-control" style="width:70px;" id="next_version" placeholder="Next Version" disabled>
           </div>
@@ -370,7 +367,9 @@
           <br>
           <form class="form-horizontal">
           <div class="form-group">
+          <label class="fontsizesmall">Code Description:</label>
           <textarea class="form-control codeTSA" id="edit_desc" Placeholder="Code Description"></textarea><br>
+          <label class="fontsizesmall">Source code:</label><br>
           <textarea class="form-control codeTS" id="edit_codedesc" Placeholder="Code Content"></textarea>
           </div>
           <div class="form-group col-xs-2">

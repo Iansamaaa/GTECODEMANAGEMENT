@@ -82,10 +82,7 @@
                 <a href="codeadded.asp" class="nav-item active">&nbsp;My Codes</a>
               </li>
                <li class="active">
-                <a href="language.asp" class="nav-item active">&nbsp; View all Languages</a>
-              </li>
-               <li>
-                <a href="mylanguage.asp" class="nav-item active">&nbsp;My Languages</a>
+                <a href="language.asp" class="nav-item active">&nbsp;Languages</a>
               </li>
             </ul>
           </li>
@@ -142,7 +139,7 @@
       <div class="container-fluid">
         <!-- Example Tables Card -->
        <center><div class="card mb-4" style="display:none;" id="tablecard">
-          <div class="card-header blue" align="left"><button type="submit" class="btn btn-primary btn-md" data-toggle="modal" data-target="#addModal1" title="Add codes"><i class="fa fa-plus" aria-hidden="true"></i> Language</button>
+          <div class="card-header" align="left"><h4><i class="fa fa-code" aria-hidden="true"></i>&nbsp;Languages</h4>
           </div>
           <div class="card-body"   id="TableBODY" >
             <div class="table-responsive">
@@ -195,24 +192,6 @@
     </div>
     <!-- END OF LOGOUT MODAL -->
 
-     <!-- ADD MODAL -->
-       <div class="modal fade" id="addModal1" tabindex="-1" role="dialog" aria-labelledby="addModallabel1" aria-hidden="true">
-      <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5>Add Language</h5>
-          </div>
-          <div class="modal-body">
-          <input type="text" class="form-control" id="langlang" placeholder="Enter Language" width="80px" maxlength="10">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary" id="addLANG">Add</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- END OF ADD MODAL -->
 
    
 <!--                                                END OF MODALS                                              -->
