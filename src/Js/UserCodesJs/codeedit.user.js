@@ -116,7 +116,7 @@ function code_edit(){
     success: function(data){
       toastr.success("Code Edited!", "Sucess");
       $('#rnaModal').modal('toggle');
-      window.setTimeout(function(){location.reload()},2000);
+      tableuserview.ajax.reload();
 
 
     },

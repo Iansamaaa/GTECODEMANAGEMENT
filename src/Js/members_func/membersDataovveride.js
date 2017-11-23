@@ -1,7 +1,8 @@
+var tblmembers;
 $(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecardsmembers').show();}, 1000);
-  tblpending = $("#memberTable").DataTable( {
+  tblmembers = $("#memberTable").DataTable( {
       dom: 'Bfrtip',
         //"processing": true,
         //"serverSide": true,
@@ -110,8 +111,8 @@ setTimeout(function() { NProgress.done(); $('#tablecardsmembers').show();}, 1000
   		data: datastring,
   		async: false,
   		success: function(data){;
-
   			toastr.success("Member Edited!", "Sucess");
+        tblmembers.ajax.reload();
   			},
   		error:  function(){
   			toastr.warning("Error", "It's Error!");}

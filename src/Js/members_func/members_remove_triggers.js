@@ -6,7 +6,7 @@ $(function(){
 		 var Remm = $("#usntor").val();
 		 memREM(Remm);
 		 aidentifier = "Member Removed";
-		 
+
 	 }
  });
 
@@ -34,8 +34,7 @@ function memREM(yow){
 		success: function(data){;
 			deact_state(data);
 			$('#RemoveMemberModal').modal('hide');
-			 window.setTimeout(function(){window.location="../../pages/loginpage.asp"
-},2000);
+			 tblmembers.ajax.reload();
 			},
 		error:  function(){
 			toastr.warning("Member not removed!", "Failed");}

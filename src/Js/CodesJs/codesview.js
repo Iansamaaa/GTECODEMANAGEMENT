@@ -2,6 +2,7 @@ var editor;
 var tblcodes,tblgg;
 var modal;
 var passversion;
+var tableview;
 
 $(document).ready(function(){
   var cd = "CodeType: "
@@ -9,9 +10,8 @@ $(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
 // DATA IN THE DATA TABLES
-  $("#dataTable").DataTable( {
+tableview =  $("#dataTable").DataTable( {
       dom: '<"toolbar">frtip',
-        processing: "true",
        ajax: {
       url: '../Vb/commands/codes/codes.view.asp',
       dataSrc: ""
@@ -89,8 +89,11 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
     select: 'single',
      });
   $('#refreshtab').on( 'click', function () {
-    window.setTimeout(function(){location.reload()},100);
+    tableview.ajax.reload();
 } );
+
+
+
 
 // VIEWW FUNCTION
     $('#dataTable tbody').on('click', 'td.details-control', function () {
@@ -103,7 +106,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
       Modalview(HAHA);
       RNview(HAHA);
       commentView(HAHA);
-      $('#viewModal').modal({backdrop: 'static', keyboard: false})  
+      $('#viewModal').modal({backdrop: 'static', keyboard: false})
       $('#viewModal').modal('toggle');
       $('#CodeTypeView').text("'"+CTV+"'");
       $('#current_version').text(""+C);
@@ -121,9 +124,9 @@ $("#prev_dt").DataTable( {
       //"contentType": 'application/json; charset=utf-8',
       //'data': function (data) { return data = JSON.stringify(data); }
       },
-    order: [[ 6, 'desc' ]],
     "aLengthMenu": [[5, 10, 15, 25, 50, 100 , -1], [5, 10, 15, 25, 50, 100, "All"]],
-    "iDisplayLength" : 5,
+    "iDisplayLength" : 3,
+    "order": [[ 6, "desc" ]],
     columns: [
             {
                 "className":      'details-control5',
@@ -159,12 +162,14 @@ $("#prev_dt").DataTable( {
      paging: false,
      destroy: true
 });
+
+
 $('#prev_dt tbody').on('click', 'td.details-control5', function () {
       var HAHA = $(this).closest('tr').find('td:eq(1)').text();
       ModalviewPC(HAHA);
-      $('#prrviewModal').modal({backdrop: 'static', keyboard: false})  
+      $('#prrviewModal').modal({backdrop: 'static', keyboard: false})
       $('#prrviewModal').modal('toggle');
-      $('#prevrelModal').modal('toggle'); 
+      $('#prevrelModal').modal('toggle');
   });
 });
 // REMOVE CODE FUNCTION
@@ -210,7 +215,7 @@ $('#prev_dt tbody').on('click', 'td.details-control5', function () {
       $('#uppbyy').val(I);
       $('#pdesc').val(atob(D));
       $('#pfunc').val(B);
-      
+
       passversion=SS;
       Modalview1();
       $('#editModal').modal('toggle');
@@ -252,7 +257,7 @@ $('#aSEARCH').on( 'click', function () {
  $('#supb').val("");
  $('#tablecard').hide()
  NProgress.start();
-setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 2000);
+setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 600);
 } );
 
 $('#viewreleasenotes').on( 'click', function () {
@@ -260,10 +265,10 @@ $('#viewreleasenotes').on( 'click', function () {
 });
 
 $('#showprev').on( 'click', function () {
-    $('#prevrelModal').modal('toggle'); 
+    $('#prevrelModal').modal('toggle');
 });
 $('#prev2').on( 'click', function () {
-  $('#prevrelModal').modal('toggle'); 
+  $('#prevrelModal').modal('toggle');
 });
 });
 

@@ -27,7 +27,7 @@ $(function(){
 			}
 
 		});
-		// ADDING RELEASENOTES ON CODE ADDING 
+		// ADDING RELEASENOTES ON CODE ADDING
 			$("#gg").bind({
 			click:function(){
 			 if($('#ctype').val()=='' || $('#fname').val()=='' || $('#codedesc').val()=='' || $('#version').val()==''|| $('#added').val()=='' || $('#rnc').val()=='')
@@ -93,7 +93,7 @@ function code_adding(){
 		async: false,
 		success: function(data){code_status(data)
 			$('#rnModal').modal('toggle');
-			 window.setTimeout(function(){location.reload()},2000);
+			 tableuserview.ajax.reload();
 
 		},
 		error:  function(){

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  
+
   $(".details-control").bind({
     click:function(){
     	alert("kafoy");

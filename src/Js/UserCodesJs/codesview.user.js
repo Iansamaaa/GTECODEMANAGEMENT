@@ -2,11 +2,13 @@ var editor;
 var tblcodes,tblgg;
 var modal;
 var passversion;
+var tableuserview;
+
 $(document).ready(function(){
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
 // DATA IN THE DATA TABLES
-  $("#dataTable").DataTable( {
+  tableuserview = $("#dataTable").DataTable( {
       dom: '<"toolbar">frtip',
         //"processing": true,
         //"serverSide": true,
@@ -154,9 +156,9 @@ $("#prev_dt").DataTable( {
 $('#prev_dt tbody').on('click', 'td.details-control5', function () {
       var HAHA = $(this).closest('tr').find('td:eq(1)').text();
       ModalviewPC(HAHA);
-      $('#prrviewModal').modal({backdrop: 'static', keyboard: false})  
+      $('#prrviewModal').modal({backdrop: 'static', keyboard: false})
       $('#prrviewModal').modal('toggle');
-      $('#prevrelModal').modal('toggle'); 
+      $('#prevrelModal').modal('toggle');
   });
 
   });
@@ -244,10 +246,10 @@ $('#viewreleasenotes').on( 'click', function () {
       $('#vrnModal').modal('toggle');
 });
 $('#showprev').on( 'click', function () {
-    $('#prevrelModal').modal('toggle'); 
+    $('#prevrelModal').modal('toggle');
 });
 $('#prev2').on( 'click', function () {
-  $('#prevrelModal').modal('toggle'); 
+  $('#prevrelModal').modal('toggle');
 });
 });
 

@@ -110,7 +110,7 @@ function SuccessfulAdd(loginstats){
 								;
 				break;
 		case "x": (toastr.success("Member added!", "Success"));
-		window.setTimeout(function(){location.reload()},2000);
+		tblmembers.ajax.reload();
 				break;
 		default:  toastr.warning("Username/Password/SPIN did not match. (Please check CAPS LOCK)", "Authentication Failed");
 

@@ -34,7 +34,7 @@ function memREM(yow){
 		success: function(data){;
 			toastr.success("Member Reactivated!", "Success");
 			$('#ReactivateModal').modal('toggle');
-			 window.setTimeout(function(){window.location="../../pages/loginpage.asp"
+			 tblmembers.ajax.reload();
 },2000);
 			},
 		error:  function(){

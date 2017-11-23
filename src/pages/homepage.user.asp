@@ -174,7 +174,7 @@
           </div>
         </div>
 
-  
+
       </div>
       <!-- /.container-fluid -->
 
@@ -486,12 +486,12 @@
           </div>
           <div class="modal-body">
              <input type="text" class="form-control" id="preeev" style="display:none">
-        <div class="card mb-4" id="tablecard">
+        <div class="card mb-4" id="tablecard" style="width:80%; margin:0 auto;">
          <div class="card-header blue" >
           </div>
           <div class="card-body">
             <div>
-              <table class="table table-bordered" id="prev_dt" cellspacing="0" width="20%">
+              <table class="table table-bordered" id="prev_dt" cellspacing="0" width="auto">
                 <thead>
                   <tr>
                     <th></th>
@@ -536,7 +536,6 @@
           </form>
           </div>
           <div class="modal-footer">
-           <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeView"></p></p>
             <button type="button" class="btn btn-secondary" data-dismiss="modal" id="prev2">Cancel</button>
           </div>
         </div>

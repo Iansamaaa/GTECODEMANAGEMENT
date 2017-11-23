@@ -89,7 +89,7 @@ function code_edit(){
     success: function(data){
       toastr.success("Code Edited!", "Sucess");
       $('#rnaModal').modal('hide');
-      window.setTimeout(function(){location.reload()},2000);
+      tableview.ajax.reload();
 
     },
     error:  function(){

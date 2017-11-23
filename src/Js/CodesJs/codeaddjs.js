@@ -85,8 +85,7 @@ function code_adding(){
 		async: false,
 		success: function(data){code_status(data)
 			$('#rnModal').modal('hide');
-			 window.setTimeout(function(){location.reload()},2000);
-
+		tableview.ajax.reload();
 		},
 		error:  function(){
 			toastr.warning("Submission Failed");}

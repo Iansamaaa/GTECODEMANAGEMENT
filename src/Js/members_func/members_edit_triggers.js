@@ -43,9 +43,7 @@ function EditMember(){
 		success: function(data){;
 
 			toastr.success("Member Edited!", "Sucess");
-			setTimeout(function () {
-			 window.location.reload(true)
-			}, 1500);
+			tblmembers.ajax.reload();
 			},
 		error:  function(){
 			toastr.warning("Error", "It's Error!");}
