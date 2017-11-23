@@ -6,7 +6,7 @@ var tableview;
 
 $(document).ready(function(){
   var cd = "CodeType: "
-
+  var fvpass =$('#FunctionNameView').text();
 NProgress.start();
 setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
 // DATA IN THE DATA TABLES
@@ -111,9 +111,15 @@ tableview =  $("#dataTable").DataTable( {
       $('#CodeTypeView').text("'"+CTV+"'");
       $('#current_version').text(""+C);
      $('#FunctionNameView').text(FNV);
+      fnprev = FNV;
+
+
+
 var hala;
 hala= {previousd: $('#preeev').val(),
 };
+
+
 $("#prev_dt").DataTable( {
       processing: "true",
       ajax: {
@@ -151,11 +157,12 @@ $("#prev_dt").DataTable( {
             },
             { data: "UpdatedBy","orderable": false},
             { data: "DateTimeUpdated","orderable": false},
+            { data: "Description","orderable":false},
         ],
      "columnDefs": [ {
         className: "hide_column",
         width: "10%",
-        targets: [1,7]
+        targets: [1,7,8]
        } ],
     select: 'single',
     searching: false,
@@ -166,10 +173,19 @@ $("#prev_dt").DataTable( {
 
 $('#prev_dt tbody').on('click', 'td.details-control5', function () {
       var HAHA = $(this).closest('tr').find('td:eq(1)').text();
+      var FV = $(this).closest('tr').find('td:eq(3)').text();
+      var ctype = $(this).closest('tr').find('td:eq(2)').text();
+      var vers = $(this).closest('tr').find('td:eq(4)').text();
+      var desc = $(this).closest('tr').find('td:eq(8)').text();
       ModalviewPC(HAHA);
+
       $('#prrviewModal').modal({backdrop: 'static', keyboard: false})
       $('#prrviewModal').modal('toggle');
       $('#prevrelModal').modal('toggle');
+      $('#FunctionNameViewPrev').text(FV);
+        $('#CodeTypeViewPrev').text(ctype);
+        $('#current_versionPrev').text(vers);
+        $('#codedescriptPrev').text(atob(desc));
   });
 });
 // REMOVE CODE FUNCTION
