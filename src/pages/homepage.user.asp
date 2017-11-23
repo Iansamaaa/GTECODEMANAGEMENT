@@ -197,7 +197,7 @@
             Select "Logout" below if you are ready to end your current session.
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <form action="Logout.asp">
             <button type="submit" class="btn btn-primary">Logout</button>
             </form>
@@ -273,7 +273,7 @@
           </div>
           <!-- HAYS -->
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary" id="btnAdd">Add</button>
           </div>
         </div>
@@ -297,7 +297,7 @@
           </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary" id="btnREMOVE">Remove</button>
           </div>
         </div>
@@ -324,7 +324,7 @@
             <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeView"></p></p>
             <button type="button" class="btn btn-secondary" id="viewreleasenotes">Release Notes</button>
             <button type="button" class="btn btn-secondary" id="showprev">Previous Versions</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
           </div>
         </div>
@@ -386,7 +386,7 @@
           </div>
           <!-- HAYS -->
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary" id="btnEDIT">Save</button>
           </div>
         </div>
@@ -406,7 +406,7 @@
           <textarea class="form-control codeTS" id="viewrnc" Placeholder="Release notes" disabled></textarea>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -429,7 +429,7 @@
            <input type="text" class="form-control topff" id="supb" placeholder="Updated by..." width="80px" maxlength="10">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id="aSEARCH">Search</button>
           </div>
         </div>
@@ -449,7 +449,7 @@
           <textarea class="form-control codeTS" id="rnc" Placeholder="Release notes"></textarea>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" id="rncancel" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary" id="rncancel" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id="gg">Add</button>
           </div>
         </div>
@@ -469,7 +469,7 @@
           <textarea class="form-control codeTS" id="rna" Placeholder="Release notes"></textarea>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" id="rnacancel" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary" id="rnacancel" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id="wp">Add</button>
           </div>
         </div>
@@ -502,6 +502,7 @@
                     <th>Date Updated</th>
                     <th>Updated By</th>
                     <th></th>
+                    <th></th>
                   </tr>
                 </thead>
               </table>
@@ -514,7 +515,7 @@
         </div>
           <!-- HAYS -->
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="gg">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="gg">Close</button>
           </div>
         </div>
       </div>
@@ -522,25 +523,27 @@
 <!-- END OF PREVIOUS MODAL -->
 
 <!-- Previous Code Modal-->
-    <div class="modal fade" id="prrviewModal" tabindex="-1" role="dialog" aria-labelledby="prrvModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="FunctionNameView"></h4>
-            <h4 id="current_version"></h4>
-          </div>
-          <div class="modal-body">
-            <textarea class="form-control desc" id="codeTA1" style="height:300px;" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
-          <form class="form-inline">
-          <input type="text" class="form-control" id="viewC" style="display:none">
-          </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="prev2">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="modal fade" id="prrviewModal" tabindex="-1" role="dialog" aria-labelledby="prrvModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+ <div class="modal-content">
+   <div class="modal-header">
+     <h4 class="modal-title" id="FunctionNameViewPrev"></h4>
+     <h4 id="current_versionPrev"></h4>
+   </div>
+   <div class="modal-body">
+     <textarea class="form-control desc" id="codeTA1" style="height:314px;" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
+     <textarea class="form-control " id="codedescriptPrev" style="height:110px; margin-top:5px;" Placeholder="Code Description" disabled></textarea>
+   <form class="form-inline">
+   <input type="text" class="form-control" id="viewC" style="display:none">
+   </form>
+   </div>
+   <div class="modal-footer">
+      <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeViewPrev"></p></p>
+     <button type="button" class="btn btn-secondary" data-dismiss="modal" id="prev2">Close</button>
+   </div>
+ </div>
+</div>
+</div>
 <!-- END OF View MODAL -->
 
 <!--                                                END OF MODALS                                              -->
