@@ -476,6 +476,7 @@
                     <th>Date Updated</th>
                     <th>Updated By</th>
                     <th></th>
+                    <th></th>
                   </tr>
                 </thead>
               </table>
@@ -495,28 +496,31 @@
     </div>
 <!-- END OF PREVIOUS MODAL -->
 
-   <!-- Previous Code Modal-->
+
+       <!-- Previous Code Modal-->
     <div class="modal fade" id="prrviewModal" tabindex="-1" role="dialog" aria-labelledby="prrvModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="FunctionNameView"></h4>
-            <h4 id="current_version"></h4>
+            <h4 class="modal-title" id="FunctionNameViewPrev"></h4>
+            <h4 id="current_versionPrev"></h4>
           </div>
           <div class="modal-body">
-            <textarea class="form-control desc" id="codeTA1" style="height:300px;" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
+            <textarea class="form-control desc" id="codeTA1" style="height:314px;" Placeholder="Code Description" disabled><p><label id="descview"></label></p></textarea>
+            <textarea class="form-control " id="codedescriptPrev" style="height:110px; margin-top:5px;" Placeholder="Code Description" disabled></textarea>
           <form class="form-inline">
           <input type="text" class="form-control" id="viewC" style="display:none">
           </form>
           </div>
           <div class="modal-footer">
-    
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="prev2">Cancel</button>
+             <p style="position:absolute;left:40px;display:inline-block;font-size:15px;">Code Type:<p style="position:absolute;left:120px;font-size:12px;font-weight:bold;" id="CodeTypeViewPrev"></p></p>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="prev2">Close</button>
           </div>
         </div>
       </div>
     </div>
     <!-- END OF View MODAL -->
+
 
 <!--                                                END OF MODALS                                              -->
 

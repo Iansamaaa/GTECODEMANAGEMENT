@@ -21,9 +21,7 @@ setTimeout(function() { NProgress.done(); $('#tablecard').show();}, 1000);
     columns: [
               {
                 "className":      'details-control2',
-                "orderable":      false,
                 "data":           null,
-                "defaultContent": '',
                  "render": function () {
                          return '<i class="fa fa-times" aria-hidden="true"></i>';
                      },

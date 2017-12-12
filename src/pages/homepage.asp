@@ -395,13 +395,15 @@
           <input type="text" class="form-control" style="width:70px;" id="edit_version" placeholder="Version" disabled>
           </div>
           <div class="form-group"><br>
-          <input type="text" class="form-control" style="width:70px;" id="next_version" placeholder="Next Version" disabled>
+          <input type="text" class="form-control" style="width:70px;display:none;" id="next_version" placeholder="Next Version" disabled>
           </div>
           </form>
           <br>
           <form class="form-horizontal">
           <div class="form-group">
-          <textarea class="form-control codeTSA" id="edit_desc" Placeholder="Code Description"></textarea><br>
+          <label class="fontsizesmall">Code Description:</label>
+          <textarea class="form-control codeTSA" id="edit_desc" Placeholder="Code Description"></textarea>
+          <label class="fontsizesmall">Source code:</label>
           <textarea class="form-control codeTS" id="edit_codedesc" Placeholder="Code Script"></textarea>
           </div>
           <div class="form-group col-xs-2">

@@ -36,6 +36,8 @@ setTimeout(function() { NProgress.done(); $('#tablecardact').show();}, 1000);
             },
             { data: "ACTdescription", "orderable": false},
         ], 
+        
+    "bInfo": false,
     "columnDefs": [ {
         className: "hide_column",
         width: "10%",
