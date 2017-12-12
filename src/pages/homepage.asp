@@ -13,7 +13,6 @@
     <!-- FILES INCLUDED -->
     <!-- JQUERY -->
     <script src="../Js/plugins/jquery-3.2.1.min.js"></script>
-
     <!-- Bootstrap core CSS -->
     <link href="pagedesigns/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
